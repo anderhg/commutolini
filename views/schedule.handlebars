@@ -1,0 +1,195 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>HCI Project Portfolio</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="/css/introHCI.css" rel="stylesheet">
+	<!-- this is a comment in HTML -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->        
+</head>
+
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h1> Edit Schedule </h1>
+		</div>
+
+		<div class="row">
+            <div class="col-md-12">
+                <div class="form-group">
+                    <label for="homeAddress"><i class="glyphicon glyphicon-home"></i>4467 Dawes Street</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="destinationAddress"><i class="glyphicon glyphicon-flag"></i>Torrey Pines Gliderport</label>
+                </div>
+
+                <div class="form-group">
+                	<button type="button" class="btn btn-success" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Edit Adresses</button>
+            	</div>
+
+                <div class="collapse" id="collapseExample">
+	                <div class="form-group">
+		                <form class="form-inline">
+						  <div class="form-group">
+						    <input type="text" class="form-control" placeholder="New home address" id="inHome">
+						  </div>
+						  <button type="submit" class="btn btn-default">Change Home Address</button>
+						  <div class="form-group">
+						    <input type="text" class="form-control" placeholder="New destination" id="inDest">
+						  </div>
+						  <button type="submit" class="btn btn-default">Change Destination Address</button>
+						</form>   
+					</div> 
+				</div>  
+            </div>
+        </div>
+
+	    <div class="row">
+	        <div class="col-md-12">
+	            <div class="panel-group" id="accordion">
+	                <div class="panel panel-default">
+	                    <div class="panel-heading">
+	                        <h4 class="panel-title">
+	                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">MONDAYS</a>
+	                        </h4>
+	                    </div>
+	                    <div id="collapseOne" class="panel-collapse collapse">
+	                        <div class="panel-body">
+	                            <div class="row">
+	                                <div class="col-md-12">
+	                                    <div class="form-group">
+	                                        <input type="text" class="form-control" placeholder="Leaving home at" required />
+	                                    </div>
+	                                    <div class="form-group">
+	                                        <input type="text" class="form-control" placeholder="Going home at" required />
+	                                    </div>
+	                                    <div class="form-group">
+											  <label for="sel1">Available seats:</label>
+											  <select class="form-control" id="sel1">
+											    <option>1</option>
+											    <option>2</option>
+											    <option>3</option>
+											    <option>4</option>
+											    <option>5</option>
+											    <option>6</option>
+											  </select>
+										</div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="panel panel-default">
+	                    <div class="panel-heading">
+	                        <h4 class="panel-title">
+	                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+	                            TUESDAYS</a>
+	                        </h4>
+	                    </div>
+	                    <div id="collapseTwo" class="panel-collapse collapse">
+	                        <div class="panel-body">
+	                            <div class="row">
+	                                <div class="col-md-12">
+	                                    <div class="form-group">
+	                                        <input type="text" class="form-control" placeholder="Leaving home at" required />
+	                                    </div>
+	                                    <div class="form-group">
+	                                        <input type="text" class="form-control" placeholder="Going home at" required />
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="panel panel-default">
+	                    <div class="panel-heading">
+	                        <h4 class="panel-title">
+	                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+	                            WEDNESDAYS</a>
+	                        </h4>
+	                    </div>
+	                    <div id="collapseThree" class="panel-collapse collapse">
+	                        <div class="panel-body">
+	                            <div class="row">
+	                                <div class="col-md-12">
+	                                    <div class="form-group">
+	                                        <input type="text" class="form-control" placeholder="Leaving home at" required />
+	                                    </div>
+	                                    <div class="form-group">
+	                                        <input type="text" class="form-control" placeholder="Going home at" required />
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="panel panel-default">
+	                    <div class="panel-heading">
+	                        <h4 class="panel-title">
+	                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+	                            THURSDAYS</a>
+	                        </h4>
+	                    </div>
+	                    <div id="collapseFour" class="panel-collapse collapse">
+	                        <div class="panel-body">
+	                            <div class="row">
+	                                <div class="col-md-12">
+	                                    <div class="form-group">
+	                                        <input type="text" class="form-control" placeholder="Leaving home at" required />
+	                                    </div>
+	                                    <div class="form-group">
+	                                        <input type="text" class="form-control" placeholder="Going home at" required />
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	                <div class="panel panel-default">
+	                    <div class="panel-heading">
+	                        <h4 class="panel-title">
+	                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+	                            FRIDAYS</a>
+	                        </h4>
+	                    </div>
+	                    <div id="collapseFive" class="panel-collapse collapse">
+	                        <div class="panel-body">
+	                            <div class="row">
+	                                <div class="col-md-12">
+	                                    <div class="form-group">
+	                                        <input type="text" class="form-control" placeholder="Leaving home at" required />
+	                                    </div>
+	                                    <div class="form-group">
+	                                        <input type="text" class="form-control" placeholder="Going home at" required />
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	            </div>
+                <a href="./" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-floppy-disk"></span>Save</a>
+	        </div>
+	    </div>
+
+
+		<div class="backButton">
+			<a href="./" class="button">Back</a>
+		</div>
+
+		<script src="https://code.jquery.com/jquery.js"></script>
+		<script src="/js/bootstrap.min.js"></script>
+	</div>
+</body>
+</html>
