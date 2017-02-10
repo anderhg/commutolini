@@ -1,8 +1,107 @@
+<!doctype html>
+
 <html>
 <head>
-	<title>Test Page</title>
+	<title>HCI Project Portfolio</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="/css/introHCI.css" rel="stylesheet">
+	<!-- this is a comment in HTML -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->        
 </head>
+
 <body>
-Begin here (or replace this with any static code already written).
+	<div class="container">
+		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
+		<!-- p means paragraph -->
+		<div class="jumbotron homepage">
+			<h1>Welcome,<br>Stian</h1>
+			<div id="personimg">
+				<a href="profile">
+					<button type="button" class="btn btn-primary btn-circle btn-xl btn-user"><i class="glyphicon glyphicon-user"></i></button>
+				</a>
+			</div>
+		</div>
+
+
+		<div>
+		<h2> Your Rides </h2>
+	</div>
+
+	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  	<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          You drive - tue, 31 Jan
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+		<p class = "drivecard">   
+			08:30 <br>
+        	pick-up	<br>
+        	@  <br>
+        	1412 Graham St
+        </p> 
+      </div>
+    </div>
+  	</div>
+  	<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Oyvind drives - wed, 01 Feb
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        <p class ="drivecard">
+        	Be ready at 08:45
+        </p>
+      </div>
+    </div>
+  	</div>
+  	<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingThree">
+      <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Anders drive - thu, 02 Feb
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+      <div class="panel-body">
+      	<p class="drivecard">
+      		Be ready at 08:55
+      	</p>	
+      </div>
+    </div>
+  	</div>
+
+		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
+		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
+		<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
+		<div class="setupSchedule">
+			<a href="setupschedule">
+				<button type="button" class="btn btn-info btn-circle btn-xl btn-schedule"><i class="glyphicon glyphicon-time time-icon"></i>Edit schedule</button>
+			</a>
+		</div>
+		
+
+	</div>
+
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
 </body>
 </html>
