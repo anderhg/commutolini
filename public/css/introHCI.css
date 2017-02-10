@@ -1,0 +1,138 @@
+/* applies to anything of class "example-class-selector" */
+.example-class-selector {
+	margin-top: 2em;
+}
+
+/* applies to any <p> descendants of an element of class "example-class-selector" */
+.example-class-selector p {
+	/* Colors are in hexadecimal: http://www.colorpicker.com/ */	
+	color: #CC00AA;
+}
+
+.jumbotron {
+	position: relative;
+	background: none;
+}
+
+.jumbotron:after {
+     content:"";
+     background: url("../images/carpool.jpeg");
+     opacity: 0.2;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     position: absolute;
+     z-index: -1;	
+}
+
+#personimg {
+     right: 50px;
+     position: absolute;
+     top: 50px;
+}
+
+.jumbotron p {
+     color: #6e6e6e;
+}
+
+p.drivecard {
+     text-align: center;
+}
+
+.project a {
+     text-align: center;
+}
+
+a.button {
+<<<<<<< HEAD
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+.btn-circle.btn-lg {
+  width: 50px;
+  height: 50px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.33;
+  border-radius: 25px;
+}
+.btn-circle.btn-xl {
+  width: 80px;
+  height: 80px;
+  padding: 16px 20px;
+  font-size: 40px;
+  line-height: 1.33;
+  border-radius: 85px;
+  max-width: 100%;
+}
+
+.btn-circle.btn-xl.btn-user {
+     position: relative;
+     top: -24px;
+}
+
+.btn-circle.btn-xl.btn-schedule {
+     position: relative;
+     top: 20px;
+     width: 100%;
+     height: 50px;
+     font-size: 20px;
+     vertical-align: middle;
+}
+
+.glyphicon.glyphicon-time.time-icon {
+     font-size: 200%;
+     right: 45px;
+     vertical-align: top;
+     top: -10px
+}
+
+.form-inline .form-group {
+     margin-right:10px;
+}
+
+.well-primary {
+color: rgb(255, 255, 255);
+background-color: rgb(66, 139, 202);
+border-color: rgb(53, 126, 189);
+}
+
+.glyphicon { 
+     margin-right:5px;
+}
+
+.panel-title {
+     text-align: center;
+}
+
+.btn.btn-success.btn-sm{
+     position: relative;
+     top: 15px;
+}
+
+.backButton {
+     position: relative;
+     top: 20px;
+}
+
+.jumbotron.homepage {
+     padding-top: 12px;
+     padding-bottom: 12px;
+}
+
+
