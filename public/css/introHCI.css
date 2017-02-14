@@ -136,14 +136,7 @@ border-color: rgb(53, 126, 189);
 }
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
-body {
-    background: -webkit-linear-gradient(90deg, #FF512F 10%, #DD2476 90%);
-    background: -moz-linear-gradient(90deg, #FF512F 10%, #DD2476 90%);
-    background: -ms-linear-gradient(90deg, #FF512F 10%, #DD2476 90%);
-    background: -o-linear-gradient(90deg, #FF512F 10%, #DD2476 90%);
-    background: linear-gradient(90deg, #FF512F 10%, #DD2476 90%);
-    font-family: 'Open Sans', sans-serif!important;
-}
+
 .well{
     background-color:#fff!important;
     border-radius:0!important;
@@ -152,8 +145,9 @@ body {
 
 .well.login-box {
     width:300px;
-    margin:0 auto;
-    display:none;
+    top: 50px;
+    position: relative;
+
 }
 .well.login-box legend {
   font-size:26px;
@@ -203,4 +197,5 @@ body {
   margin:0;
   font-weight:300;
 }
+
 
