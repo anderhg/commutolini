@@ -144,8 +144,12 @@ border-color: rgb(53, 126, 189);
 }
 
 .well.login-box {
-    width:300px;
+    width: 300px;
     top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-top: auto;
     position: relative;
 
 }
@@ -197,5 +201,7 @@ border-color: rgb(53, 126, 189);
   margin:0;
   font-weight:300;
 }
+
+
 
 
