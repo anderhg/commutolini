@@ -135,10 +135,7 @@ border-color: rgb(53, 126, 189);
      padding-bottom: 12px;
 }
 
-body
-{
-    font-family: 'Lato', 'sans-serif';
-    }
+
 .profile 
 {
     min-height: 355px;
@@ -212,6 +209,7 @@ span.tags
     position: absolute;
     bottom: -10px;
     left: 50%;
+<<<<<<< HEAD
 }
 
 .panel-heading {
@@ -223,3 +221,73 @@ span.tags
     padding: 10px 15px;
     margin: -10px -15px;
 }
+=======
+    }
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
+
+.well{
+    background-color:#fff!important;
+    border-radius:0!important;
+    border:none!important;
+}
+
+.well.login-box {
+    width: 300px;
+    top: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-top: auto;
+    position: relative;
+
+}
+.well.login-box legend {
+  font-size:26px;
+  text-align:center;
+  font-weight:300;
+}
+.well.login-box label {
+  font-weight:300;
+  font-size:16px;
+  
+}
+.well.login-box input[type="text"] {
+  box-shadow:none;
+  border-color:#ddd;
+  border-radius:0;
+}
+
+.well.welcome-text{
+    font-size:21px;
+}
+
+/* Notifications */
+
+.notification{
+    position:fixed;
+    top: 20px;
+    right:0;
+    background-color:#FF4136;
+    padding: 20px;
+    color: #fff;
+    font-size:21px;
+    display:none;
+}
+.notification-success{
+  background-color:#3D9970;
+}
+
+.notification-show{
+    display:block!important;
+}
+
+/*Loged in*/
+.logged-in{
+  display:none;
+}
+.logged-in h1{
+  margin:0;
+  font-weight:300;
+}
+>>>>>>> e8ca3ffb1dc44fd0bbc87946977735d71ea9992f

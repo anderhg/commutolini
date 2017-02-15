@@ -38,10 +38,10 @@ if ('development' == app.get('env')) {
 }
 
 // Add routes here
-app.get('/', index.view);
+app.get('/', login.viewLogin);
 app.get('/schedule', schedule.viewSchedule);
 app.get('/profile', profile.viewProfile);
-app.get('/login', login.viewLogin);
+app.get('/homepage', index.view);
 // Example route
 // app.get('/users', user.list);
 
