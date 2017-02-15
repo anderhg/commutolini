@@ -1,0 +1,24 @@
+{
+	"days": [
+		{
+			"name": "Monday",
+			"id": "collapseOne"
+		},
+		{
+			"name": "Tuesday",
+			"id": "collapseTwo"
+		},
+		{
+			"name": "Wedensday",
+			"id": "collapseThree"
+		},
+		{
+			"name": "Thursday",
+			"id": "collapseFour"
+		},
+		{
+			"name": "Friday",
+			"id": "collapseFive"
+		}
+	]
+}
