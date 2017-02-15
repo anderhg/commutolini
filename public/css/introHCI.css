@@ -212,3 +212,14 @@ span.tags
     position: absolute;
     bottom: -10px;
     left: 50%;
+}
+
+.panel-heading {
+    cursor: pointer;
+}
+
+.panel-title a {
+    display: block;
+    padding: 10px 15px;
+    margin: -10px -15px;
+}
