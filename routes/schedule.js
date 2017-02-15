@@ -1,3 +1,5 @@
+var data = require('../data.json');
+
 exports.viewSchedule = function(req, res) {
-	res.render('schedule');
+	res.render('schedule', data);
 }
