@@ -86,6 +86,13 @@ a.button {
      top: -24px;
 }
 
+
+.btn-circle.btn-xl.btn-editProfile {
+  position: relative;
+  right: 100px;
+  height: 
+}
+
 .btn-circle.btn-xl.btn-schedule {
      position: relative;
      top: 20px;
@@ -133,8 +140,29 @@ border-color: rgb(53, 126, 189);
 .jumbotron.homepage {
      padding-top: 12px;
      padding-bottom: 12px;
+     top:55px;
 }
 
+.row.schedule {
+  position: relative;
+  padding-top: 50px;
+}
+
+#yourrides {
+  position: relative;
+  padding-top: 10px;
+}
+
+.row.profilepage {
+  position: relative;
+  padding-top: 60px;
+}
+
+#profileimg {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .profile 
 {
