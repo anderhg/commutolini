@@ -104,7 +104,7 @@ function saveSchedule() {
 }
 
 function checkSelect(result){
-	console.log(result.days[0]['seats']);
+	console.log(result.data.days[0]['seats']);
 	
 	for (var i=0; i<5; i++){
 		checkSelectedValues(result,i);
@@ -114,7 +114,7 @@ function checkSelect(result){
 function checkSelectedValues(result,seatsID) {
 
 	var liste = ["#MSeats","#TuSeats","#WSeats","#ThSeats","#FSeats"];
-	var Seats = result.days[seatsID]['seats'];
+	var Seats = result.data.days[seatsID]['seats'];
 
 
 	if (Seats == "" || Seats == "1") {

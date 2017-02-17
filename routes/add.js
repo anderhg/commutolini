@@ -45,8 +45,7 @@ exports.addSchedule = function(req, res) { 
 			}
 		]		
 		
-	console.log(days);
-	delete data.days;
-	data.days = days;
+	delete data.data.days;
+	data.data.days = days;
 	res.render('schedule', data);
  }

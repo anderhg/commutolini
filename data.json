@@ -1,47 +1,54 @@
-{
-	
-
-	"days":[
-		{
-			"name": "Monday",
-			"code": "M",
-			"id": "collapseOne",
-			"start": "",
-			"end": "",
-			"seats": ""
-		},
-		{
-			"name": "Tuesday",
-			"code": "Tu",
-			"id": "collapseTwo",
-			"start": "",
-			"end": "",
-			"seats": ""
-		},
-		{
-			"name": "Wednesday",
-			"code": "W",
-			"id": "collapseThree",
-			"start": "",
-			"end": "",
-			"seats": ""
-		},
-		{
-			"name": "Thursday",
-			"code": "Th",
-			"id": "collapseFour",
-			"start": "",
-			"end": "",
-			"seats": ""
-		},
-		{
-			"name": "Friday",
-			"code": "F",
-			"id": "collapseFive",
-			"start": "",
-			"end": "",
-			"seats": ""
-		}
-	]
-	
+{	
+	"data":{
+		"days":[
+			{
+				"name": "Monday",
+				"code": "M",
+				"id": "collapseOne",
+				"start": "",
+				"end": "",
+				"seats": ""
+			},
+			{
+				"name": "Tuesday",
+				"code": "Tu",
+				"id": "collapseTwo",
+				"start": "",
+				"end": "",
+				"seats": ""
+			},
+			{
+				"name": "Wednesday",
+				"code": "W",
+				"id": "collapseThree",
+				"start": "",
+				"end": "",
+				"seats": ""
+			},
+			{
+				"name": "Thursday",
+				"code": "Th",
+				"id": "collapseFour",
+				"start": "",
+				"end": "",
+				"seats": ""
+			},
+			{
+				"name": "Friday",
+				"code": "F",
+				"id": "collapseFive",
+				"start": "",
+				"end": "",
+				"seats": ""
+			}
+		],
+		"users":[
+			{
+				"username": "stianvale",
+				"firstName": "Stian",
+				"lastName": "Vale"
+			}
+		]
+		
+	}
 }
