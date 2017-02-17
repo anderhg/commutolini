@@ -63,38 +63,27 @@
 		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
 		<!-- p means paragraph -->
 		<div class="jumbotron homepage">
-<<<<<<< HEAD
-			<h1>Welcome,</h1>
-      <div class = "username-homepage">
-        <h1>Stian</h1>
-        </div>
-
-=======
 			<h1>Welcome, {{data.currentUser.firstName}}</h1>
->>>>>>> ebbeb9feb9866135f21a9e781530aacf0795d412
 		</div>
 
 
 		<div id="yourrides">
-		  <h2> Your Rides </h2>
+		  <h2> Commuters </h2>
 	  </div>
 
 
   
 
   <div class = "available-rides">
-    {{#each users}}
+    {{#each schedule}}
     <img src="images/anon.jpg" id="userimg">
     <h4> {{username}} </h4>
-  {{/each}}
-  </div>
-    {{#each schedule}}
       {{#each days}}
         <h6>{{day}}</h6>
         <p class= "schedule"> Leaves home: {{start}} </br> Goes back home: {{end}} <br> Has {{seats}} available seats </p>
     {{/each}}
-    {{/each}}
-
+  {{/each}}
+  </div>
   
 
 

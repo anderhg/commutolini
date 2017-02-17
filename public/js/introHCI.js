@@ -5,12 +5,8 @@ $(document).ready(function() {
 	initializePage();
 	console.log('hei');
 	$("#saveSchedule").click(saveSchedule);
-<<<<<<< HEAD
-	
-=======
-	makeDriveCard();
 	$("#login").click(login);
->>>>>>> ebbeb9feb9866135f21a9e781530aacf0795d412
+
 })
 
 /*

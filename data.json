@@ -77,29 +77,99 @@
 					"seats": ""
 					}
 				]	
+			},
+			{
+				"username": "anderhg",
+				"days": [
+					{
+					"day": "Monday",
+					"start": "08:00",
+					"end": "17:00",
+					"seats": ""
+					},
+					{
+					"day": "Tuesday",
+					"start": "09:00",
+					"end": "16:00",
+					"seats": ""
+					},
+					{
+					"day": "Wednesday",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": ""
+					},
+					{
+					"day": "Thursday",
+					"start": "09:00",
+					"end": "19:00",
+					"seats": ""
+					},
+					{
+					"day": "Friday",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": ""
+					}
+				]	
+			},
+			{
+				"username": "oyvikjo",
+				"days": [
+					{
+					"day": "Monday",
+					"start": "13:00",
+					"end": "17:00",
+					"seats": ""
+					},
+					{
+					"day": "Tuesday",
+					"start": "07:00",
+					"end": "17:00",
+					"seats": ""
+					},
+					{
+					"day": "Wednesday",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": ""
+					},
+					{
+					"day": "Thursday",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": ""
+					},
+					{
+					"day": "Friday",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": ""
+					}
+				]	
 			}
+
 		],
 
-		"users":[
-			{
-				"username": "stianvale",
-=======
 		"users":{
 
 			"stianvale":{
->>>>>>> ebbeb9feb9866135f21a9e781530aacf0795d412
 				"firstName": "Stian",
-				"lastName": "Vale"
+				"lastName": "Vale",
+				"username": "stianvale"
 			},
 			"anderhg":{
 				"firstName": "Anders",
-				"lastName": "Geitle"
+				"lastName": "Geitle",
+				"username": "anderhg"
 			},
 			"oyvikjo":{
 				"firstName": "Øyvind",
-				"lastName": "Johnsen"
+				"lastName": "Johnsen",
+				"username": "oyvikjo"
 			}
 		},
+
 		"currentUser":{
 
 		}
