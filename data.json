@@ -1,24 +1,47 @@
 {
-	"days": [
+	
+
+	"days":[
 		{
 			"name": "Monday",
-			"id": "1"
+			"code": "M",
+			"id": "collapseOne",
+			"start": "",
+			"end": "",
+			"seats": ""
 		},
 		{
 			"name": "Tuesday",
-			"id": "2"
+			"code": "Tu",
+			"id": "collapseTwo",
+			"start": "",
+			"end": "",
+			"seats": ""
 		},
 		{
-			"name": "Wedensday",
-			"id": "3"
+			"name": "Wednesday",
+			"code": "W",
+			"id": "collapseThree",
+			"start": "",
+			"end": "",
+			"seats": ""
 		},
 		{
 			"name": "Thursday",
-			"id": "4"
+			"code": "Th",
+			"id": "collapseFour",
+			"start": "",
+			"end": "",
+			"seats": ""
 		},
 		{
 			"name": "Friday",
-			"id": "5"
+			"code": "F",
+			"id": "collapseFive",
+			"start": "",
+			"end": "",
+			"seats": ""
 		}
 	]
+	
 }

@@ -12,6 +12,8 @@ var index = require('./routes/index');
 var schedule = require('./routes/schedule');
 var profile = require('./routes/profile');
 var login = require('./routes/login');
+var add = require('./routes/add');
+var data = require('./routes/data');
 var ride = require('./routes/rides');
 // Example route
 // var user = require('./routes/user');
@@ -44,6 +46,8 @@ app.get('/schedule', schedule.viewSchedule);
 app.get('/profile', profile.viewProfile);
 app.get('/homepage', index.view);
 app.get('/rides', ride.viewRide);
+app.get('/add', add.addSchedule);
+app.get('/data', data.usersInfo);
 // Example route
 // app.get('/users', user.list);
 
