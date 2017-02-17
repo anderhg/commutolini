@@ -327,4 +327,7 @@ span.tags
 #destination {
   padding-top: 30px;
 }
->>>>>>> e8ca3ffb1dc44fd0bbc87946977735d71ea9992f
+
+.profileLabel {
+  float: left;
+}
