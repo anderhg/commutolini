@@ -2,23 +2,23 @@
 	"days": [
 		{
 			"name": "Monday",
-			"id": "collapseOne"
+			"id": "1"
 		},
 		{
 			"name": "Tuesday",
-			"id": "collapseTwo"
+			"id": "2"
 		},
 		{
 			"name": "Wedensday",
-			"id": "collapseThree"
+			"id": "3"
 		},
 		{
 			"name": "Thursday",
-			"id": "collapseFour"
+			"id": "4"
 		},
 		{
 			"name": "Friday",
-			"id": "collapseFive"
+			"id": "5"
 		}
 	]
 }

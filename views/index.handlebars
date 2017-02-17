@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>HCI Project Portfolio</title>	
+	<title>Commutolini</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -19,6 +19,7 @@
 </head>
 
 <body>
+	<div class="dicontainer">
 
 
 
@@ -71,58 +72,31 @@
 		  <h2> Your Rides </h2>
 	  </div>
 
+
+  <div class="heisann"></div>
+
 	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
   	<div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingOne">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-          You drive - tue, 31 Jan
-        </a>
-      </h4>
-    </div>
-    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-      <div class="panel-body">
-		<p class = "drivecard">   
-			08:30 <br>
-        	pick-up	<br>
-        	@  <br>
-        	1412 Graham St
-        </p> 
-      </div>
-    </div>
+    {{#each drivecard}}
+        <div class="panel-heading" role="tab">
+          <h4 class="panel-title">
+            <a class="collapsed" id="headerdrivecard{{id}}"" role="button" data-toggle="collapse" data-parent="#accordion" href="#{{id}}" aria-expanded="false" aria-controls="{{id}}"> 
+            </a>
+          </h4>
+        </div>
+        <div id="{{id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+    		<p class = "drivecard" id="bodydrivecard{{id}}">   
+    			    08:30 <br>
+            	pick-up	<br>
+            	@  <br>
+            	1412 Graham St
+            </p> 
+          </div>
+        </div>
+    {{/each}}
   	</div>
-  	<div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingTwo">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Oyvind drives - wed, 01 Feb
-        </a>
-      </h4>
-    </div>
-    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-      <div class="panel-body">
-        <p class ="drivecard">
-        	Be ready at 08:45
-        </p>
-      </div>
-    </div>
-  	</div>
-  	<div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="headingThree">
-      <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Anders drive - thu, 02 Feb
-        </a>
-      </h4>
-    </div>
-    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-      <div class="panel-body">
-      	<p class="drivecard">
-      		Be ready at 08:55
-      	</p>	
-      </div>
-    </div>
-  	</div>
+  </div>
 
 		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
 		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
@@ -138,5 +112,6 @@
 
 	<script src="https://code.jquery.com/jquery.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+  <script src="/js/introHCI.js"></script>
 </body>
 </html>

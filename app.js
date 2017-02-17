@@ -12,6 +12,7 @@ var index = require('./routes/index');
 var schedule = require('./routes/schedule');
 var profile = require('./routes/profile');
 var login = require('./routes/login');
+var ride = require('./routes/rides');
 // Example route
 // var user = require('./routes/user');
 
@@ -42,6 +43,7 @@ app.get('/', login.viewLogin);
 app.get('/schedule', schedule.viewSchedule);
 app.get('/profile', profile.viewProfile);
 app.get('/homepage', index.view);
+app.get('/rides', ride.viewRide);
 // Example route
 // app.get('/users', user.list);
 
