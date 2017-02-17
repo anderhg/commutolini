@@ -89,7 +89,7 @@
 	        <div class="col-md-12">
 	            <div class="panel-group" id="accordion">
 	                <div class="panel panel-default">
-		    				{{#each days}}
+		    				{{#each data.days}}
 			                    <div class="panel-heading">
 			                        <h4 class="panel-title">
 			                            <a data-toggle="collapse" data-parent="#accordion" href="#{{id}}">{{name}}</a>
@@ -108,12 +108,8 @@
 			                                    <div class="form-group">
 													  <label for="sel1">Available seats:</label>
 													  <select class="form-control" id="{{code}}Seats" value="{{seats}}">
-													  	<div id="oneOption">
-												    		<option>1</option>
-												    	</div>
-												    	<div id="twoOption">
-													    	<option>2</option>
-														</div>
+											    		<option>1</option>
+												    	<option>2</option>
 													    <option>3</option>
 													    <option>4</option>
 													    <option>5</option>
