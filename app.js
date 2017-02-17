@@ -15,6 +15,7 @@ var login = require('./routes/login');
 var add = require('./routes/add');
 var data = require('./routes/data');
 var ride = require('./routes/rides');
+var username = require('./routes/username');
 // Example route
 // var user = require('./routes/user');
 
@@ -48,6 +49,7 @@ app.get('/homepage', index.view);
 app.get('/rides', ride.viewRide);
 app.get('/add', add.addSchedule);
 app.get('/data', data.usersInfo);
+app.post('/username', username.login);
 // Example route
 // app.get('/users', user.list);
 
