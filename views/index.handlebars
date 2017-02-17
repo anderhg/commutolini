@@ -63,7 +63,10 @@
 		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
 		<!-- p means paragraph -->
 		<div class="jumbotron homepage">
-			<h1>Welcome, Stian</h1>
+			<h1>Welcome,</h1>
+      <div class = "username-homepage">
+        <h1>Stian</h1>
+        </div>
 
 		</div>
 
@@ -73,32 +76,28 @@
 	  </div>
 
 
-  <div class="heisann"></div>
+  
 
-	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  	<div class="panel panel-default">
-    {{#each drivecard}}
-        <div class="panel-heading" role="tab">
-          <h4 class="panel-title">
-            <a class="collapsed" id="headerdrivecard{{id}}"" role="button" data-toggle="collapse" data-parent="#accordion" href="#{{id}}" aria-expanded="false" aria-controls="{{id}}"> 
-            </a>
-          </h4>
-        </div>
-        <div id="{{id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-          <div class="panel-body">
-    		<p class = "drivecard" id="bodydrivecard{{id}}">   
-    			    08:30 <br>
-            	pick-up	<br>
-            	@  <br>
-            	1412 Graham St
-            </p> 
-          </div>
-        </div>
-    {{/each}}
-  	</div>
+  <div class = "available-rides">
+    {{#each users}}
+    <img src="images/anon.jpg" id="userimg">
+    <h4> {{username}} </h4>
+  {{/each}}
   </div>
+    {{#each schedule}}
+      {{#each days}}
+        <h6>{{day}}</h6>
+        <p class= "schedule"> Leaves home: {{start}} </br> Goes back home: {{end}} <br> Has {{seats}} available seats </p>
+    {{/each}}
+    {{/each}}
 
-		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
+  
+
+
+      
+
+
+    <!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
 		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
 		<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
 		<div class="setupSchedule">

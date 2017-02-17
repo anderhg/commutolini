@@ -47,7 +47,7 @@ app.get('/profile', profile.viewProfile);
 app.get('/homepage', index.view);
 app.get('/rides', ride.viewRide);
 app.get('/add', add.addSchedule);
-app.get('/data', data.usersInfo);
+app.get('/data', data.dataInfo);
 // Example route
 // app.get('/users', user.list);
 

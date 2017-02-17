@@ -5,7 +5,7 @@ $(document).ready(function() {
 	initializePage();
 	console.log('hei');
 	$("#saveSchedule").click(saveSchedule);
-	makeDriveCard();
+	
 })
 
 /*
@@ -13,46 +13,6 @@ $(document).ready(function() {
  */
 
 
-function makeDriveCard(e){
-
-
-	$.get("/rides", setCardHeader);
-	$.get("/rides", setCardBody)
-
-
-} 
-
-function setCardHeader(result){
-	var drivecard = result.drivecard;
-	var username = $("div.jumbotron.homepage").text().substr(12).trim();
-	console.log(username);
-	for (var i=0; i < drivecard.length; i++){
-		if (String(username).toUpperCase() == String(drivecard[i]["driver"]).toUpperCase()){
-			$("#headerdrivecard"+drivecard[i]["id"]).html("You drive");
-		} else{
-			$("#headerdrivecard"+drivecard[i]["id"]).html(drivecard[i]["driver"] + " drives");
-		}
-	}
-
-}
-
-
-function setCardBody(result){
-	var drivecard = result.drivecard;
-	var username = $("div.jumbotron.homepage").text().substr(12).trim();
-	console.log(username);
-	for (var i=0; i < drivecard.length; i++){
-		if (String(username).toUpperCase() == String(drivecard[i]["driver"]).toUpperCase()){
-			$("#bodydrivecard"+drivecard[i]["id"]).html(drivecard[i]["pickUpTime"]+
-														"<br>"+
-														"pick up <br>" + 
-														"@ <br>" +
-														drivecard[i]["pickUpDestination"]["address"][0]);
-		} else{
-			$("#bodydrivecard"+drivecard[i]["id"]).html("Be ready for pick up at " + drivecard[i]["pickUpTime"]);
-		}
-	}
-}
 
 
 
@@ -104,7 +64,7 @@ function saveSchedule() {
 }
 
 function checkSelect(result){
-	console.log(result.data.days[0]['seats']);
+	console.log(result.days[0]['seats']);
 	
 	for (var i=0; i<5; i++){
 		checkSelectedValues(result,i);
@@ -114,7 +74,7 @@ function checkSelect(result){
 function checkSelectedValues(result,seatsID) {
 
 	var liste = ["#MSeats","#TuSeats","#WSeats","#ThSeats","#FSeats"];
-	var Seats = result.data.days[seatsID]['seats'];
+	var Seats = result.days[seatsID]['seats'];
 
 
 	if (Seats == "" || Seats == "1") {

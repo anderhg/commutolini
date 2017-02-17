@@ -1,5 +1,4 @@
 {	
-	"data":{
 		"days":[
 			{
 				"name": "Monday",
@@ -42,6 +41,45 @@
 				"seats": ""
 			}
 		],
+		
+		"schedule": [
+				{
+				"username": "stianvale",
+				"days": [
+					{
+					"day": "Monday",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": ""
+					},
+					{
+					"day": "Tuesday",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": ""
+					},
+					{
+					"day": "Wednesday",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": ""
+					},
+					{
+					"day": "Thursday",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": ""
+					},
+					{
+					"day": "Friday",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": ""
+					}
+				]	
+			}
+		],
+
 		"users":[
 			{
 				"username": "stianvale",
@@ -50,5 +88,4 @@
 			}
 		]
 		
-	}
 }
