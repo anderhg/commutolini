@@ -42,13 +42,24 @@
 				"seats": ""
 			}
 		],
-		"users":[
-			{
-				"username": "stianvale",
+		"users":{
+
+			"stianvale":{
 				"firstName": "Stian",
 				"lastName": "Vale"
+			},
+			"anderhg":{
+				"firstName": "Anders",
+				"lastName": "Geitle"
+			},
+			"oyvikjo":{
+				"firstName": "Øyvind",
+				"lastName": "Johnsen"
 			}
-		]
+		},
+		"currentUser":{
+
+		}
 		
 	}
 }
