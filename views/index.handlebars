@@ -51,7 +51,7 @@
 
 
       </ul>
-      <p class="navbar-text navbar-right">Signed in as <a href="/profile" class="navbar-link">Stian Vale</a>&nbsp&nbsp&nbsp</p>
+      <p class="navbar-text navbar-right">Signed in as <a href="/profile" class="navbar-link">{{data.currentUser.firstName}} {{data.currentUser.lastName}}</a>&nbsp&nbsp&nbsp</p>
 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -63,11 +63,15 @@
 		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
 		<!-- p means paragraph -->
 		<div class="jumbotron homepage">
+<<<<<<< HEAD
 			<h1>Welcome,</h1>
       <div class = "username-homepage">
         <h1>Stian</h1>
         </div>
 
+=======
+			<h1>Welcome, {{data.currentUser.firstName}}</h1>
+>>>>>>> ebbeb9feb9866135f21a9e781530aacf0795d412
 		</div>
 
 

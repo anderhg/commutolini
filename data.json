@@ -83,9 +83,25 @@
 		"users":[
 			{
 				"username": "stianvale",
+=======
+		"users":{
+
+			"stianvale":{
+>>>>>>> ebbeb9feb9866135f21a9e781530aacf0795d412
 				"firstName": "Stian",
 				"lastName": "Vale"
+			},
+			"anderhg":{
+				"firstName": "Anders",
+				"lastName": "Geitle"
+			},
+			"oyvikjo":{
+				"firstName": "Øyvind",
+				"lastName": "Johnsen"
 			}
-		]
+		},
+		"currentUser":{
+
+		}
 		
 }

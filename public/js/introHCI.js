@@ -5,7 +5,12 @@ $(document).ready(function() {
 	initializePage();
 	console.log('hei');
 	$("#saveSchedule").click(saveSchedule);
+<<<<<<< HEAD
 	
+=======
+	makeDriveCard();
+	$("#login").click(login);
+>>>>>>> ebbeb9feb9866135f21a9e781530aacf0795d412
 })
 
 /*
@@ -20,7 +25,6 @@ function initializePage() {
 	// add any functionality and listeners you want here
 
 	$("#personimg").click(redirect);
-	$("#login").click(index);
 	$.get('data',checkSelect);
 
 
@@ -30,10 +34,6 @@ function redirect() {
 	$(this).text("Changed text");
 }
 
-function index() {
-	event.preventDefault();
-	window.location.href('vg.no');
-}
 
 function saveSchedule() {
 
@@ -91,4 +91,17 @@ function checkSelectedValues(result,seatsID) {
 		$(liste[seatsID]).html('<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option selected>6</option>');
 	}
 
+}
+
+function login(){
+	event.preventDefault();
+	var username = document.getElementById('username-email').value;
+	console.log(username);
+	var data = {"username":username};
+	$.post('/username',data,loginCallback(data));
+}
+
+function loginCallback(result){
+	console.log('1');
+	window.location.href = "/homepage";
 }
