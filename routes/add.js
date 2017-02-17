@@ -45,43 +45,48 @@ exports.addSchedule = function(req, res) { 
 			}
 		]
 
+	var currentUser = data.currentUser.username;
+
 	var newSchedule = 	{
-		"username": "Balle",
-		"days": [{
-				"day": "Monday",
-				"start": req.query.MStart,
-				"end": req.query.MEnd,
-				"seats": req.query.MSeats
-					},
-					{
-				"day": "Tuesday",
-				"start": req.query.TuStart,
-				"end": req.query.TuEnd,
-				"seats": req.query.TuSeats
-					},
-					{
-				"day": "Wednesday",		
-				"start": req.query.WStart,
-				"end": req.query.WEnd,
-				"seats": req.query.WSeats
-					},
-					{
-				"day": "Thursday",		
-				"start": req.query.ThStart,
-				"end": req.query.ThEnd,
-				"seats": req.query.ThSeats
-					},
-					{
-				"day":	"Friday",	
-				"start": req.query.FStart,
-				"end": req.query.FEnd,
-				"seats": req.query.FSeats
-				}
-				]
-	}	
-		
+					"username": currentUser,
+					"days": [{
+							"day": "Monday",
+							"start": req.query.MStart,
+							"end": req.query.MEnd,
+							"seats": req.query.MSeats
+								},
+								{
+							"day": "Tuesday",
+							"start": req.query.TuStart,
+							"end": req.query.TuEnd,
+							"seats": req.query.TuSeats
+								},
+								{
+							"day": "Wednesday",		
+							"start": req.query.WStart,
+							"end": req.query.WEnd,
+							"seats": req.query.WSeats
+								},
+								{
+							"day": "Thursday",		
+							"start": req.query.ThStart,
+							"end": req.query.ThEnd,
+							"seats": req.query.ThSeats
+								},
+								{
+							"day":	"Friday",	
+							"start": req.query.FStart,
+							"end": req.query.FEnd,
+							"seats": req.query.FSeats
+							}
+							]
+						}	
+	
+	if(data.schedule.hasOwnProperty(currentUser)){
+		delete data.schedule.currentUser;
+	}
 	delete data.days;
 	data.days = days;
-	data.schedule.push(newSchedule);
+	data.schedule[currentUser] = newSchedule;
 	res.render('schedule', data);
- }
+}

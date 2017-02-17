@@ -42,8 +42,9 @@
 			}
 		],
 		
-		"schedule": [
-				{
+		"schedule":{ 
+				
+			"stianvale": {
 				"username": "stianvale",
 				"days": [
 					{
@@ -78,7 +79,7 @@
 					}
 				]	
 			},
-			{
+			"anderhg": {
 				"username": "anderhg",
 				"days": [
 					{
@@ -113,7 +114,7 @@
 					}
 				]	
 			},
-			{
+			"oyvikjo":{
 				"username": "oyvikjo",
 				"days": [
 					{
@@ -148,8 +149,7 @@
 					}
 				]	
 			}
-
-		],
+		},
 
 		"users":{
 
