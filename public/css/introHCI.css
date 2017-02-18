@@ -361,3 +361,7 @@ span.tags
 .navbar-brand {
   font-family: AboveFont;
 }
+
+.input-group-addon {
+  height: 10px;
+}

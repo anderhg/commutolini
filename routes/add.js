@@ -4,12 +4,16 @@ var data = require("../data.json");
 exports.addSchedule = function(req, res) { 
 
 	if (data.currentUser.firstName == undefined){
+		console.log('hjsdf');
 		res.redirect('/');
+		return;
 	}
 
-	var days = [
+	console.log('no');
+
+	var newSchedule = [
 			{
-				"name": "Monday",
+				"day": "Monday",
 				"code": "M",
 				"id": "collapseOne",
 				"start": req.query.MStart,
@@ -17,7 +21,7 @@ exports.addSchedule = function(req, res) { 
 				"seats": req.query.MSeats
 			},
 			{
-				"name": "Tuesday",
+				"day": "Tuesday",
 				"code": "Tu",
 				"id": "collapseTwo",
 				"start": req.query.TuStart,
@@ -25,7 +29,7 @@ exports.addSchedule = function(req, res) { 
 				"seats": req.query.TuSeats
 			},
 			{
-				"name": "Wednesday",
+				"day": "Wednesday",
 				"code": "W",
 				"id": "collapseThree",
 				"start": req.query.WStart,
@@ -33,7 +37,7 @@ exports.addSchedule = function(req, res) { 
 				"seats": req.query.WSeats
 			},
 			{
-				"name": "Thursday",
+				"day": "Thursday",
 				"code": "Th",
 				"id": "collapseFour",
 				"start": req.query.ThStart,
@@ -41,7 +45,7 @@ exports.addSchedule = function(req, res) { 
 				"seats": req.query.ThSeats
 			},
 			{
-				"name": "Friday",
+				"day": "Friday",
 				"code": "F",
 				"id": "collapseFive",
 				"start": req.query.FStart,
@@ -52,43 +56,11 @@ exports.addSchedule = function(req, res) { 
 
 	var currentUser = data.currentUser.username;
 
-	var newSchedule = 	 [{
-							"day": "Monday",
-							"start": req.query.MStart,
-							"end": req.query.MEnd,
-							"seats": req.query.MSeats
-								},
-								{
-							"day": "Tuesday",
-							"start": req.query.TuStart,
-							"end": req.query.TuEnd,
-							"seats": req.query.TuSeats
-								},
-								{
-							"day": "Wednesday",		
-							"start": req.query.WStart,
-							"end": req.query.WEnd,
-							"seats": req.query.WSeats
-								},
-								{
-							"day": "Thursday",		
-							"start": req.query.ThStart,
-							"end": req.query.ThEnd,
-							"seats": req.query.ThSeats
-								},
-								{
-							"day":	"Friday",	
-							"start": req.query.FStart,
-							"end": req.query.FEnd,
-							"seats": req.query.FSeats
-							}
-							]
 	
 	if(data.schedule.hasOwnProperty(currentUser)){
 		delete data.schedule.currentUser;
 	}
-	delete data.days;
-	data.days = days;
+
 	data.schedule[currentUser].days = newSchedule;
 	res.render('schedule', data);
 }

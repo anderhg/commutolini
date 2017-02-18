@@ -8,6 +8,12 @@
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
 	<link href="/css/introHCI.css" rel="stylesheet">
+	<link href="/dist/bootstrap-clockpicker.css" rel="stylesheet">
+	<link href="/dist/bootstrap-clockpicker.min.css" rel="stylesheet">
+	<link href="/dist/jquery-clockpicker.css" rel="stylesheet">
+	<link href="/dist/jquery-clockpicker.min.css" rel="stylesheet">
+	<link href="/src/clockpicker.css" rel="stylesheet">
+	<link href="/src/standalone.css" rel="stylesheet">
 	<!-- this is a comment in HTML -->
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -19,6 +25,17 @@
 </head>
 
 <body>
+
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/dist/bootstrap-clockpicker.js"></script>
+	<script src="/dist/bootstrap-clockpicker.min.js"></script>
+	<script src="/dist/jquery-clockpicker.js"></script>
+	<script src="/dist/jquery-clockpicker.min.js"></script>
+	<script src="/src/clockpicker.js"></script>
+
+
+
 	<div class="container">
 
 		<nav class="navbar navbar-default navbar-fixed-top">
@@ -101,10 +118,26 @@
 			                            <div class="row">
 			                                <div class="col-md-12">
 			                                    <div class="form-group">
-			                                        <input type="text" id="{{code}}Start" class="form-control" placeholder="Leaving home at" value="{{start}}" required />
+			                                        <div class="input-group clockpicker" data-align="top" data-autoclose="true">
+													    <input type="text" class="form-control" id="{{code}}Start" value="{{start}}">
+													    <span class="input-group-addon">
+													        <span class="glyphicon glyphicon-time"></span>
+													    </span>
+													</div>
+													<script type="text/javascript">
+														$('.clockpicker').clockpicker();
+													</script>
 			                                    </div>
 			                                    <div class="form-group">
-			                                        <input type="text" id="{{code}}End" class="form-control" placeholder="Going home at" value="{{end}}"required />
+			                                        <div class="input-group clockpicker" data-align="top" data-autoclose="true">
+													    <input type="text" class="form-control" id="{{code}}End" value="{{end}}">
+													    <span class="input-group-addon">
+													        <span class="glyphicon glyphicon-time"></span>
+													    </span>
+													</div>
+													<script type="text/javascript">
+														$('.clockpicker').clockpicker();
+													</script>
 			                                    </div>
 			                                    <div class="form-group">
 													  <label for="sel1">Available seats:</label>
@@ -130,8 +163,6 @@
 
 		<a href="#" class="btn btn-success btn-sm" id="saveSchedule"><span class="glyphicon glyphicon-floppy-disk"></span>Save</a>
 
-		<script src="https://code.jquery.com/jquery.js"></script>
-		<script src="/js/bootstrap.min.js"></script>
 		<script src="/js/introHCI.js"></script>
 
 	</div>

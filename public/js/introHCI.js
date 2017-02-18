@@ -22,6 +22,7 @@ function initializePage() {
 
 	$("#personimg").click(redirect);
 	$.get('data',checkData);
+
 }
 
 function redirect() {
@@ -102,6 +103,9 @@ function loginCallback(result){
 	console.log('1');
 	window.location.href = "/homepage";
 }
+
+
+
 
 /*function checkUser(result){
 
