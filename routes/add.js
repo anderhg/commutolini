@@ -47,9 +47,7 @@ exports.addSchedule = function(req, res) { 
 
 	var currentUser = data.currentUser.username;
 
-	var newSchedule = 	{
-					"username": currentUser,
-					"days": [{
+	var newSchedule = 	 [{
 							"day": "Monday",
 							"start": req.query.MStart,
 							"end": req.query.MEnd,
@@ -80,13 +78,12 @@ exports.addSchedule = function(req, res) { 
 							"seats": req.query.FSeats
 							}
 							]
-						}	
 	
 	if(data.schedule.hasOwnProperty(currentUser)){
 		delete data.schedule.currentUser;
 	}
 	delete data.days;
 	data.days = days;
-	data.schedule[currentUser] = newSchedule;
+	data.schedule[currentUser].days = newSchedule;
 	res.render('schedule', data);
 }
