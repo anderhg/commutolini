@@ -344,3 +344,20 @@ span.tags
   top: -29px;
   left: 57px;
 }
+
+#profilewell {
+  height: 500px;
+  width: 325px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; 
+}
+
+@font-face {
+  font-family: AboveFont;
+  src: url("../fonts/ABOVE.ttf");
+}
+
+.navbar-brand {
+  font-family: AboveFont;
+}

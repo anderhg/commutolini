@@ -19,11 +19,16 @@ var username = require('./routes/username');
 // var user = require('./routes/user');
 
 var app = express();
+var hbs = handlebars.create({
+    helpers: {
+        lookup: function (obj, field) { return obj && obj[field]; }
+    }
+});
 
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', path.join(__dirname, 'views'));
-app.engine('handlebars', handlebars());
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(express.favicon());
 app.use(express.logger('dev'));
@@ -34,6 +39,7 @@ app.use(express.cookieParser('Intro HCI secret key'));
 app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 // development only
 if ('development' == app.get('env')) {
