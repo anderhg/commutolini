@@ -338,3 +338,9 @@ span.tags
 .profileLabel {
   float: left;
 }
+
+#rating {
+  position: relative;
+  top: -29px;
+  left: 57px;
+}

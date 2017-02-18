@@ -21,12 +21,7 @@ function initializePage() {
 	// add any functionality and listeners you want here
 
 	$("#personimg").click(redirect);
-	$.get('data',checkSelect);
-	$.get('data',checkUser);
-
-
-
-
+	$.get('data',checkData);
 }
 
 function redirect() {
@@ -62,11 +57,15 @@ function saveSchedule() {
 
 }
 
-function checkSelect(result){
+function checkData(result){
 	
 	for (var i=0; i<5; i++){
 		checkSelectedValues(result,i);
-	}	
+	}
+
+	for (var i=0; i<result.currentUser.rating;i++){
+		$('#rating').append('<a href="#"><span class="fa fa-star"></span></a>&nbsp');
+	}
 }
 
 function checkSelectedValues(result,seatsID) {
@@ -104,7 +103,7 @@ function loginCallback(result){
 	window.location.href = "/homepage";
 }
 
-function checkUser(result){
+/*function checkUser(result){
 
 	console.log(result.data);
 
@@ -112,4 +111,4 @@ function checkUser(result){
 		window.location.replace("/");
 	}
 
-}
+}*/

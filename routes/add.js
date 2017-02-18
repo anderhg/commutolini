@@ -1,7 +1,12 @@
 var data = require("../data.json");
 
 
-exports.addSchedule = function(req, res) {    
+exports.addSchedule = function(req, res) { 
+
+	if (data.currentUser.firstName == undefined){
+		res.redirect('/');
+	}
+
 	var days = [
 			{
 				"name": "Monday",

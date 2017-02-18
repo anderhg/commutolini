@@ -1,3 +1,8 @@
+var data = require('../data.json');
+
 exports.viewProfile = function(req, res) {
-	res.render('profile');
+	if (data.currentUser.firstName == undefined){
+	res.redirect('/');
+	}
+	res.render('profile', data);
 };

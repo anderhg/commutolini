@@ -159,22 +159,43 @@
 			"stianvale":{
 				"firstName": "Stian",
 				"lastName": "Vale",
-				"username": "stianvale"
+				"username": "stianvale",
+				"image": "images/anon.jpg",
+				"about": "Student at UCSD",
+				"car": "Hyundai Elantra 2003",
+				"age": "22",
+				"rides": "1",
+				"address": "4467 Dawes Street, San Diego, CA 92109",
+				"rating": "3"
 			},
 			"anderhg":{
 				"firstName": "Anders",
 				"lastName": "Geitle",
-				"username": "anderhg"
+				"username": "anderhg",
+				"image": "images/banana.png",
+				"about": "Student at UCSD",
+				"car": "Batmobile",
+				"age": "22",
+				"rides": "10",
+				"address": "4095 Honeycutt Street, San Diego, CA 92109",
+				"rating": "4"
 			},
 			"oyvikjo":{
 				"firstName": "Øyvind",
 				"lastName": "Johnsen",
-				"username": "oyvikjo"
+				"username": "oyvikjo",
+				"image": "images/klopp.jpg",
+				"about": "Student at UCSD",
+				"car": "Volkswagen Passat 1999",
+				"age": "22",
+				"rides": "100",
+				"address": "1412 Graham Street, San Diego, CA 92109",
+				"rating": "5"
 			}
 		},
 
 		"currentUser":{
-			
+
 		}
 		
 }
