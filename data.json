@@ -46,6 +46,7 @@
 				
 			"stianvale": {
 				"username": "stianvale",
+				"name": "Stian Vale",
 				"image": "images/anon.jpg",
 				"days": [
 					{
@@ -92,6 +93,7 @@
 			},
 			"anderhg": {
 				"username": "anderhg",
+				"name": "Anders Geitle",
 				"image": "images/banana.png",
 				"days": [
 					{
@@ -138,6 +140,7 @@
 			},
 			"oyvikjo":{
 				"username": "oyvikjo",
+				"name": "Øyvind Johnsen",
 				"image": "images/klopp.jpg",
 				"days": [
 					{

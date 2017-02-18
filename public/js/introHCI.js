@@ -19,9 +19,15 @@ $(document).ready(function() {
 
 function initializePage() {
 	// add any functionality and listeners you want here
+	var path = window.location.pathname;
+	var data = 'data';
+	if (path.slice(0,path.lastIndexOf('/')+1) == "/profile/"){
+		data = '../data';
+	}
+
 
 	$("#personimg").click(redirect);
-	$.get('data',checkData);
+	$.get(data,checkData);
 
 }
 
@@ -59,13 +65,29 @@ function saveSchedule() {
 }
 
 function checkData(result){
+
+	var path = window.location.pathname;
+
+	console.log(window.location.pathname.slice(0,1));
+
+	console.log(path.slice(0,path.lastIndexOf('/')));
 	
-	for (var i=0; i<5; i++){
+	if (path == "/schedule"){
+		for (var i=0; i<5; i++){
 		checkSelectedValues(result,i);
+		}
 	}
 
-	for (var i=0; i<result.currentUser.rating;i++){
-		$('#rating').append('<a href="#"><span class="fa fa-star"></span></a>&nbsp');
+	if (path == "/profile"){
+		for (var i=0; i<result.currentUser.rating;i++){
+			$('#rating').append('<a href="#"><span class="fa fa-star"></span></a>&nbsp');
+		}
+	} else if (path.slice(0,path.lastIndexOf('/')+1) == "/profile/"){
+		var username = path.slice(path.lastIndexOf('/')+1);
+		console.log(username);
+		for (var i=0; i<result.users[username].rating;i++){
+			$('#rating').append('<a href="#"><span class="fa fa-star"></span></a>&nbsp');
+		}
 	}
 }
 

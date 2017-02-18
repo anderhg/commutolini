@@ -79,12 +79,12 @@
       <div class="thumbnail">
         <img class = "card-img-top" src="{{image}}" id="userimg" alt ="Card image cap">
         <div class="caption">
-          <h4> {{username}} </h4>
+          <h4><a href="/profile/{{username}}"> {{name}} </a></h4>
             {{#each days}}
               <h5>{{day}}</h5>
               <p class= "schedule"> Leaves home: {{start}} </br> Goes back home: {{end}} <br> Has {{seats}} available seats </p>
             {{/each}}
-            <a href="#" class="btn btn-primary" role="button">Contact</a>
+            <a href="/profile/{{username}}" class="btn btn-primary" role="button">Contact</a>
         </div>
       </div>
     </div>

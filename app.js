@@ -54,6 +54,7 @@ app.get('/homepage', index.view);
 app.get('/add', add.addSchedule);
 app.get('/data', data.dataInfo);
 app.post('/username', username.login);
+app.get('/profile/:username', profile.viewUserProfile);
 
 // Example route
 // app.get('/users', user.list);
