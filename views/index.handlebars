@@ -71,19 +71,25 @@
 		  <h2> Commuters </h2>
 	  </div>
 
-
   
 
-  <div class = "available-rides">
+<div class = "row">
+  <div class="col-sm-6 col-md-4">
     {{#each schedule}}
-    <img src="images/anon.jpg" id="userimg">
-    <h4> {{username}} </h4>
-      {{#each days}}
-        <h6>{{day}}</h6>
-        <p class= "schedule"> Leaves home: {{start}} </br> Goes back home: {{end}} <br> Has {{seats}} available seats </p>
+      <div class="thumbnail">
+        <img class = "card-img-top" src="images/anon.jpg" id="userimg" alt ="Card image cap">
+        <div class="card-block">
+          <h4> {{username}} </h4>
+            {{#each days}}
+              <h6>{{day}}</h6>
+              <p class= "schedule"> Leaves home: {{start}} </br> Goes back home: {{end}} <br> Has {{seats}} available seats </p>
+            {{/each}}
+            <a href="#" class="btn btn-primary" role="button">Contact</a>
+        </div>
+      </div>
     {{/each}}
-  {{/each}}
   </div>
+</div>
   
 
 
