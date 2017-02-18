@@ -46,6 +46,7 @@
 				
 			"stianvale": {
 				"username": "stianvale",
+				"image": "images/anon.jpg",
 				"days": [
 					{
 					"day": "Monday",
@@ -81,6 +82,7 @@
 			},
 			"anderhg": {
 				"username": "anderhg",
+				"image": "images/banana.png",
 				"days": [
 					{
 					"day": "Monday",
@@ -116,6 +118,7 @@
 			},
 			"oyvikjo":{
 				"username": "oyvikjo",
+				"image": "images/noimage.jpg",
 				"days": [
 					{
 					"day": "Monday",
