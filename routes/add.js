@@ -16,41 +16,41 @@ exports.addSchedule = function(req, res) { 
 				"day": "Monday",
 				"code": "M",
 				"id": "collapseOne",
-				"start": req.query.MStart,
-				"end": req.query.MEnd,
-				"seats": req.query.MSeats
+				"start": req.body.MStart,
+				"end": req.body.MEnd,
+				"seats": req.body.MSeats
 			},
 			{
 				"day": "Tuesday",
 				"code": "Tu",
 				"id": "collapseTwo",
-				"start": req.query.TuStart,
-				"end": req.query.TuEnd,
-				"seats": req.query.TuSeats
+				"start": req.body.TuStart,
+				"end": req.body.TuEnd,
+				"seats": req.body.TuSeats
 			},
 			{
 				"day": "Wednesday",
 				"code": "W",
 				"id": "collapseThree",
-				"start": req.query.WStart,
-				"end": req.query.WEnd,
-				"seats": req.query.WSeats
+				"start": req.body.WStart,
+				"end": req.body.WEnd,
+				"seats": req.body.WSeats
 			},
 			{
 				"day": "Thursday",
 				"code": "Th",
 				"id": "collapseFour",
-				"start": req.query.ThStart,
-				"end": req.query.ThEnd,
-				"seats": req.query.ThSeats
+				"start": req.body.ThStart,
+				"end": req.body.ThEnd,
+				"seats": req.body.ThSeats
 			},
 			{
 				"day": "Friday",
 				"code": "F",
 				"id": "collapseFive",
-				"start": req.query.FStart,
-				"end": req.query.FEnd,
-				"seats": req.query.FSeats
+				"start": req.body.FStart,
+				"end": req.body.FEnd,
+				"seats": req.body.FSeats
 			}
 		]
 

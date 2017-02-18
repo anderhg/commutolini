@@ -17,5 +17,12 @@ exports.login = function(req, res) {
 	console.log(data);
 
 
+}
+
+exports.logoff = function(req, res) {   
+	
+
+	data.currentUser = {};
+
 
 }

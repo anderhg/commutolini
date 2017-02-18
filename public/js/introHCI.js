@@ -6,6 +6,7 @@ $(document).ready(function() {
 	console.log('hei');
 	$("#saveSchedule").click(saveSchedule);
 	$("#login").click(login);
+	$("#logoff").click(logoff);
 
 })
 
@@ -26,14 +27,10 @@ function initializePage() {
 	}
 
 
-	$("#personimg").click(redirect);
 	$.get(data,checkData);
 
 }
 
-function redirect() {
-	$(this).text("Changed text");
-}
 
 
 function saveSchedule() {
@@ -57,24 +54,37 @@ function saveSchedule() {
 
 	console.log(TuEnd);
 
-	window.location.href = "/add?MStart=" + MStart + "&TuStart=" + TuStart + "&WStart=" + WStart + "&ThStart=" + ThStart + "&FStart=" + FStart
-	+ "&MEnd=" + MEnd + "&TuEnd=" + TuEnd + "&WEnd=" + WEnd + "&ThEnd=" + ThEnd + "&FEnd=" + FEnd + "&MSeats=" + MSeats + "&TuSeats=" + TuSeats + "&WSeats=" + WSeats + "&ThSeats=" + ThSeats + "&FSeats=" + FSeats;
 
+	var data = {
+	"MStart": document.getElementById('MStart').value,
+	"TuStart": document.getElementById('TuStart').value,
+	"WStart": document.getElementById('WStart').value,
+	"ThStart": document.getElementById('ThStart').value,
+	"FStart": document.getElementById('FStart').value,
+	"MEnd": document.getElementById('MEnd').value,
+	"TuEnd": document.getElementById('TuEnd').value,
+	"WEnd": document.getElementById('WEnd').value,
+	"ThEnd": document.getElementById('ThEnd').value,
+	"FEnd": document.getElementById('FEnd').value,
+	"MSeats": document.getElementById('MSeats').value,
+	"TuSeats": document.getElementById('TuSeats').value,
+	"WSeats": document.getElementById('WSeats').value,
+	"ThSeats": document.getElementById('ThSeats').value,
+	"FSeats": document.getElementById('FSeats').value
+	};
 
+	$.post('/add', data, saveScheduleCallback(data));
 
 }
 
 function checkData(result){
 
 	var path = window.location.pathname;
-
-	console.log(window.location.pathname.slice(0,1));
-
-	console.log(path.slice(0,path.lastIndexOf('/')));
 	
 	if (path == "/schedule"){
 		for (var i=0; i<5; i++){
-		checkSelectedValues(result,i);
+			console.log(i);
+			checkSelectedValues(result,i);
 		}
 	}
 
@@ -94,8 +104,10 @@ function checkData(result){
 function checkSelectedValues(result,seatsID) {
 
 	var liste = ["#MSeats","#TuSeats","#WSeats","#ThSeats","#FSeats"];
-	var Seats = result.days[seatsID]['seats'];
-
+	var username = result.currentUser.username;
+	console.log(username);
+	var Seats = result.schedule[username].days[seatsID].seats;
+	console.log(Seats);
 
 	if (Seats == "" || Seats == "1") {
 		$(liste[seatsID]).html('<option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>');
@@ -118,12 +130,26 @@ function login(){
 	var username = document.getElementById('username-email').value;
 	console.log(username);
 	var data = {"username":username};
-	$.post('/username',data,loginCallback(data));
+	$.post('/login',data,loginCallback(data));
+}
+
+function logoff(){
+	event.preventDefault();
+	$.post('/logoff',{},logoffCallback({}));
+
 }
 
 function loginCallback(result){
 	console.log('1');
 	window.location.href = "/homepage";
+}
+
+function logoffCallback(result){
+	window.location.href = '/';
+}
+
+function saveScheduleCallback(result){
+	window.location.href = "/schedule";
 }
 
 

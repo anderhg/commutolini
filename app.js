@@ -51,9 +51,10 @@ app.get('/', login.viewLogin);
 app.get('/schedule', schedule.viewSchedule);
 app.get('/profile', profile.viewProfile);
 app.get('/homepage', index.view);
-app.get('/add', add.addSchedule);
+app.post('/add', add.addSchedule);
 app.get('/data', data.dataInfo);
-app.post('/username', username.login);
+app.post('/login', username.login);
+app.post('/logoff', username.logoff);
 app.get('/profile/:username', profile.viewUserProfile);
 
 // Example route
