@@ -8,9 +8,11 @@ exports.login = function(req, res) {
 	var username = req.body.username;
 	data.currentUser = username;
 
-	var loggedInUser = data.users[username];
 
-	data.currentUser = loggedInUser;
+	if (data.users[username] != undefined){
+		var loggedInUser = data.users[username];
+		data.currentUser = loggedInUser;
+	}
 
 	console.log(data);
 

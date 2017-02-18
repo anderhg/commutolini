@@ -22,6 +22,9 @@ function initializePage() {
 
 	$("#personimg").click(redirect);
 	$.get('data',checkSelect);
+	$.get('data',checkUser);
+
+
 
 
 }
@@ -60,7 +63,6 @@ function saveSchedule() {
 }
 
 function checkSelect(result){
-	console.log(result.days[0]['seats']);
 	
 	for (var i=0; i<5; i++){
 		checkSelectedValues(result,i);
@@ -100,4 +102,14 @@ function login(){
 function loginCallback(result){
 	console.log('1');
 	window.location.href = "/homepage";
+}
+
+function checkUser(result){
+
+	console.log(result.data);
+
+	if (result.currentUser.firstName == undefined && window.location.href != "http://localhost:3000/"){
+		window.location.replace("/");
+	}
+
 }
