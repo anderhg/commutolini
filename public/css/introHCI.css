@@ -365,3 +365,12 @@ span.tags
 .input-group-addon {
   height: 10px;
 }
+
+.profileName {
+  text-align: center;
+}
+
+.profileDesc{
+  font-style: italic;
+  text-align: center;
+}
