@@ -332,7 +332,7 @@ span.tags
 }
 
 #destination {
-  padding-top: 30px;
+  padding-left: 0px;
 }
 
 .profileLabel {
@@ -373,4 +373,13 @@ span.tags
 .profileDesc{
   font-style: italic;
   text-align: center;
+}
+
+.glyphicon-ok-circle{
+  color: green;
+}
+
+#rating-outside {
+  position: absolute;
+  top: 375px;
 }

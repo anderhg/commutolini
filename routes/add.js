@@ -57,6 +57,9 @@ exports.addSchedule = function(req, res) { 
 	var currentUser = req.session.username;
 
 	data.schedule[currentUser].days = newSchedule;
+	data.users[currentUser].home = req.body.home;
+	data.users[currentUser].destination = req.body.destination;
+
 	var fakeData = JSON.parse(JSON.stringify(data));
 	fakeData.currentUser = fakeData.users[currentUser];
 	res.render('schedule', fakeData);

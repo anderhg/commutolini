@@ -199,7 +199,10 @@
 				"age": "22",
 				"rides": "1",
 				"address": "4467 Dawes Street, San Diego, CA 92109",
-				"rating": "3"
+				"rating": "3",
+				"home": "Pacific Beach",
+				"destination": "UCSD",
+				"verified": true
 			},
 			"anderhg":{
 				"firstName": "Anders",
@@ -211,7 +214,10 @@
 				"age": "22",
 				"rides": "10",
 				"address": "4095 Honeycutt Street, San Diego, CA 92109",
-				"rating": "4"
+				"rating": "4",
+				"home": "Pacific Beach",
+				"destination": "UCSD",
+				"verified": true
 			},
 			"oyvikjo":{
 				"firstName": "Øyvind",
@@ -223,7 +229,10 @@
 				"age": "22",
 				"rides": "100",
 				"address": "1412 Graham Street, San Diego, CA 92109",
-				"rating": "5"
+				"rating": "5",
+				"home": "Pacific Beach",
+				"destination": "UCSD",
+				"verified": true
 			}
 		},
 

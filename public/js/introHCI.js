@@ -36,21 +36,6 @@ function initializePage() {
 function saveSchedule() {
 
 	event.preventDefault();
-	var MStart = document.getElementById('MStart').value;
-	var TuStart = document.getElementById('TuStart').value;
-	var WStart = document.getElementById('WStart').value;
-	var ThStart = document.getElementById('ThStart').value;
-	var FStart = document.getElementById('FStart').value;
-	var MEnd = document.getElementById('MEnd').value;
-	var TuEnd = document.getElementById('TuEnd').value;
-	var WEnd = document.getElementById('WEnd').value;
-	var ThEnd = document.getElementById('ThEnd').value;
-	var FEnd = document.getElementById('FEnd').value;
-	var MSeats = document.getElementById('MSeats').value;
-	var TuSeats = document.getElementById('TuSeats').value;
-	var WSeats = document.getElementById('WSeats').value;
-	var ThSeats = document.getElementById('ThSeats').value;
-	var FSeats = document.getElementById('FSeats').value;
 
 	console.log(TuEnd);
 
@@ -70,7 +55,9 @@ function saveSchedule() {
 	"TuSeats": document.getElementById('TuSeats').value,
 	"WSeats": document.getElementById('WSeats').value,
 	"ThSeats": document.getElementById('ThSeats').value,
-	"FSeats": document.getElementById('FSeats').value
+	"FSeats": document.getElementById('FSeats').value,
+	"home": document.getElementById('inHome').value,
+	"destination": document.getElementById('inDest').value
 	};
 
 	$.post('/add', data, saveScheduleCallback(data));
@@ -86,6 +73,9 @@ function checkData(result){
 			console.log(i);
 			checkSelectedValues(result,i);
 		}
+
+		checkAddresses(result);
+
 	}
 
 	if (path == "/profile"){
@@ -123,6 +113,26 @@ function checkSelectedValues(result,seatsID) {
 	}else if (Seats == "6"){
 		$(liste[seatsID]).html('<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option selected>6</option>');
 	}
+
+}
+
+function checkAddresses(result){
+	var username = document.cookie.split('=')[1];
+	var home = result.users[username].home;
+	var dest = result.users[username].destination;
+
+	if (home == 'La Jolla'){
+		$('#inHome').html('<option>Pacific Beach</option><option selected>La Jolla</option><option>Downtown</option>');
+	} else if (home == 'Downtown'){
+		$('#inHome').html('<option>Pacific Beach</option><option>La Jolla</option><option selected>Downtown</option>');
+	}
+
+	if (dest == 'SDSU'){
+		$('#inDest').html('<option>UCSD</option><option selected>SDSU</option><option>USD</option>');
+	} else if (dest == 'USD'){
+		$('#inDest').html('<option>UCSD</option><option>SDSU</option><option selected>USD</option>');
+	}
+
 
 }
 

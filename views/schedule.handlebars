@@ -76,11 +76,11 @@
 		<div class="row schedule">
             <div class="col-md-12">
                 <div class="form-group">
-                    <label for="homeAddress"><i class="glyphicon glyphicon-home"></i>4467 Dawes Street</label>
+                    <label for="homeAddress"><i class="glyphicon glyphicon-home"></i>{{currentUser.home}}</label>
                 </div>
 
                 <div class="form-group">
-                    <label for="destinationAddress"><i class="glyphicon glyphicon-flag"></i>Torrey Pines Gliderport</label>
+                    <label for="destinationAddress"><i class="glyphicon glyphicon-flag"></i>{{currentUser.destination}}</label>
                 </div>
 
                 <div class="form-group">
@@ -91,15 +91,23 @@
 	                <div class="form-group">
 		                <form class="form-inline">
 						  <div class="form-group">
-						    <input type="text" class="form-control" placeholder="New home address" id="inHome">
+						  	<label for="inHome"><i class="glyphicon glyphicon-home"></i>Home address:</label>
+						    <select class="form-control" id="inHome">
+					    		<option>Pacific Beach</option>
+						    	<option>La Jolla</option>
+							    <option>Downtown</option>
+							  </select>
 						  </div>
-						  <button type="submit" class="btn btn-default">Change Home Address</button>
-						  <div class="form-group" id="destination">
-						    <input type="text" class="form-control" placeholder="New destination" id="inDest">
+						  <div class="form-group">
+						  	<label for="inDest"><i class="glyphicon glyphicon-flag"></i>Destination:</label>
+						    <select class="form-control" id="inDest">
+					    		<option>UCSD</option>
+						    	<option>SDSU</option>
+							    <option>USD</option>
+							  </select>
 						  </div>
-						  <button type="submit" class="btn btn-default">Change Destination Address</button>
 						</form>   
-					</div> 
+					</div>
 				</div>  
             </div>
         </div>
