@@ -383,3 +383,15 @@ span.tags
   position: absolute;
   top: 375px;
 }
+
+#leftArrow {
+  color: #b20000;
+}
+
+#rightArrow {
+  color: green;
+}
+
+#people {
+  color: #3B5998;
+}
