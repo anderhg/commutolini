@@ -42,11 +42,14 @@
         <li><a href="/homepage"><i class="glyphicon glyphicon-home"></i>Home<span class="sr-only">(current)</span></a></li>
         <li><a href="/schedule"><i class="glyphicon glyphicon-list-alt"></i>Schedule<span class="sr-only">(current)</span></a></li>
         <li><a href="/profile"><i class="glyphicon glyphicon-user"></i>Profile<span class="sr-only">(current)</span></a></li>
-
-
       </ul>
-      <p class="navbar-text navbar-right">Signed in as <a href="/profile" class="navbar-link">{{currentUser.firstName}} {{currentUser.lastName}}</a>&nbsp&nbsp&nbsp</p>
 
+    {{#with (lookup users sessions)}}
+      <ul class="nav navbar-nav navbar-right">
+        <li><p class="navbar-text">&nbsp&nbsp&nbspSigned in as <a href="/profile" class="navbar-link">{{firstName}} {{lastName}}</a></p></li>
+        <li><a href="#" id="logoff"><i class="glyphicon glyphicon-off"></i>Log off&nbsp&nbsp&nbsp</a></li>
+      </ul>
+    {{/with}}
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

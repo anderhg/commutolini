@@ -8,6 +8,7 @@ exports.viewProfile = function(req, res) {
 	}else{
 		var fakeData = JSON.parse(JSON.stringify(data));
 		fakeData.currentUser = fakeData.users[username];
+		fakeData.sessions = username;
 		res.render('profile', fakeData);
 	}
 };
@@ -22,13 +23,15 @@ exports.viewUserProfile = function(req, res) {
 		return;
 	}
 
-	var username = req.params.username;
+	var profileUsername = req.params.username;
+	var username = req.session.username;
 
 	var fakeData = JSON.parse(JSON.stringify(data));
 
 
-	fakeData.currentUser = fakeData.users[username];
+	fakeData.currentUser = fakeData.users[profileUsername];
 	fakeData.currentUser.image = "../" + fakeData.currentUser.image;
+	fakeData.sessions = username;
 
 	res.render('profile', fakeData);
 };
