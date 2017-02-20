@@ -58,31 +58,23 @@
             <div class="col-sm-12">
                 <div class="col-xs-12 col-sm-12">
                     <img src="{{currentUser.image}}" alt="" class="img-circle img-responsive profilePic" id="profileimg">
-                    <div onClick="this.contentEditable='true';"> 
-                        <h4>{{currentUser.firstName}} {{currentUser.lastName}}</h4>
+                    <div onClick="this.contentEditable='true';" class="profileName"> 
+                        <h4>{{currentUser.firstName}} {{currentUser.lastName}}, {{currentUser.age}} </h4>
                     </div>
-                    <div class="profileLabel">
-                        <p><strong>About: &nbsp </strong></p>
-                    </div>
-                    <div class="profileEditable" onClick="this.contentEditable='true';"> 
+                    <div class="profileDesc" onClick="this.contentEditable='true';"> 
                         <p>{{currentUser.about}}</p>
                     </div>
+                    <div class="profileEditable"><i class="glyphicon glyphicon-home"></i><p style="display:inline">{{currentUser.address}}</p> <a href="http://www.google.com/maps">Open in Google Maps</a>
+                    </div>
+
                     <div class="profileLabel">
                         <p><strong>Car: &nbsp </strong></p>
                     </div>
                     <div class="profileEditable" onClick="this.contentEditable='true';"> 
                         <p>{{currentUser.car}} </p>
                     </div>
-                    
-                    <p><strong>Age: &nbsp</strong>{{currentUser.age}}</p>
                    
                     <p><strong>Rides: </strong> {{currentUser.rides}} </p>
-                    <div class="profileLabel">
-                        <p><strong>Address:  &nbsp</strong></p>
-                    </div>
-                    <div class="profileEditable" onClick="this.contentEditable='true';"> 
-                        <p>{{currentUser.address}}</p>
-                    </div>
                     <div id="rating-outside">
                         <figcaption class="ratings">
                                 <p><strong>Rating: </strong>
