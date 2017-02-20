@@ -3,7 +3,7 @@ var data = require("../data.json");
 
 exports.addSchedule = function(req, res) { 
 
-	if (data.currentUser.firstName == undefined){
+	if (req.session.username == undefined){
 		console.log('hjsdf');
 		res.redirect('/');
 		return;
@@ -54,13 +54,10 @@ exports.addSchedule = function(req, res) { 
 			}
 		]
 
-	var currentUser = data.currentUser.username;
-
-	
-	if(data.schedule.hasOwnProperty(currentUser)){
-		delete data.schedule.currentUser;
-	}
+	var currentUser = req.session.username;
 
 	data.schedule[currentUser].days = newSchedule;
-	res.render('schedule', data);
+	var fakeData = JSON.parse(JSON.stringify(data));
+	fakeData.currentUser = fakeData.users[currentUser];
+	res.render('schedule', fakeData);
 }

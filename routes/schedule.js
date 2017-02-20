@@ -1,9 +1,14 @@
 var data = require('../data.json');
 
 exports.viewSchedule = function(req, res) {
-	if (data.currentUser.firstName == undefined){
+	var username = req.session.username;
+	if (username == undefined){
 		res.redirect('/');
 		return;
+	}else{
+		var fakeData = JSON.parse(JSON.stringify(data));
+		fakeData.currentUser = fakeData.users[username];
+		console.log(fakeData);
+		res.render('schedule', fakeData);
 	}
-	res.render('schedule', data);
 }

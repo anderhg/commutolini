@@ -3,7 +3,7 @@
 // Call this function when the page loads (the "ready" event)
 $(document).ready(function() {
 	initializePage();
-	console.log('hei');
+	console.log(document.cookie);
 	$("#saveSchedule").click(saveSchedule);
 	$("#login").click(login);
 	$("#logoff").click(logoff);
@@ -89,7 +89,8 @@ function checkData(result){
 	}
 
 	if (path == "/profile"){
-		for (var i=0; i<result.currentUser.rating;i++){
+
+		for (var i=0; i<result.users[document.cookie.split('=')[1]].rating;i++){
 			$('#rating').append('<a href="#"><span class="fa fa-star"></span></a>&nbsp');
 		}
 	} else if (path.slice(0,path.lastIndexOf('/')+1) == "/profile/"){
@@ -104,7 +105,7 @@ function checkData(result){
 function checkSelectedValues(result,seatsID) {
 
 	var liste = ["#MSeats","#TuSeats","#WSeats","#ThSeats","#FSeats"];
-	var username = result.currentUser.username;
+	var username = document.cookie.split('=')[1];
 	console.log(username);
 	var Seats = result.schedule[username].days[seatsID].seats;
 	console.log(Seats);
@@ -131,6 +132,7 @@ function login(){
 	console.log(username);
 	var data = {"username":username};
 	$.post('/login',data,loginCallback(data));
+	document.cookie = "username="+username;
 }
 
 function logoff(){
@@ -149,7 +151,7 @@ function logoffCallback(result){
 }
 
 function saveScheduleCallback(result){
-	window.location.href = "/schedule";
+	window.location.href = "/homepage";
 }
 
 

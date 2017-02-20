@@ -1,28 +1,23 @@
 var data = require("../data.json");
 
 
-exports.login = function(req, res) {   
+exports.login = function(req, res) {  
 	
-	console.log(req.body.username);
 
 	var username = req.body.username;
-	data.currentUser = username;
+	console.log(username)
 
 
 	if (data.users[username] != undefined){
-		var loggedInUser = data.users[username];
-		data.currentUser = loggedInUser;
+		req.session.username = username;
+		req.session.save();
+		data.sessions[username] = data.users[username];
+		console.log(req.session);
 	}
-
-	console.log(data);
 
 
 }
 
 exports.logoff = function(req, res) {   
-	
-
-	data.currentUser = {};
-
-
+	req.session.destroy();
 }

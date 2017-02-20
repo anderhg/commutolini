@@ -7,6 +7,8 @@ var express = require('express');
 var http = require('http');
 var path = require('path');
 var handlebars = require('express3-handlebars')
+var session = require('express-session');
+
 
 var index = require('./routes/index');
 var schedule = require('./routes/schedule');
@@ -39,6 +41,7 @@ app.use(express.cookieParser('Intro HCI secret key'));
 app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
+
 
 
 // development only

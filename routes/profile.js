@@ -1,11 +1,15 @@
 var data = require('../data.json');
 
 exports.viewProfile = function(req, res) {
-	if (data.currentUser.firstName == undefined){
+	var username = req.session.username;
+	if (username == undefined){
 		res.redirect('/');
 		return;
+	}else{
+		var fakeData = JSON.parse(JSON.stringify(data));
+		fakeData.currentUser = fakeData.users[username];
+		res.render('profile', fakeData);
 	}
-	res.render('profile', data);
 };
 
 exports.viewUserProfile = function(req, res) {
@@ -13,7 +17,7 @@ exports.viewUserProfile = function(req, res) {
 	console.log(req.params.username);
 	console.log(data);
 
-	if (data.currentUser.firstName == undefined){
+	if (req.session.username == undefined){
 		res.redirect('/');
 		return;
 	}
