@@ -17,23 +17,15 @@ exports.editProfileInfo = function(req,res) {
 
 	console.log("car "+req.profileCar);
 
-	var newProfile = {
-		"firstName": req.body.firstName,
-		"lastName":req.body.lastName,
-		"username": "stianvale",
-		"image": "images/anon.jpg",
-		"about": "Student at UCSD",
-		"car": req.body.car,
-		"age": "22",
-		"rides": "1",
-		"address": req.body.address,
-		"rating": "3",
-		"home": "Pacific Beach",
-		"destination": "UCSD",
-		"verified": true
-	}
-
 	var currentUser = req.session.username;
+
+	var newProfile = data.users[currentUser];
+
+	newProfile.firstName = req.body.firstName;
+	newProfile.lastName = req.body.lastName;
+	newProfile.car = req.body.car;
+	newProfile.address = req.body.address;
+
 
 	data.users[currentUser] = newProfile;
 
