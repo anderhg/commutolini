@@ -17,6 +17,11 @@ exports.registerUser = function(req, res) { 
 
 
 	data.users[req.body.username] = newUser;
+	var days = data.days
+	console.log(days)
+	data.schedule[req.body.username] = {'days': days,
+										'username': req.body.username
+};
 
 	res.render('/');
 }

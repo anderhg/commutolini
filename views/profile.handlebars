@@ -81,6 +81,7 @@
                         <figcaption class="ratings">
                                 <p><strong>Rating: </strong>
                                     <div id="rating">
+                                        {{#unless currentUser.rating}}<p>Not yet rated</p>{{/unless}}
                                     </div>
                                 </p>
                         </figcaption>

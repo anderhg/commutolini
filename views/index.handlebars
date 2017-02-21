@@ -76,13 +76,14 @@
 
 <div class = "row">
   {{#each schedule}}
+    {{#with (lookup ../users username)}}
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
         <a href="/profile/{{username}}">
-          <img class = "card-img-top" src="{{image}}" id="userimg" alt ="Card image cap">
+          <img class = "card-img-top" src="{{#unless image}}/images/noimage.png{{/unless}}{{image}}" id="userimg" alt ="Card image cap">
         </a>
         <div class="caption">
-          <h4><a href="/profile/{{username}}"> {{name}} </a></h4>
+          <h4><a href="/profile/{{username}}"> {{firstName}} {{lastName}} </a></h4> {{/with}}
             <table class="table">
               <thead>
                 <tr>
