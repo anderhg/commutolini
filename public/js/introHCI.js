@@ -7,7 +7,11 @@ $(document).ready(function() {
 	$("#saveSchedule").click(saveSchedule);
 	$("#login").click(login);
 	$("#logoff").click(logoff);
+<<<<<<< HEAD
 	$("#saveProfile").click(saveProfile);
+=======
+	$('#register').click(register);
+>>>>>>> 19f288543b95236953e7e758cf6d655d31270659
 
 })
 
@@ -180,19 +184,33 @@ function saveScheduleCallback(result){
 	window.location.href = "/homepage";
 }
 
+<<<<<<< HEAD
 function saveProfileCallback(result){
 	window.location.href = "/profile";
 }
 
+=======
+function register(){
+	var username = document.getElementById('username').value;
+	var name = document.getElementById('name').value;
+	var firstName = name.slice(0,name.lastIndexOf(' '));
+	var lastName = name.slice(name.lastIndexOf(' ')+1);
+	var password = document.getElementById('password').value;
+	var email = document.getElementById('email').value;
 
-
-
-/*function checkUser(result){
-
-	console.log(result.data);
-
-	if (result.currentUser.firstName == undefined && window.location.href != "http://localhost:3000/"){
-		window.location.replace("/");
+	var obj = {
+		'username': username,
+		'firstName': firstName,
+		'lastName': lastName
 	}
+>>>>>>> 19f288543b95236953e7e758cf6d655d31270659
 
-}*/
+	$.post('/reg', obj, registerCallback(obj));
+	
+}
+
+function registerCallback(result){
+	window.location.href = "/";
+}
+
+

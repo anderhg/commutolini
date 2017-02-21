@@ -17,7 +17,12 @@ var login = require('./routes/login');
 var add = require('./routes/add');
 var data = require('./routes/data');
 var username = require('./routes/username');
+<<<<<<< HEAD
 var editProfile = require('./routes/editProfile');
+=======
+var register = require('./routes/register');
+var reg = require('./routes/reg');
+>>>>>>> 19f288543b95236953e7e758cf6d655d31270659
 // Example route
 // var user = require('./routes/user');
 
@@ -62,6 +67,10 @@ app.post('/logoff', username.logoff);
 app.get('/profile/:username', profile.viewUserProfile);
 app.get('/editProfile', editProfile.viewEditProfile);
 app.post('/editProfileInfo', editProfile.editProfileInfo);
+
+app.get('/register', register.viewRegister);
+app.post('/reg', reg.registerUser);
+
 
 // Example route
 // app.get('/users', user.list);

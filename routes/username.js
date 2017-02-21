@@ -21,3 +21,8 @@ exports.login = function(req, res) {
 exports.logoff = function(req, res) {   
 	req.session.destroy();
 }
+
+
+exports.register = function(req, res) {
+	
+}

@@ -1,7 +1,7 @@
 {	
 		"days":[
 			{
-				"name": "Monday",
+				"day": "Monday",
 				"code": "M",
 				"id": "collapseOne",
 				"start": "",
@@ -9,7 +9,7 @@
 				"seats": ""
 			},
 			{
-				"name": "Tuesday",
+				"day": "Tuesday",
 				"code": "Tu",
 				"id": "collapseTwo",
 				"start": "",
@@ -17,7 +17,7 @@
 				"seats": ""
 			},
 			{
-				"name": "Wednesday",
+				"day": "Wednesday",
 				"code": "W",
 				"id": "collapseThree",
 				"start": "",
@@ -25,7 +25,7 @@
 				"seats": ""
 			},
 			{
-				"name": "Thursday",
+				"day": "Thursday",
 				"code": "Th",
 				"id": "collapseFour",
 				"start": "",
@@ -33,7 +33,7 @@
 				"seats": ""
 			},
 			{
-				"name": "Friday",
+				"day": "Friday",
 				"code": "F",
 				"id": "collapseFive",
 				"start": "",
@@ -140,8 +140,6 @@
 			},
 			"oyvikjo":{
 				"username": "oyvikjo",
-				"name": "Øyvind Johnsen",
-				"image": "images/klopp.jpg",
 				"days": [
 					{
 					"day": "Monday",
@@ -233,6 +231,12 @@
 				"home": "Pacific Beach",
 				"destination": "UCSD",
 				"verified": true
+			},
+			"geokuk":{
+				"firstName": "Georg",
+				"lastName": "Kukfjes",
+				"username": "geokuk",
+				"rides": "0"
 			}
 		},
 

@@ -30,7 +30,9 @@ exports.viewUserProfile = function(req, res) {
 
 
 	fakeData.currentUser = fakeData.users[profileUsername];
-	fakeData.currentUser.image = "../" + fakeData.currentUser.image;
+	if (fakeData.currentUser.image != undefined) {
+		fakeData.currentUser.image = "../" + fakeData.currentUser.image;
+	}
 	fakeData.sessions = username;
 
 	res.render('profile', fakeData);
