@@ -17,12 +17,9 @@ var login = require('./routes/login');
 var add = require('./routes/add');
 var data = require('./routes/data');
 var username = require('./routes/username');
-<<<<<<< HEAD
 var editProfile = require('./routes/editProfile');
-=======
 var register = require('./routes/register');
 var reg = require('./routes/reg');
->>>>>>> 19f288543b95236953e7e758cf6d655d31270659
 // Example route
 // var user = require('./routes/user');
 

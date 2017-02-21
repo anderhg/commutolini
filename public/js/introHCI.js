@@ -7,11 +7,8 @@ $(document).ready(function() {
 	$("#saveSchedule").click(saveSchedule);
 	$("#login").click(login);
 	$("#logoff").click(logoff);
-<<<<<<< HEAD
 	$("#saveProfile").click(saveProfile);
-=======
 	$('#register').click(register);
->>>>>>> 19f288543b95236953e7e758cf6d655d31270659
 
 })
 
@@ -184,12 +181,10 @@ function saveScheduleCallback(result){
 	window.location.href = "/homepage";
 }
 
-<<<<<<< HEAD
 function saveProfileCallback(result){
 	window.location.href = "/profile";
 }
 
-=======
 function register(){
 	var username = document.getElementById('username').value;
 	var name = document.getElementById('name').value;
@@ -203,7 +198,6 @@ function register(){
 		'firstName': firstName,
 		'lastName': lastName
 	}
->>>>>>> 19f288543b95236953e7e758cf6d655d31270659
 
 	$.post('/reg', obj, registerCallback(obj));
 	
