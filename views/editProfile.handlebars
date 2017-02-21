@@ -51,7 +51,7 @@
     <br><br>
 
 
-
+      {{#with (lookup users currentUser.username)}}
 
         <h1>Edit Profile</h1>
       	<hr>
@@ -59,7 +59,7 @@
           <!-- left column -->
           <div class="col-md-3">
             <div class="text-center">
-              <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+              <img src="{{image}}" class="avatar img-circle" id="editImage"alt="avatar">
               <h6>Upload a different photo...</h6>
               
               <input type="file" class="form-control">
@@ -74,7 +74,6 @@
               This is an <strong>.alert</strong>. Use this to show important messages to the user.
             </div>
             <h3>Personal info</h3>
-            {{#with (lookup users currentUser.username)}}
             
             <form class="form-horizontal" role="form">
               <div class="form-group">
