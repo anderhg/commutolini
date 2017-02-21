@@ -465,3 +465,7 @@ input::-webkit-input-placeholder {
 .input-group-addon {
   height: 100%;
 }
+
+#checkProfile {
+  margin-top: -25px;
+}

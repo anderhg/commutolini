@@ -9,6 +9,7 @@ $(document).ready(function() {
 	$("#logoff").click(logoff);
 	$("#saveProfile").click(saveProfile);
 	$('#register').click(register);
+	checkProfile();
 
 })
 
@@ -207,4 +208,10 @@ function registerCallback(result){
 	window.location.href = "/";
 }
 
+function checkProfile(){
+	if (window.location.pathname == "/profile"){
+		console.log('jaja');
+		$("#checkProfile").html('<a href="/editProfile" class="btn btn-primary" role="button">Edit Profile</a>');
+	}
+}
 

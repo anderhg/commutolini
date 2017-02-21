@@ -21,6 +21,8 @@ exports.viewUserProfile = function(req, res) {
 	if (req.session.username == undefined){
 		res.redirect('/');
 		return;
+	} else if (req.session.username == req.params.username){
+		res.redirect('/profile');
 	}
 
 	var profileUsername = req.params.username;
