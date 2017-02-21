@@ -7,6 +7,7 @@ $(document).ready(function() {
 	$("#saveSchedule").click(saveSchedule);
 	$("#login").click(login);
 	$("#logoff").click(logoff);
+	$('#register').click(register);
 
 })
 
@@ -164,15 +165,26 @@ function saveScheduleCallback(result){
 	window.location.href = "/homepage";
 }
 
+function register(){
+	var username = document.getElementById('username').value;
+	var name = document.getElementById('name').value;
+	var firstName = name.slice(0,name.lastIndexOf(' '));
+	var lastName = name.slice(name.lastIndexOf(' ')+1);
+	var password = document.getElementById('password').value;
+	var email = document.getElementById('email').value;
 
-
-
-/*function checkUser(result){
-
-	console.log(result.data);
-
-	if (result.currentUser.firstName == undefined && window.location.href != "http://localhost:3000/"){
-		window.location.replace("/");
+	var obj = {
+		'username': username,
+		'firstName': firstName,
+		'lastName': lastName
 	}
 
-}*/
+	$.post('/reg', obj, registerCallback(obj));
+	
+}
+
+function registerCallback(result){
+	window.location.href = "/";
+}
+
+

@@ -60,12 +60,12 @@
     	 <div class="well profile" id="profilewell">
             <div class="col-sm-12">
                 <div class="col-xs-12 col-sm-12">
-                    <img src="{{currentUser.image}}" alt="" class="img-circle img-responsive profilePic" id="profileimg">
+                    <img src="{{currentUser.image}}{{#unless currentUser.image}}/images/noimage.png{{/unless}}" alt="" class="img-circle img-responsive profilePic" id="profileimg">
                     <div onClick="this.contentEditable='true';" class="profileName"> 
-                        <h4>{{currentUser.firstName}} {{currentUser.lastName}}, {{currentUser.age}}  {{#if currentUser.verified}}<i class = 'glyphicon glyphicon-ok-circle'></i>{{/if}}</h4>
+                        <h4>{{currentUser.firstName}} {{currentUser.lastName}}{{#if currentUser.age}}, {{currentUser.age}}{{/if}}  {{#if currentUser.verified}}<i class = 'glyphicon glyphicon-ok-circle'></i>{{/if}}</h4>
                     </div>
                     <div class="profileDesc" onClick="this.contentEditable='true';"> 
-                        <p>{{currentUser.about}}</p>
+                        <p>{{currentUser.about}}{{#unless currentUser.about}}<br>{{/unless}}</p>
                     </div>
                     <div class="profileEditable"><i class="glyphicon glyphicon-home"></i><p style="display:inline">{{currentUser.address}}</p> <a href="http://www.google.com/maps/search/{{currentUser.address}}"><br>Open in Google Maps</a>
                     </div>
@@ -74,7 +74,7 @@
                         <p><strong>Car: &nbsp </strong></p>
                     </div>
                     <div class="profileEditable" onClick="this.contentEditable='true';"> 
-                        <p>{{currentUser.car}} </p>
+                        <p>{{currentUser.car}}{{#unless currentUser.car}}<br>{{/unless}}</p>
                     </div>
                     <p><strong>Rides: </strong> {{currentUser.rides}} </p>
                     <div id="rating-outside">

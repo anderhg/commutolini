@@ -17,6 +17,8 @@ var login = require('./routes/login');
 var add = require('./routes/add');
 var data = require('./routes/data');
 var username = require('./routes/username');
+var register = require('./routes/register');
+var reg = require('./routes/reg');
 // Example route
 // var user = require('./routes/user');
 
@@ -59,6 +61,8 @@ app.get('/data', data.dataInfo);
 app.post('/login', username.login);
 app.post('/logoff', username.logoff);
 app.get('/profile/:username', profile.viewUserProfile);
+app.get('/register', register.viewRegister);
+app.post('/reg', reg.registerUser);
 
 // Example route
 // app.get('/users', user.list);

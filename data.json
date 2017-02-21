@@ -233,6 +233,12 @@
 				"home": "Pacific Beach",
 				"destination": "UCSD",
 				"verified": true
+			},
+			"geokuk":{
+				"firstName": "Georg",
+				"lastName": "Kukfjes",
+				"username": "geokuk",
+				"rides": "0"
 			}
 		},
 
