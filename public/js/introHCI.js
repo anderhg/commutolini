@@ -7,6 +7,7 @@ $(document).ready(function() {
 	$("#saveSchedule").click(saveSchedule);
 	$("#login").click(login);
 	$("#logoff").click(logoff);
+	$("#saveProfile").click(saveProfile);
 
 })
 
@@ -133,6 +134,21 @@ function checkAddresses(result){
 		$('#inDest').html('<option>UCSD</option><option>SDSU</option><option selected>USD</option>');
 	}
 
+}
+
+function saveProfile(){
+	event.preventDefault();
+
+	var data = {
+		"firstName": document.getElementById('firstName').value,
+		"lastName": document.getElementById('lastName').value,
+		"address": document.getElementById('profileAddress').value,
+		"car": document.getElementById('profileCar').value,
+
+
+	}
+
+	$.post('/editProfileInfo', data, saveProfileCallback(data));
 
 }
 
@@ -162,6 +178,10 @@ function logoffCallback(result){
 
 function saveScheduleCallback(result){
 	window.location.href = "/homepage";
+}
+
+function saveProfileCallback(result){
+	window.location.href = "/profile";
 }
 
 
