@@ -200,6 +200,8 @@
 				"address": "4467 Dawes Street, San Diego, CA 92109",
 				"home": "Pacific Beach",
 				"destination": "UCSD",
+				"email": "stainvale@stud.ntnu.no",
+				"phoneNumber": "123456789",
 				"verified": true
 			},
 			"anderhg":{
@@ -215,6 +217,8 @@
 				"rating": {},
 				"home": "Pacific Beach",
 				"destination": "UCSD",
+				"email": "anderhg@stud.ntnu.no",
+				"phoneNumber": "111111111",
 				"verified": true
 			},
 			"oyvikjo":{
@@ -230,6 +234,8 @@
 				"rating": {"stianvale":5,"anderhg":3},
 				"home": "Pacific Beach",
 				"destination": "UCSD",
+				"email": "oyvikjo@stud.ntnu.no",
+				"phoneNumber": "987654321",
 				"verified": true
 			},
 			"geokuk":{

@@ -56,7 +56,6 @@ p.drivecard {
 }
 
 a.button {
-<<<<<<< HEAD
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
@@ -249,7 +248,6 @@ span.tags
     position: absolute;
     bottom: -10px;
     left: 50%;
-<<<<<<< HEAD
 }
 
 .panel-heading {
@@ -261,7 +259,7 @@ span.tags
     padding: 10px 15px;
     margin: -10px -15px;
 }
-=======
+
     }
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
@@ -495,4 +493,15 @@ input::-webkit-input-placeholder {
 .table{
   width: 100%;
   table-layout: fixed;
+}
+
+.contactTable{
+  margin-left: 30px;
+  margin-bottom: 10px;
+  width: 35%;
+  table-layout: fixed;
+}
+
+#envelope {
+  color: #35abdd;
 }

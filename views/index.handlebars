@@ -83,8 +83,8 @@
           <img class = "card-img-top" src="{{#unless image}}/images/noimage.png{{/unless}}{{image}}" id="userimg" alt ="Card image cap">
         </a>
         <div class="caption">
-          <h4><a href="/profile/{{username}}"> {{firstName}} {{lastName}} </a></h4> {{/with}}
-            <table class="table">
+          <h4><a href="/profile/{{username}}"> {{firstName}} {{lastName}}</a></h4> {{/with}}
+            <table class="table" id='info{{username}}'>
               <thead>
                 <tr>
                   <th></th>
@@ -114,7 +114,25 @@
                 </tr>
               </tbody>
             </table>
-            <a href="/profile/{{username}}" class="btn btn-primary" role="button">Contact</a>
+
+            {{#with (lookup ../users username)}}
+            <table class="contactTable" id='contactInfo{{username}}' style='display:none'>
+              <thead>
+                <tr>
+                  <td><i class="glyphicon glyphicon-envelope" id="envelope"></i></td>
+                  <td>{{email}}</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                 <td><i class="glyphicon glyphicon-phone-alt" id="phone-alt"></i></td>
+                 <td>{{phoneNumber}}</td>
+                </tr>
+              </tbody>
+            </table>
+            {{/with}}
+          
+            <div class="btn btn-primary contactButton" id='contact{{username}}' role="button">Contact</div>
         </div>
       </div>
     </div>

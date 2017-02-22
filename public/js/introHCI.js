@@ -25,6 +25,7 @@ $(document).ready(function() {
 	$('#starFive').mouseenter(fiveStar);
 	$('#starFive').mouseleave(removeFiveStar);
 	$('#starFive').click(fiveStarClick);
+	$('div.contactButton').click(contactClick);
 })
 
 /*
@@ -53,8 +54,6 @@ function initializePage() {
 function saveSchedule() {
 
 	event.preventDefault();
-
-	console.log(TuEnd);
 
 
 	var data = {
@@ -104,8 +103,7 @@ function checkData(result){
 	if (path == "/profile"){
 		console.log('profile');
 		for (var giver in result.users[currentUser].rating){
-			console.log('Total rating: '+totalRating);
-			console.log('Rating: '+result.users[currentUser].rating[giver]);
+
 			totalRating += result.users[currentUser].rating[giver];
 			numberOfRatings++;
 		}
@@ -114,19 +112,14 @@ function checkData(result){
 		for (var giver in result.users[username].rating){
 			totalRating += result.users[username].rating[giver];
 			numberOfRatings++;
-			console.log('works');
-			console.log(totalRating);
-			console.log(numberOfRatings);
+
 		}
 	}
 
-	console.log(totalRating);
-	console.log(numberOfRatings);
+
 	if (totalRating >= 1 && numberOfRatings >= 1){
 		var averageRating = totalRating/numberOfRatings;
 	}
-
-	console.log(averageRating);
 
 	$('#ratingText').text(averageRating.toFixed(1));
 }
@@ -135,9 +128,8 @@ function checkSelectedValues(result,seatsID) {
 
 	var liste = ["#MSeats","#TuSeats","#WSeats","#ThSeats","#FSeats"];
 	var username = document.cookie.split('=')[1];
-	console.log(username);
 	var Seats = result.schedule[username].days[seatsID].seats;
-	console.log(Seats);
+
 
 	if (Seats == "" || Seats == "1") {
 		$(liste[seatsID]).html('<option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>');
@@ -193,7 +185,6 @@ function saveProfile(){
 function login(){
 	event.preventDefault();
 	var username = document.getElementById('username-email').value;
-	console.log(username);
 	var data = {"username":username};
 	$.post('/login',data,loginCallback(data));
 	document.cookie = "username="+username;
@@ -206,7 +197,6 @@ function logoff(){
 }
 
 function loginCallback(result){
-	console.log('1');
 	window.location.href = "/homepage";
 }
 
@@ -258,7 +248,6 @@ function registerCallback(result){
 
 function checkProfile(){
 	if (window.location.pathname == "/profile"){
-		console.log('jaja');
 		$("#checkProfile").html('<a href="/editProfile" class="btn btn-primary" role="button">Edit Profile</a>');
 	}
 }
@@ -391,4 +380,25 @@ function fiveStarClick(){
 
 function ratingCallback(){
 	setTimeout(initializePage, 1);
+}
+
+function contactClick(){
+	var id = $(this).attr('id').trim();
+	var text = $('#'+id).text();
+	var username = id.slice(7);
+
+
+	if (text == "Contact"){
+		$('#'+id).text("Show Schedule");
+		$('#info'+ username).hide();
+		$('#contactInfo'+username).show();
+	} else{
+		$('#'+id).text("Contact");
+		$('#contactInfo'+username).hide();
+		$('#info'+ username).show();
+	}
+	
+
+	
+	
 }
