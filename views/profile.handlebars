@@ -64,6 +64,9 @@
                     <div onClick="this.contentEditable='true';" class="profileName"> 
                         <h4>{{currentUser.firstName}} {{currentUser.lastName}}{{#if currentUser.age}}, {{currentUser.age}}{{/if}}  {{#if currentUser.verified}}<i class = 'glyphicon glyphicon-ok-circle'></i>{{/if}}</h4>
                     </div>
+                    <div class="profileRating" id="profileRating"> 
+                        <i class="glyphicon glyphicon-star-empty" id="starOne"></i><i class="glyphicon glyphicon-star-empty" id="starTwo"></i><i class="glyphicon glyphicon-star-empty" id="starThree"></i><i class="glyphicon glyphicon-star-empty" id="starFour"></i><i class="glyphicon glyphicon-star-empty" id="starFive"></i>
+                    </div>
                     <div class="profileDesc" onClick="this.contentEditable='true';"> 
                         <p>{{currentUser.about}}{{#unless currentUser.about}}<br>{{/unless}}</p>
                     </div>
@@ -79,9 +82,9 @@
                     <p><strong>Rides: </strong> {{currentUser.rides}} </p>
                     <div id="rating-outside">
                         <figcaption class="ratings">
-                                <p><strong>Rating: </strong>
+                                <p><strong>Average rating: </strong>
                                     <div id="rating">
-                                        {{#unless currentUser.rating}}<p>Not yet rated</p>{{/unless}}
+                                        {{#unless currentUser.rating}}<p>Not yet rated</p>{{/unless}}<p id='ratingText'></p><p id='ratingEnd'>/ 5<p>
                                     </div>
                                 </p>
                         </figcaption>

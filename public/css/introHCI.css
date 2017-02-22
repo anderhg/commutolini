@@ -179,8 +179,8 @@ border-color: rgb(53, 126, 189);
 .profile 
 {
     min-height: 355px;
-    display: inline-block;
-    }
+}
+
 figcaption.ratings
 {
     margin-top:20px;
@@ -341,16 +341,16 @@ span.tags
 
 #rating {
   position: relative;
-  top: -29px;
-  left: 57px;
+  top: -36px;
+  margin-left: 120px;
 }
 
 #profilewell {
-  height: 500px;
+  height: 540px;
   width: 325px;
   display: block;
   margin-left: auto;
-  margin-right: auto; 
+  margin-right: auto;
 }
 
 @font-face {
@@ -473,4 +473,21 @@ input::-webkit-input-placeholder {
 #editImage {
   width: 200px;
   height: 200px;
+}
+
+.profileRating {
+  font-size: 25px;
+  text-align: center;
+  color: #ffd700;
+}
+
+#ratingEnd {
+  margin-top: -31px;
+  margin-left: 33px;
+  color: grey;
+}
+
+#ratingText {
+  font-size: 20px;
+  font-weight: bold;
 }

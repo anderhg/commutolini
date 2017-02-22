@@ -196,8 +196,8 @@
 				"car": "Hyundai Elantra 2003",
 				"age": "22",
 				"rides": "1",
+				"rating": {"oyvikjo":3},
 				"address": "4467 Dawes Street, San Diego, CA 92109",
-				"rating": "3",
 				"home": "Pacific Beach",
 				"destination": "UCSD",
 				"verified": true
@@ -212,7 +212,7 @@
 				"age": "22",
 				"rides": "10",
 				"address": "4095 Honeycutt Street, San Diego, CA 92109",
-				"rating": "4",
+				"rating": {},
 				"home": "Pacific Beach",
 				"destination": "UCSD",
 				"verified": true
@@ -227,7 +227,7 @@
 				"age": "22",
 				"rides": "100",
 				"address": "1412 Graham Street, San Diego, CA 92109",
-				"rating": "5",
+				"rating": {"stianvale":5,"anderhg":3},
 				"home": "Pacific Beach",
 				"destination": "UCSD",
 				"verified": true
@@ -236,7 +236,8 @@
 				"firstName": "Georg",
 				"lastName": "Kukfjes",
 				"username": "geokuk",
-				"rides": "0"
+				"rides": "0",
+				"rating": {}
 			}
 		},
 

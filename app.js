@@ -20,6 +20,7 @@ var username = require('./routes/username');
 var editProfile = require('./routes/editProfile');
 var register = require('./routes/register');
 var reg = require('./routes/reg');
+var giveRating = require('./routes/giveRating');
 // Example route
 // var user = require('./routes/user');
 
@@ -67,6 +68,7 @@ app.post('/editProfileInfo', editProfile.editProfileInfo);
 
 app.get('/register', register.viewRegister);
 app.post('/reg', reg.registerUser);
+app.post('/giveRating', giveRating.giveRating);
 
 
 // Example route

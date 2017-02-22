@@ -10,7 +10,21 @@ $(document).ready(function() {
 	$("#saveProfile").click(saveProfile);
 	$('#register').click(register);
 	checkProfile();
-
+	$('#starOne').mouseenter(oneStar);
+	$('#starOne').mouseleave(removeOneStar);
+	$('#starOne').click(oneStarClick);
+	$('#starTwo').mouseenter(twoStar);
+	$('#starTwo').mouseleave(removeTwoStar);
+	$('#starTwo').click(twoStarClick);
+	$('#starThree').mouseenter(threeStar);
+	$('#starThree').mouseleave(removeThreeStar);
+	$('#starThree').click(threeStarClick);
+	$('#starFour').mouseenter(fourStar);
+	$('#starFour').mouseleave(removeFourStar);
+	$('#starFour').click(fourStarClick);
+	$('#starFive').mouseenter(fiveStar);
+	$('#starFive').mouseleave(removeFiveStar);
+	$('#starFive').click(fiveStarClick);
 })
 
 /*
@@ -70,6 +84,8 @@ function saveSchedule() {
 function checkData(result){
 
 	var path = window.location.pathname;
+	checkStars(result);
+	var currentUser = document.cookie.split('=')[1];
 	
 	if (path == "/schedule"){
 		for (var i=0; i<5; i++){
@@ -81,18 +97,38 @@ function checkData(result){
 
 	}
 
-	if (path == "/profile"){
+	var totalRating = 0.0;
+	var numberOfRatings = 0;
+	var averageRating = 0;
 
-		for (var i=0; i<result.users[document.cookie.split('=')[1]].rating;i++){
-			$('#rating').append('<a href="#"><span class="fa fa-star"></span></a>&nbsp');
+	if (path == "/profile"){
+		console.log('profile');
+		for (var giver in result.users[currentUser].rating){
+			console.log('Total rating: '+totalRating);
+			console.log('Rating: '+result.users[currentUser].rating[giver]);
+			totalRating += result.users[currentUser].rating[giver];
+			numberOfRatings++;
 		}
 	} else if (path.slice(0,path.lastIndexOf('/')+1) == "/profile/"){
 		var username = path.slice(path.lastIndexOf('/')+1);
-		console.log(username);
-		for (var i=0; i<result.users[username].rating;i++){
-			$('#rating').append('<a href="#"><span class="fa fa-star"></span></a>&nbsp');
+		for (var giver in result.users[username].rating){
+			totalRating += result.users[username].rating[giver];
+			numberOfRatings++;
+			console.log('works');
+			console.log(totalRating);
+			console.log(numberOfRatings);
 		}
 	}
+
+	console.log(totalRating);
+	console.log(numberOfRatings);
+	if (totalRating >= 1 && numberOfRatings >= 1){
+		var averageRating = totalRating/numberOfRatings;
+	}
+
+	console.log(averageRating);
+
+	$('#ratingText').text(averageRating.toFixed(1));
 }
 
 function checkSelectedValues(result,seatsID) {
@@ -227,3 +263,132 @@ function checkProfile(){
 	}
 }
 
+var mouseenterno = 0;
+
+
+function checkStars(result){
+}
+
+function oneStar(){
+	$('#starOne').removeClass('glyphicon glyphicon-star-empty').addClass('glyphicon glyphicon-star');
+}
+
+function removeOneStar(){
+	$('#starOne').removeClass('glyphicon glyphicon-star').addClass('glyphicon glyphicon-star-empty');
+}
+
+function twoStar(){
+	$('#starOne').removeClass('glyphicon glyphicon-star-empty').addClass('glyphicon glyphicon-star');
+	$('#starTwo').removeClass('glyphicon glyphicon-star-empty').addClass('glyphicon glyphicon-star');
+}
+
+function removeTwoStar(){
+	$('#starOne').removeClass('glyphicon glyphicon-star').addClass('glyphicon glyphicon-star-empty');
+	$('#starTwo').removeClass('glyphicon glyphicon-star').addClass('glyphicon glyphicon-star-empty');
+}
+
+function threeStar(){
+	$('#starOne').removeClass('glyphicon glyphicon-star-empty').addClass('glyphicon glyphicon-star');
+	$('#starTwo').removeClass('glyphicon glyphicon-star-empty').addClass('glyphicon glyphicon-star');
+	$('#starThree').removeClass('glyphicon glyphicon-star-empty').addClass('glyphicon glyphicon-star');
+}
+
+function removeThreeStar(){
+	$('#starOne').removeClass('glyphicon glyphicon-star').addClass('glyphicon glyphicon-star-empty');
+	$('#starTwo').removeClass('glyphicon glyphicon-star').addClass('glyphicon glyphicon-star-empty');
+	$('#starThree').removeClass('glyphicon glyphicon-star').addClass('glyphicon glyphicon-star-empty');
+}
+
+function fourStar(){
+	$('#starOne').removeClass('glyphicon glyphicon-star-empty').addClass('glyphicon glyphicon-star');
+	$('#starTwo').removeClass('glyphicon glyphicon-star-empty').addClass('glyphicon glyphicon-star');
+	$('#starThree').removeClass('glyphicon glyphicon-star-empty').addClass('glyphicon glyphicon-star');
+	$('#starFour').removeClass('glyphicon glyphicon-star-empty').addClass('glyphicon glyphicon-star');
+}
+
+function removeFourStar(){
+	$('#starOne').removeClass('glyphicon glyphicon-star').addClass('glyphicon glyphicon-star-empty');
+	$('#starTwo').removeClass('glyphicon glyphicon-star').addClass('glyphicon glyphicon-star-empty');
+	$('#starThree').removeClass('glyphicon glyphicon-star').addClass('glyphicon glyphicon-star-empty');
+	$('#starFour').removeClass('glyphicon glyphicon-star').addClass('glyphicon glyphicon-star-empty');
+}
+
+function fiveStar(){
+	$('#starOne').removeClass('glyphicon glyphicon-star-empty').addClass('glyphicon glyphicon-star');
+	$('#starTwo').removeClass('glyphicon glyphicon-star-empty').addClass('glyphicon glyphicon-star');
+	$('#starThree').removeClass('glyphicon glyphicon-star-empty').addClass('glyphicon glyphicon-star');
+	$('#starFour').removeClass('glyphicon glyphicon-star-empty').addClass('glyphicon glyphicon-star');
+	$('#starFive').removeClass('glyphicon glyphicon-star-empty').addClass('glyphicon glyphicon-star');
+}
+
+function removeFiveStar(){
+	$('#starOne').removeClass('glyphicon glyphicon-star').addClass('glyphicon glyphicon-star-empty');
+	$('#starTwo').removeClass('glyphicon glyphicon-star').addClass('glyphicon glyphicon-star-empty');
+	$('#starThree').removeClass('glyphicon glyphicon-star').addClass('glyphicon glyphicon-star-empty');
+	$('#starFour').removeClass('glyphicon glyphicon-star').addClass('glyphicon glyphicon-star-empty');
+	$('#starFive').removeClass('glyphicon glyphicon-star').addClass('glyphicon glyphicon-star-empty');
+}
+
+function oneStarClick(){
+	$('#profileRating').html('<i class="glyphicon glyphicon-star" id="starOne"></i><i class="glyphicon glyphicon-star-empty" id="starTwo"></i><i class="glyphicon glyphicon-star-empty" id="starThree"></i><i class="glyphicon glyphicon-star-empty" id="starFour"></i><i class="glyphicon glyphicon-star-empty" id="starFive"></i>')
+	var path = window.location.pathname;
+	var receiver;
+	if (path != "/profile"){
+		receiver = path.slice(path.lastIndexOf('/')+1);
+	}else{
+		receiver = document.cookie.split('=')[1];
+	}
+	$.post('/giveRating',{'stars':1, 'giver':document.cookie.split('=')[1], 'receiver':receiver}, ratingCallback());
+}
+
+function twoStarClick(){
+	$('#profileRating').html('<i class="glyphicon glyphicon-star" id="starOne"></i><i class="glyphicon glyphicon-star" id="starTwo"></i><i class="glyphicon glyphicon-star-empty" id="starThree"></i><i class="glyphicon glyphicon-star-empty" id="starFour"></i><i class="glyphicon glyphicon-star-empty" id="starFive"></i>')
+	var path = window.location.pathname;
+	var receiver;
+	if (path != "/profile"){
+		receiver = path.slice(path.lastIndexOf('/')+1);
+	}else{
+		receiver = document.cookie.split('=')[1];
+	}
+	$.post('/giveRating',{'stars':2, 'giver':document.cookie.split('=')[1], 'receiver':receiver}, ratingCallback());
+}
+
+function threeStarClick(){
+	$('#profileRating').html('<i class="glyphicon glyphicon-star" id="starOne"></i><i class="glyphicon glyphicon-star" id="starTwo"></i><i class="glyphicon glyphicon-star" id="starThree"></i><i class="glyphicon glyphicon-star-empty" id="starFour"></i><i class="glyphicon glyphicon-star-empty" id="starFive"></i>')
+	var path = window.location.pathname;
+	var receiver;
+	if (path != "/profile"){
+		receiver = path.slice(path.lastIndexOf('/')+1);
+	}else{
+		receiver = document.cookie.split('=')[1];
+	}
+	$.post('/giveRating',{'stars':3, 'giver':document.cookie.split('=')[1], 'receiver':receiver}, ratingCallback());
+}
+
+function fourStarClick(){
+	$('#profileRating').html('<i class="glyphicon glyphicon-star" id="starOne"></i><i class="glyphicon glyphicon-star" id="starTwo"></i><i class="glyphicon glyphicon-star" id="starThree"></i><i class="glyphicon glyphicon-star" id="starFour"></i><i class="glyphicon glyphicon-star-empty" id="starFive"></i>')
+	var path = window.location.pathname;
+	var receiver;
+	if (path != "/profile"){
+		receiver = path.slice(path.lastIndexOf('/')+1);
+	}else{
+		receiver = document.cookie.split('=')[1];
+	}
+	$.post('/giveRating',{'stars':4, 'giver':document.cookie.split('=')[1], 'receiver':receiver}, ratingCallback());
+}
+
+function fiveStarClick(){
+	$('#profileRating').html('<i class="glyphicon glyphicon-star" id="starOne"></i><i class="glyphicon glyphicon-star" id="starTwo"></i><i class="glyphicon glyphicon-star" id="starThree"></i><i class="glyphicon glyphicon-star" id="starFour"></i><i class="glyphicon glyphicon-star" id="starFive"></i>')
+	var path = window.location.pathname;
+	var receiver;
+	if (path != "/profile"){
+		receiver = path.slice(path.lastIndexOf('/')+1);
+	}else{
+		receiver = document.cookie.split('=')[1];
+	}
+	$.post('/giveRating',{'stars':5, 'giver':document.cookie.split('=')[1], 'receiver':receiver}, ratingCallback());
+}
+
+function ratingCallback(){
+	setTimeout(initializePage, 1);
+}
