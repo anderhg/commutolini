@@ -491,3 +491,8 @@ input::-webkit-input-placeholder {
   font-size: 20px;
   font-weight: bold;
 }
+
+.table{
+  width: 100%;
+  table-layout: fixed;
+}
