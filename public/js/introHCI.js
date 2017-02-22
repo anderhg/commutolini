@@ -187,6 +187,10 @@ function saveProfileCallback(result){
 }
 
 function register(){
+	$.get('data', registerGetCallback);
+}
+
+function registerGetCallback(result){
 	var username = document.getElementById('username').value;
 	var name = document.getElementById('name').value;
 	var firstName = name.slice(0,name.lastIndexOf(' '));
@@ -200,7 +204,15 @@ function register(){
 		'lastName': lastName
 	}
 
-	$.post('/reg', obj, registerCallback(obj));
+	if (username.length == 0){
+		$('#alert').html('<div class="alert alert-info alert-dismissable"><a class="panel-close close" data-dismiss="alert">×</a><i class="glyphicon glyphicon-ban-circle"></i>Username not entered.</div>');
+	}else if (result.users[username] != undefined){
+		$('#alert').html('<div class="alert alert-info alert-dismissable"><a class="panel-close close" data-dismiss="alert">×</a><i class="glyphicon glyphicon-ban-circle"></i>Username already exists.</div>');
+	}else if (name.split(' ').length < 2){
+		$('#alert').html('<div class="alert alert-info alert-dismissable"><a class="panel-close close" data-dismiss="alert">×</a><i class="glyphicon glyphicon-ban-circle"></i>Name not valid. Remember to insert full name.</div>');
+	}else{
+		$.post('/reg', obj, registerCallback(obj));
+	}
 	
 }
 
