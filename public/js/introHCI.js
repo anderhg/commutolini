@@ -176,8 +176,9 @@ function saveProfile(){
 		"lastName": document.getElementById('lastName').value,
 		"address": document.getElementById('profileAddress').value,
 		"car": document.getElementById('profileCar').value,
-		"about": document.getElementById('profileAbout').value
-
+		"about": document.getElementById('profileAbout').value,
+		"phoneNumber": document.getElementById('profilePhone').value,
+		"email": document.getElementById('profileEmail').value
 	}
 
 	$.post('/editProfileInfo', data, saveProfileCallback(data));

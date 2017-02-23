@@ -26,7 +26,8 @@ exports.editProfileInfo = function(req,res) {
 	newProfile.car = req.body.car;
 	newProfile.address = req.body.address;
 	newProfile.about = req.body.about;
-
+	newProfile.phoneNumber = req.body.phoneNumber;
+	newProfile.email = req.body.email;
 
 	data.users[currentUser] = newProfile;
 

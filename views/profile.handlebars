@@ -79,6 +79,18 @@
                     <div class="profileEditable"> 
                         <p>{{currentUser.car}}{{#unless currentUser.car}}<br>{{/unless}}</p>
                     </div>
+                    <div class="profileLabel">
+                        <p><strong>Phone: &nbsp </strong></p>
+                    </div>
+                    <div class="profileEditable"> 
+                        <p>{{currentUser.phoneNumber}}{{#unless currentUser.phoneNumber}}<br>{{/unless}}</p>
+                    </div>
+                    <div class="profileLabel">
+                        <p><strong>Email: &nbsp </strong></p>
+                    </div>
+                    <div class="profileEditable"> 
+                        <p>{{currentUser.email}}{{#unless currentUser.email}}<br>{{/unless}}</p>
+                    </div>
                     <p><strong>Rides: </strong> {{currentUser.rides}} </p>
                     <div id="rating-outside">
                         <figcaption class="ratings">
@@ -90,9 +102,10 @@
                         </figcaption>
                     </div>
                     <br>
-                    <div id='checkProfile'>
-                    </div>
-                </div>             
+                    
+                </div>
+                <div id='checkProfile'>
+                    </div>             
             </div>          
     	 </div>                
 		</div>
