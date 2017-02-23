@@ -12,6 +12,7 @@ exports.registerUser = function(req, res) { 
 		"username": req.body.username,
 		"firstName": req.body.firstName,
 		"lastName": req.body.lastName,
+		"email": req.body.email,
 		"rides": "0",
 		"rating": {}
 	}

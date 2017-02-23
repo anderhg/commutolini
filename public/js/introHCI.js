@@ -133,18 +133,20 @@ function checkSelectedValues(result,seatsID) {
 	var Seats = result.schedule[username].days[seatsID].seats;
 
 
-	if (Seats == "" || Seats == "1") {
-		$(liste[seatsID]).html('<option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>');
+	if (Seats == "" || Seats == "0") {
+		$(liste[seatsID]).html('<option selected>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>');
+	}else if(Seats =="1") {
+		$(liste[seatsID]).html('<option>0</option><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option>');		
 	}else if (Seats == "2"){
-		$(liste[seatsID]).html('<option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option>');
+		$(liste[seatsID]).html('<option>0</option><option>1</option><option selected>2</option><option>3</option><option>4</option><option>5</option><option>6</option>');
 	}else if (Seats == "3"){
-		$(liste[seatsID]).html('<option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option><option>6</option>');
+		$(liste[seatsID]).html('<option>0</option><option>1</option><option>2</option><option selected>3</option><option>4</option><option>5</option><option>6</option>');
 	}else if (Seats == "4"){
-		$(liste[seatsID]).html('<option>1</option><option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option>');
+		$(liste[seatsID]).html('<option>0</option><option>1</option><option>2</option><option>3</option><option selected>4</option><option>5</option><option>6</option>');
 	}else if (Seats == "5"){
-		$(liste[seatsID]).html('<option>1</option><option>2</option><option>3</option><option>4</option><option selected>5</option><option>6</option>');
+		$(liste[seatsID]).html('<option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option selected>5</option><option>6</option>');
 	}else if (Seats == "6"){
-		$(liste[seatsID]).html('<option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option selected>6</option>');
+		$(liste[seatsID]).html('<option>0</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option selected>6</option>');
 	}
 
 }
@@ -230,7 +232,8 @@ function registerGetCallback(result){
 	var obj = {
 		'username': username,
 		'firstName': firstName,
-		'lastName': lastName
+		'lastName': lastName,
+		'email': email
 	}
 
 	if (username.length == 0){
@@ -239,6 +242,8 @@ function registerGetCallback(result){
 		$('#alert').html('<div class="alert alert-info alert-dismissable"><a class="panel-close close" data-dismiss="alert">×</a><i class="glyphicon glyphicon-ban-circle"></i>Username already exists.</div>');
 	}else if (name.split(' ').length < 2){
 		$('#alert').html('<div class="alert alert-info alert-dismissable"><a class="panel-close close" data-dismiss="alert">×</a><i class="glyphicon glyphicon-ban-circle"></i>Name not valid. Remember to insert full name.</div>');
+	}else if (email.length == 0 || email.search('@') == -1){
+		$('#alert').html('<div class="alert alert-info alert-dismissable"><a class="panel-close close" data-dismiss="alert">×</a><i class="glyphicon glyphicon-ban-circle"></i>Email not valid.</div>');
 	}else{
 		$.post('/reg', obj, registerCallback(obj));
 	}
