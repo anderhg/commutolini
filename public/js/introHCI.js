@@ -272,7 +272,7 @@ function registerCallback(result){
 
 function checkProfile(){
 	if (window.location.pathname == "/profile"){
-		$("#checkProfile").html('<a href="/editProfile" class="btn btn-primary" role="button">Edit Profile</a>');
+		$("#checkProfile").html('<a href="/editProfile" class="btn btn-primary btn-lg" id="editProfileBtn" role="button">Edit Profile</a>');
 	}
 }
 
