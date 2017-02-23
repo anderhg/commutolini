@@ -69,7 +69,8 @@
 
 
 		<div id="yourrides">
-		  <h2> Commuters </h2>
+		  <h2> Available Commuters </h2>
+      <p> Find a fellow commuter that fits your schedule, get in contact and plan your commute.</p>
 	  </div>
 
   
@@ -83,7 +84,9 @@
           <img class = "card-img-top" src="{{#unless image}}/images/noimage.png{{/unless}}{{image}}" id="userimg" alt ="Card image cap">
         </a>
         <div class="caption">
-          <h4><a href="/profile/{{username}}"> {{firstName}} {{lastName}}</a></h4> {{/with}}
+          <h4><a href="/profile/{{username}}"> {{firstName}} {{lastName}}</a></h4> 
+          <h5 style='text-align:center; font-weight:bold'> {{home}}  &nbsp<i class="glyphicon glyphicon-arrow-right" id="rightArrow"></i> {{destination}} </h5>
+            {{/with}}
             <table class="table" id='info{{username}}'>
               <thead>
                 <tr>
@@ -118,16 +121,38 @@
             {{#with (lookup ../users username)}}
             <table class="contactTable" id='contactInfo{{username}}' style='display:none'>
               <thead>
-                <tr>
-                  <td><i class="glyphicon glyphicon-envelope" id="envelope"></i></td>
-                  <td>{{email}}</td>
-                </tr>
               </thead>
               <tbody>
                 <tr>
+                  <td>&nbsp</td>
+                  <td>&nbsp</td>
+                </tr>
+                <tr>
+                  <td>&nbsp</td>
+                  <td>&nbsp</td>
+                </tr>
+                <tr style=' text-align:center'>
+                  <td><i class="glyphicon glyphicon-envelope" id="envelope"></i></td>
+                  <td>{{email}}</td>
+                </tr>
+                <tr>
+                  <td>&nbsp</td>
+                  <td>&nbsp</td>
+                </tr>
+
+                <tr style=' text-align:center'>
                  <td><i class="glyphicon glyphicon-phone-alt" id="phone-alt"></i></td>
                  <td>{{phoneNumber}}</td>
                 </tr>
+                <tr>
+                  <td>&nbsp</td>
+                  <td>&nbsp</td>
+                </tr>
+                <tr>
+                  <td>&nbsp</td>
+                  <td>&nbsp</td>
+                </tr>
+
               </tbody>
             </table>
             {{/with}}
