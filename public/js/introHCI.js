@@ -4,6 +4,7 @@
 $(document).ready(function() {
 	initializePage();
 	console.log(document.cookie);
+	document.cookie = '_ga=; Max-Age=0';
 	$("#saveSchedule").click(saveSchedule);
 	$("#login").click(login);
 	$("#logoff").click(logoff);
