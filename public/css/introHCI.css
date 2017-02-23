@@ -496,9 +496,9 @@ input::-webkit-input-placeholder {
 }
 
 .contactTable{
-  margin-left: 30px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 10px;
-  width: 35%;
   table-layout: fixed;
 }
 
