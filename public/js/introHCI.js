@@ -175,7 +175,7 @@ function saveProfile(){
 		"lastName": document.getElementById('lastName').value,
 		"address": document.getElementById('profileAddress').value,
 		"car": document.getElementById('profileCar').value,
-
+		"about": document.getElementById('profileAbout').value
 
 	}
 

@@ -63,6 +63,14 @@
               <h6>Upload a different photo...</h6>
               
               <input type="file" class="form-control">
+              <br>
+
+              <div class="form-group">
+                <label for="comment">About</label>
+                <textarea class="form-control" id="profileAbout" rows="4" id="comment">{{about}}</textarea>
+              </div>
+
+
             </div>
           </div>
           
@@ -103,7 +111,7 @@
               <div class="form-group">
                 <label class="col-md-3 control-label">Username:</label>
                 <div class="col-md-8">
-                  <input class="form-control" type="text" value="*notImplemented*">
+                  <input class="form-control" id="profileUsername" type="text" value="{{username}}" disabled>
                 </div>
               </div>
               <div class="form-group">
