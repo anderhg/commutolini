@@ -29,7 +29,7 @@ exports.editProfileInfo = function(req,res) {
 	newProfile.phoneNumber = req.body.phoneNumber;
 	newProfile.email = req.body.email;
 
-	data.users[currentUser] = newProfile;
+	//data.users[currentUser] = newProfile;
 
 	/*var fakeData = JSON.parse(JSON.stringify(data));
 	fakeData.currentUser = fakeData.users[currentUser];

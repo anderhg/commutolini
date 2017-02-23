@@ -173,17 +173,33 @@ function checkAddresses(result){
 function saveProfile(){
 	event.preventDefault();
 
+	var firstName = document.getElementById('firstName').value;
+	var lastName = document.getElementById('lastName').value;
+	var address = document.getElementById('profileAddress').value;
+	var car = document.getElementById('profileCar').value;
+	var about = document.getElementById('profileAbout').value;
+	var phoneNumber = document.getElementById('profilePhone').value;
+	var email = document.getElementById('profileEmail').value;
+
 	var data = {
-		"firstName": document.getElementById('firstName').value,
-		"lastName": document.getElementById('lastName').value,
-		"address": document.getElementById('profileAddress').value,
-		"car": document.getElementById('profileCar').value,
-		"about": document.getElementById('profileAbout').value,
-		"phoneNumber": document.getElementById('profilePhone').value,
-		"email": document.getElementById('profileEmail').value
+		"firstName": firstName,
+		"lastName": lastName,
+		"address": address,
+		"car": car,
+		"about": about,
+		"phoneNumber": phoneNumber,
+		"email": email
 	}
 
-	$.post('/editProfileInfo', data, saveProfileCallback(data));
+	if (firstName.length == 0){
+		$('#alert').html('<div class="alert alert-info alert-dismissable"><a class="panel-close close" data-dismiss="alert">×</a><i class="glyphicon glyphicon-ban-circle"></i>First name not entered.</div>');
+	}else if (lastName.length == 0){
+		$('#alert').html('<div class="alert alert-info alert-dismissable"><a class="panel-close close" data-dismiss="alert">×</a><i class="glyphicon glyphicon-ban-circle"></i>Last name not entered.</div>');
+	}else if (email.length == 0 || email.search('@') == -1){
+		$('#alert').html('<div class="alert alert-info alert-dismissable"><a class="panel-close close" data-dismiss="alert">×</a><i class="glyphicon glyphicon-ban-circle"></i>Email not valid.</div>');
+	}else{
+		$.post('/editProfileInfo', data, saveProfileCallback(data));
+	}
 
 }
 
