@@ -121,6 +121,7 @@ function checkData(result){
 		var averageRating = totalRating/numberOfRatings;
 	}
 
+	console.log(averageRating);
 	$('#ratingText').text(averageRating.toFixed(1));
 }
 
