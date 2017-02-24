@@ -344,7 +344,7 @@ span.tags
 }
 
 #profilewell {
-  height: 570px;
+  height: 540px;
   width: 325px;
   display: block;
   margin-left: auto;
@@ -519,5 +519,4 @@ input::-webkit-input-placeholder {
   margin-bottom: 10px;
   width: 325px;
   text-align: center;
-  /*vertical-align: center;*/
 }
