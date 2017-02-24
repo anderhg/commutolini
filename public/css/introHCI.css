@@ -156,7 +156,7 @@ border-color: rgb(53, 126, 189);
 
 .row.schedule {
   position: relative;
-  padding-top: 50px;
+  padding-top: 10px;
 }
 
 #yourrides {
@@ -520,4 +520,12 @@ input::-webkit-input-placeholder {
   width: 325px;
   text-align: center;
   /*vertical-align: center;*/
+}
+
+#indexHeader {
+  padding-top: 40px;
+}
+
+#scheduleHeader {
+  padding-top: 40px;
 }
