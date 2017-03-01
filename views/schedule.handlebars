@@ -113,65 +113,133 @@
         </div>
 
    
-     	<div class="row">
-	        <div class="col-md-12">
-	            <div class="panel-group" id="accordion">
-	                <div class="panel panel-default">
-	                	{{#with (lookup schedule currentUser.username)}}
-		    				{{#each days}}
-			                    <div class="panel-heading">
-			                        <h4 class="panel-title">
-			                            <a data-toggle="collapse" data-parent="#accordion" href="#{{id}}">{{day}}</a>
-			                        </h4>
-			                    </div>
-			                    <div id="{{id}}" class="panel-collapse collapse">
-			                        <div class="panel-body">
-			                            <div class="row">
-			                                <div class="col-md-12">
-			                                    <div class="form-group">
-			                                        <div class="input-group clockpicker" data-align="top" data-autoclose="true">
-													    <input type="text" class="form-control" id="{{code}}Start" value="{{start}}">
-													    <span class="input-group-addon">
-													        <span class="glyphicon glyphicon-time"></span>
-													    </span>
+     	{{#if accordion}}
+	     	<div class="row">
+		        <div class="col-md-12">
+		            <div class="panel-group" id="accordion">
+		                <div class="panel panel-default">
+		                	{{#with (lookup schedule currentUser.username)}}
+			    				{{#each days}}
+				                    <div class="panel-heading">
+				                        <h4 class="panel-title">
+				                            <a data-toggle="collapse" data-parent="#accordion" href="#{{id}}">{{day}}</a>
+				                        </h4>
+				                    </div>
+				                    <div id="{{id}}" class="panel-collapse collapse">
+				                        <div class="panel-body">
+				                            <div class="row">
+				                                <div class="col-md-12">
+				                                    <div class="form-group">
+				                                        <div class="input-group clockpicker" data-align="top" data-autoclose="true">
+														    <input type="text" class="form-control" id="{{code}}Start" value="{{start}}">
+														    <span class="input-group-addon">
+														        <span class="glyphicon glyphicon-time"></span>
+														    </span>
+														</div>
+														<script type="text/javascript">
+															$('.clockpicker').clockpicker();
+														</script>
+				                                    </div>
+				                                    <div class="form-group">
+				                                        <div class="input-group clockpicker" data-align="top" data-autoclose="true">
+														    <input type="text" class="form-control" id="{{code}}End" value="{{end}}">
+														    <span class="input-group-addon">
+														        <span class="glyphicon glyphicon-time"></span>
+														    </span>
+														</div>
+														<script type="text/javascript">
+															$('.clockpicker').clockpicker();
+														</script>
+				                                    </div>
+				                                    <div class="form-group">
+														  <label for="sel1">Available seats:</label>
+														  <select class="form-control" id="{{code}}Seats" value="{{seats}}">
+														  	<option>0</option>
+												    		<option>1</option>
+													    	<option>2</option>
+														    <option>3</option>
+														    <option>4</option>
+														    <option>5</option>
+														    <option>6</option>
+														  </select>
 													</div>
-													<script type="text/javascript">
-														$('.clockpicker').clockpicker();
-													</script>
-			                                    </div>
-			                                    <div class="form-group">
-			                                        <div class="input-group clockpicker" data-align="top" data-autoclose="true">
-													    <input type="text" class="form-control" id="{{code}}End" value="{{end}}">
-													    <span class="input-group-addon">
-													        <span class="glyphicon glyphicon-time"></span>
-													    </span>
-													</div>
-													<script type="text/javascript">
-														$('.clockpicker').clockpicker();
-													</script>
-			                                    </div>
-			                                    <div class="form-group">
-													  <label for="sel1">Available seats:</label>
-													  <select class="form-control" id="{{code}}Seats" value="{{seats}}">
-													  	<option>0</option>
-											    		<option>1</option>
-												    	<option>2</option>
-													    <option>3</option>
-													    <option>4</option>
-													    <option>5</option>
-													    <option>6</option>
-													  </select>
+				                                </div>
+				                            </div>
+				                        </div>
+				                    </div>
+			                    {{/each}}
+		                    {{/with}}
+		                </div>
+		            </div>	            
+		        </div>
+		    </div>
+		    {{else}}
+		     	<div class="row">
+		        <div class="col-md-12">
+		            <div class="panel-group" id="accordion">
+		                <div class="panel panel-default">
+		                	{{#with (lookup schedule currentUser.username)}}
+			    				
+				                    <table class="table" id='info{{username}}'>
+						              <thead>
+						                <tr>
+						                  <th></th>		
+						                  <th><p style="font-weight:bold">Start <i class="glyphicon glyphicon-arrow-right" id="rightArrow"></i></p></th>
+						                  <th><p style="font-weight:bold">End <i class="glyphicon glyphicon-arrow-left" id="leftArrow"></i></p></th>
+						                  <th><p style="font-weight:bold">Seats <i class="glyphicon glyphicon-user" id="people"></i></p></th>
+						                </tr>
+						              </thead>
+						              <tbody>
+						              	{{#each days}}
+						                <tr>
+						                  <td><p style="font-weight:bold">{{day}}</p>
+						                  </td>		
+						                  <td><div class="input-group clockpicker" data-autoclose="true">
+												<input type="text" class="form-control" id="{{code}}Start" value="{{start}}">
+<!-- 													<span class="input-group-addon">
+														    <span class="glyphicon glyphicon-time"></span>
+												    </span> -->
 												</div>
-			                                </div>
-			                            </div>
-			                        </div>
-			                    </div>
-		                    {{/each}}
-	                    {{/with}}
-	                </div>
-	            </div>	            
-	        </div>
-	    </div>
+												<script type="text/javascript">
+													$('.clockpicker').clockpicker(
+														{
+															placement: 'top'
+														});
+												</script>
+										  </td>
+						                  <td><div class="input-group clockpicker"  data-placement="top" data-align="right" data-autoclose="true">
+												<input type="text" class="form-control" id="{{code}}End" value="{{end}}">
+<!-- 													<span class="input-group-addon">
+														    <span class="glyphicon glyphicon-time"></span>
+												    </span> -->
+												</div>
+												<script type="text/javascript">
+													$('.clockpicker').clockpicker();
+												</script>
+										 </td>
+										 <td>
+											  <select class="form-control" id="{{code}}Seats" value="{{seats}}">
+											  	<option>0</option>
+									    		<option>1</option>
+										    	<option>2</option>
+											    <option>3</option>
+											    <option>4</option>
+											    <option>5</option>
+											    <option>6</option>
+											  </select>
+										 </td>																			
+						                </tr>
+						                {{/each}}
+						              </tbody>
+						            </table> 
+			                  
+		                    {{/with}}
+		                </div>
+		            </div>	            
+		        </div>
+		    </div>
+	    {{/if}}
+
 
 		<a href="#" class="btn btn-success btn-sm" id="saveSchedule"><span class="glyphicon glyphicon-floppy-disk"></span>Save</a>
 
