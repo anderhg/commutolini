@@ -528,3 +528,9 @@ input::-webkit-input-placeholder {
 #scheduleHeader {
   padding-top: 40px;
 }
+
+#yesNo {
+  position: relative;
+  top: 7px;
+  text-align: center;
+}
