@@ -9,7 +9,7 @@ exports.login = function(req, res) {
 
 
 	if (data.users[username] != undefined){
-		req.session.username = username;
+		req.session["username"] = username;
 		req.session.save();
 		data.sessions[username] = data.users[username];
 		console.log(req.session);
@@ -24,5 +24,5 @@ exports.logoff = function(req, res) {
 
 
 exports.register = function(req, res) {
-	
+
 }

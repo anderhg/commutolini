@@ -1,7 +1,7 @@
 var data = require('../data.json');
 
 exports.viewSchedule = function(req, res) {
-	var username = req.session.username;
+	var username = req.session["username"];
 	data['accordion'] = true;
 	if (username == undefined){
 		res.redirect('/');
@@ -15,7 +15,7 @@ exports.viewSchedule = function(req, res) {
 }
 
 exports.viewTable = function(req,res) {
-	var username = req.session.username;
+	var username = req.session["username"];
 	data['accordion'] = false;
 	if (username == undefined){
 		res.redirect('/');

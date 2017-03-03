@@ -27,6 +27,18 @@ $(document).ready(function() {
 	$('#starFive').mouseleave(removeFiveStar);
 	$('#starFive').click(fiveStarClick);
 	$('div.contactButton').click(contactClick);
+	$('#username-email').keypress(function(event) {
+	    if (event.keyCode == 13 || event.which == 13) {
+	        login();
+	        event.preventDefault();
+	    }
+	});
+	$('#password').keypress(function(event) {
+	    if (event.keyCode == 13 || event.which == 13) {
+	        login();
+	        event.preventDefault();
+	    }
+	});
 })
 
 /*
@@ -267,7 +279,11 @@ function registerGetCallback(result){
 }
 
 function registerCallback(result){
-	window.location.href = "/";
+	event.preventDefault();
+	var data = {"username":result.username};
+	console.log("all fine");
+	$.post('/login',data,loginCallback(data));
+	document.cookie = "username="+result.username;
 }
 
 function checkProfile(){
@@ -421,7 +437,6 @@ function contactClick(){
 		$('#contactInfo'+username).hide();
 		$('#info'+ username).show();
 	}
-	
 
 	
 	

@@ -1,7 +1,7 @@
 var data = require('../data.json');
 
 exports.viewProfile = function(req, res) {
-	var username = req.session.username;
+	var username = req.session["username"];
 	if (username == undefined){
 		res.redirect('/');
 		return;
@@ -15,10 +15,10 @@ exports.viewProfile = function(req, res) {
 
 exports.viewUserProfile = function(req, res) {
 
-	if (req.session.username == undefined){
+	if (req.session["username"] == undefined){
 		res.redirect('/');
 		return;
-	} else if (req.session.username == req.params.username){
+	} else if (req.session["username"] == req.params.username){
 		res.redirect('/profile');
 	}
 

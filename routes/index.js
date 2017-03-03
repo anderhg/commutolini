@@ -7,7 +7,7 @@ var data = require('../data.json');
 exports.view = function(req, res){
 	console.log(req.session);
 	console.log(Object.keys(data.users));
-	var username = req.session.username;
+	var username = req.session["username"];
 
 	if (username == undefined){
 		console.log('not in list');

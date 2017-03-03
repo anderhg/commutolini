@@ -1,7 +1,7 @@
 var data = require('../data.json');
 
 exports.viewEditProfile = function(req, res) {
-	var username = req.session.username;
+	var username = req.session["username"];
 	if (username == undefined){
 		res.redirect('/');
 		return;

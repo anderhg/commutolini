@@ -3,7 +3,7 @@ var data = require("../data.json");
 
 exports.registerUser = function(req, res) { 
 
-	if (req.session.username != undefined){
+	if (req.session["username"] != undefined){
 		res.redirect('/homepage');
 		return;
 	}
@@ -23,7 +23,8 @@ exports.registerUser = function(req, res) { 
 	console.log(days)
 	data.schedule[req.body.username] = {'days': days,
 										'username': req.body.username
-};
+										};
 
-	res.render('/');
+	req.session["username"] = req.body.username;
+	res.redirect('/homepage');
 }

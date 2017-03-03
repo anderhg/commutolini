@@ -3,7 +3,7 @@ var data = require("../data.json");
 
 exports.addSchedule = function(req, res) { 
 
-	if (req.session.username == undefined){
+	if (req.session["username"] == undefined){
 		console.log('hjsdf');
 		res.redirect('/');
 		return;

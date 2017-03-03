@@ -2,7 +2,7 @@ var data = require('../data.json');
 
 exports.viewRegister = function(req, res) {
 
-	if (req.session.username != undefined){
+	if (req.session["username"] != undefined){
 		res.redirect('/homepage');
 		return;
 	}
