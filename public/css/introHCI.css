@@ -534,3 +534,31 @@ input::-webkit-input-placeholder {
   top: 7px;
   text-align: center;
 }
+
+.requestCommute{
+  float: right;
+}
+
+.modal .modal-header {
+  border-bottom: none;
+  position: relative;
+}
+.modal .modal-header .btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.modal .modal-footer {
+  border-top: none;
+  padding: 0;
+}
+
+.modal .modal-header .modal-title{
+  text-align: center;
+}
+#sendRequest {
+  float: left;
+}

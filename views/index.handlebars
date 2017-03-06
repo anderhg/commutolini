@@ -155,13 +155,69 @@
             </table>
             {{/with}}
           
-            <div class="btn btn-primary contactButton" id='contact{{username}}' role="button">Contact</div>
+            <div>
+              <button class="btn btn-primary contactButton" id='contact{{username}}' role="button">Contact</button>
+              <button href="#myModal" class="btn btn-success requestCommute" id='commute{{username}}' role="button">Request Commute</button>
+            </div>
         </div>
       </div>
     </div>
   {{/each}}
 </div>
   
+
+    
+    
+  <div id="myModal" class="modal fade in">
+        <div class="modal-dialog">
+            <div class="modal-content">
+ 
+                <div class="modal-header">
+                    <a class="btn btn-default closeModal"><span class="glyphicon glyphicon-remove"></span></a>
+                    <h4 class="modal-title">Commute Request</h4>
+                </div>
+                <div class="modal-body">
+                    <h6>Pick the days for which you wish to request a commute.</h6>
+
+                     <table class="requestTable" id='requestTable'>
+                      <thead>
+                      </thead>
+                      <tbody>
+                        <tr style=' text-align:center'>
+                          <td>Monday &nbsp</td>
+                          <td>Tuesday &nbsp</td>
+                          <td>Wednesday &nbsp</td>
+                          <td>Thursday &nbsp</td>
+                          <td>Friday &nbsp</td>
+                        </tr>
+
+                        <tr style=' text-align:center'>
+                          <form action="">
+                            <td><input type="checkbox" name="Day" value="Monday"></td>
+                            <td><input type="checkbox" name="Day" value="Tuesday"></td>
+                            <td><input type="checkbox" name="Day" value="Wednesday"></td>
+                            <td><input type="checkbox" name="Day" value="Thursday"></td>
+                            <td><input type="checkbox" name="Day" value="Friday"></td>
+                          </form>
+                        </tr>
+
+                      </tbody>
+                    </table>
+
+                    
+                </div>
+                <div class="modal-footer">
+                  <div class="btn-toolbar">
+                      <button class="btn btn-primary" id="sendRequest"><span class="glyphicon glyphicon-check"></span> Send</button>
+                      <button class="btn btn-danger closeRequest closeModal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                    </div>
+                </div>
+ 
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dalog -->
+    </div><!-- /.modal -->
+    
+
 
 
       

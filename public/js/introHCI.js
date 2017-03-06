@@ -26,7 +26,8 @@ $(document).ready(function() {
 	$('#starFive').mouseenter(fiveStar);
 	$('#starFive').mouseleave(removeFiveStar);
 	$('#starFive').click(fiveStarClick);
-	$('div.contactButton').click(contactClick);
+	$('.contactButton').click(contactClick);
+	$('.requestCommute').click(requestCommuteClick);
 	$('#username-email').keypress(function(event) {
 	    if (event.keyCode == 13 || event.which == 13) {
 	        login();
@@ -436,8 +437,28 @@ function contactClick(){
 		$('#'+id).text("Contact");
 		$('#contactInfo'+username).hide();
 		$('#info'+ username).show();
-	}
+	}	
+}
 
-	
-	
+function requestCommuteClick(){
+	console.log($(this).attr('id').trim());
+	var modal = document.getElementById('myModal');
+	modal.style.display = 'block';
+
+	//Closes the modal when user clicks outside of the modal box.
+	window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+
+    //Closes the modal when user clicks X or close button. 
+    var close = document.getElementsByClassName("closeModal");
+    for (var i=0; i<close.length; i++){
+	    close[i].onclick = function(){
+	    	modal.style.display = "none";
+	    }
+    	
+    }
+}	
+
 }
