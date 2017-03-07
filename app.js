@@ -22,6 +22,7 @@ var register = require('./routes/register');
 var reg = require('./routes/reg');
 var giveRating = require('./routes/giveRating');
 var commuteRequest = require('./routes/commuteRequest');
+var homepage = require('./routes/homepage');
 // Example route
 // var user = require('./routes/user');
 
@@ -59,7 +60,8 @@ app.get('/', login.viewLogin);
 app.get('/schedule', schedule.viewSchedule);
 app.get('/grid', schedule.viewTable);
 app.get('/profile', profile.viewProfile);
-app.get('/homepage', index.view);
+app.get('/homepage', homepage.view);
+app.get('/browse', index.view);
 app.post('/add', add.addSchedule);
 app.get('/data', data.dataInfo);
 app.post('/login', username.login);
