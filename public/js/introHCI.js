@@ -487,7 +487,7 @@ function commuteRequestCallback(username, result){
 	var modal = document.getElementById('modal'+username);
 
 	var days = document.getElementsByClassName("requestDays"+username);
-    var requestedDays = []
+    var requestedDays = [];
 
     var pointsNeeded = 0;
 
@@ -500,12 +500,13 @@ function commuteRequestCallback(username, result){
     		requestedDays[days[i].value] = 0;
     	}
     }
-    var currentUser = getCookie("username");
+
+	var currentUser = getCookie("username");
 
     console.log(requestedDays['Monday']);
 
     if(pointsNeeded>result.users[currentUser].rides){
-    	$('#alert').html('<div class="alert alert-info alert-dismissable"><a class="panel-close close" data-dismiss="alert">×</a><i class="glyphicon glyphicon-ban-circle"></i>Not enough rides available.</div>');
+    	$('#alert'+username).html('<div class="alert alert-info alert-dismissable"><a class="panel-close close" data-dismiss="alert">×</a><i class="glyphicon glyphicon-ban-circle"></i>Not enough rides available.</div>');
     } else{
     	console.log(requestedDays);
     	modal.style.display = "none";
