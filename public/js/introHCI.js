@@ -5,6 +5,8 @@ $(document).ready(function() {
 	initializePage();
 	console.log(document.cookie);
 	document.cookie = '_ga=; Max-Age=0';
+	document.cookie = '__utmx=; Max-Age=0';
+	document.cookie = '__utmxx=; Max-Age=0';
 	$("#saveSchedule").click(saveSchedule);
 	$("#login").click(login);
 	$("#logoff").click(logoff);
@@ -100,7 +102,7 @@ function checkData(result){
 
 	var path = window.location.pathname;
 	checkStars(result);
-	var currentUser = document.cookie.split('=')[1];
+	var currentUser = getCookie("username");
 	
 	if (path == "/schedule"){
 		for (var i=0; i<5; i++){
@@ -144,7 +146,7 @@ function checkData(result){
 function checkSelectedValues(result,seatsID) {
 
 	var liste = ["#MSeats","#TuSeats","#WSeats","#ThSeats","#FSeats"];
-	var username = document.cookie.split('=')[1];
+	var username = getCookie("username");
 	var Seats = result.schedule[username].days[seatsID].seats;
 
 
@@ -167,7 +169,7 @@ function checkSelectedValues(result,seatsID) {
 }
 
 function checkAddresses(result){
-	var username = document.cookie.split('=')[1];
+	var username = getCookie("username");
 	var home = result.users[username].home;
 	var dest = result.users[username].destination;
 
@@ -368,9 +370,9 @@ function oneStarClick(){
 	if (path != "/profile"){
 		receiver = path.slice(path.lastIndexOf('/')+1);
 	}else{
-		receiver = document.cookie.split('=')[1];
+		receiver = getCookie("username");
 	}
-	$.post('/giveRating',{'stars':1, 'giver':document.cookie.split('=')[1], 'receiver':receiver}, ratingCallback());
+	$.post('/giveRating',{'stars':1, 'giver':getCookie("username"), 'receiver':receiver}, ratingCallback());
 }
 
 function twoStarClick(){
@@ -380,9 +382,9 @@ function twoStarClick(){
 	if (path != "/profile"){
 		receiver = path.slice(path.lastIndexOf('/')+1);
 	}else{
-		receiver = document.cookie.split('=')[1];
+		receiver = getCookie("username");
 	}
-	$.post('/giveRating',{'stars':2, 'giver':document.cookie.split('=')[1], 'receiver':receiver}, ratingCallback());
+	$.post('/giveRating',{'stars':2, 'giver':getCookie("username"), 'receiver':receiver}, ratingCallback());
 }
 
 function threeStarClick(){
@@ -392,9 +394,9 @@ function threeStarClick(){
 	if (path != "/profile"){
 		receiver = path.slice(path.lastIndexOf('/')+1);
 	}else{
-		receiver = document.cookie.split('=')[1];
+		receiver = getCookie("username");
 	}
-	$.post('/giveRating',{'stars':3, 'giver':document.cookie.split('=')[1], 'receiver':receiver}, ratingCallback());
+	$.post('/giveRating',{'stars':3, 'giver':getCookie("username"), 'receiver':receiver}, ratingCallback());
 }
 
 function fourStarClick(){
@@ -404,9 +406,9 @@ function fourStarClick(){
 	if (path != "/profile"){
 		receiver = path.slice(path.lastIndexOf('/')+1);
 	}else{
-		receiver = document.cookie.split('=')[1];
+		receiver = getCookie("username");
 	}
-	$.post('/giveRating',{'stars':4, 'giver':document.cookie.split('=')[1], 'receiver':receiver}, ratingCallback());
+	$.post('/giveRating',{'stars':4, 'giver':getCookie("username"), 'receiver':receiver}, ratingCallback());
 }
 
 function fiveStarClick(){
@@ -416,9 +418,9 @@ function fiveStarClick(){
 	if (path != "/profile"){
 		receiver = path.slice(path.lastIndexOf('/')+1);
 	}else{
-		receiver = document.cookie.split('=')[1];
+		receiver = getCookie("username");
 	}
-	$.post('/giveRating',{'stars':5, 'giver':document.cookie.split('=')[1], 'receiver':receiver}, ratingCallback());
+	$.post('/giveRating',{'stars':5, 'giver':getCookie("username"), 'receiver':receiver}, ratingCallback());
 }
 
 function ratingCallback(){
@@ -500,7 +502,7 @@ function commuteRequestCallback(username, result){
     		requestedDays[days[i].value] = 0;
     	}
     }
-    var currentUser = document.cookie.split('=')[1];
+    var currentUser = getCookie("username");
 
     console.log(result.users[currentUser].rides);
 
@@ -511,4 +513,20 @@ function commuteRequestCallback(username, result){
     	modal.style.display = "none";
     }
  
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
 }
