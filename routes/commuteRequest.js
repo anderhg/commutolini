@@ -2,16 +2,43 @@ var data = require('../data.json');
 
 exports.sendRequest = function(req, res){
 	
-	var request = {
-		"sender": req.body.sender,
-		"receiver": req.body.receiver,
-		"Monday": req.body.monday,
-		"Tuesday": req.body.tuesday,
-		"Wednesday": req.body.wednesday,
-		"Thursday": req.body.thursday,
-		"Friday": req.body.friday
-	};
 
 	var sender = req.body.sender;
-	data.users[req.body.receiver].requests[sender] = request;
+	var receiver = req.body.receiver;
+
+	var request = {
+		"sender": sender,
+		"receiver": receiver,
+		"day": ""
+	}
+	data.users[receiver].requests = [] 
+
+
+
+	if (req.body.monday == 1){
+		var fakeData = JSON.parse(JSON.stringify(request));
+		fakeData.day = 'Monday';
+		data.users[receiver].requests.push(fakeData);
+	}
+	if (req.body.tuesday == 1){
+		var fakeData = JSON.parse(JSON.stringify(request));
+		fakeData.day = 'Tuesday';
+		data.users[receiver].requests.push(fakeData);
+	}
+	if (req.body.wednesday == 1){
+		var fakeData = JSON.parse(JSON.stringify(request));
+		fakeData.day = 'Wedensday';
+		data.users[receiver].requests.push(fakeData);
+	}
+	if (req.body.thursday == 1){
+		var fakeData = JSON.parse(JSON.stringify(request));
+		fakeData.day = 'Thursday';
+		data.users[receiver].requests.push(fakeData);
+	}
+	if (req.body.friday == 1){
+		var fakeData = JSON.parse(JSON.stringify(request));
+		fakeData.day = 'Friday';
+		data.users[receiver].requests.push(fakeData);
+	}
+
 }

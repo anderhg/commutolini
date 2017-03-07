@@ -486,7 +486,7 @@ function commuteRequestCallback(username, result){
 	var modal = document.getElementById('modal'+username);
 
 	var days = document.getElementsByClassName("requestDays"+username);
-    var requestedDays = []
+    var requestedDays = [];
 
     var pointsNeeded = 0;
 
@@ -499,7 +499,8 @@ function commuteRequestCallback(username, result){
     		requestedDays[days[i].value] = 0;
     	}
     }
-    var currentUser = getCookie("username");
+
+	var currentUser = getCookie("username");
 
     console.log(requestedDays['Monday']);
 
