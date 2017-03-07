@@ -21,6 +21,7 @@ var editProfile = require('./routes/editProfile');
 var register = require('./routes/register');
 var reg = require('./routes/reg');
 var giveRating = require('./routes/giveRating');
+var commuteRequest = require('./routes/commuteRequest');
 // Example route
 // var user = require('./routes/user');
 
@@ -66,6 +67,7 @@ app.post('/logoff', username.logoff);
 app.get('/profile/:username', profile.viewUserProfile);
 app.get('/editProfile', editProfile.viewEditProfile);
 app.post('/editProfileInfo', editProfile.editProfileInfo);
+app.post('/commuteRequest', commuteRequest.sendRequest);
 
 app.get('/register', register.viewRegister);
 app.post('/reg', reg.registerUser);

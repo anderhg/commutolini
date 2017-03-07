@@ -14,7 +14,8 @@ exports.registerUser = function(req, res) { 
 		"lastName": req.body.lastName,
 		"email": req.body.email,
 		"rides": "0",
-		"rating": {}
+		"rating": {},
+		"requests": {}
 	}
 
 

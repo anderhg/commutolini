@@ -504,15 +504,29 @@ function commuteRequestCallback(username, result){
     }
     var currentUser = getCookie("username");
 
-    console.log(result.users[currentUser].rides);
+    console.log(requestedDays['Monday']);
 
     if(pointsNeeded>result.users[currentUser].rides){
     	$('#alert').html('<div class="alert alert-info alert-dismissable"><a class="panel-close close" data-dismiss="alert">×</a><i class="glyphicon glyphicon-ban-circle"></i>Not enough rides available.</div>');
     } else{
     	console.log(requestedDays);
     	modal.style.display = "none";
+    	var request = {
+    		'sender': currentUser,
+    		'receiver': username,
+    		'monday': requestedDays['Monday'],
+    		'tuesday': requestedDays['Tuesday'],
+    		'wednesday': requestedDays['Wednesday'],
+    		'thursday': requestedDays['Thursday'],
+    		'friday': requestedDays['Friday']
+    	};
+    	$.post('/commuteRequest', request, postRequestCallback);
     }
  
+}
+
+function postRequestCallback(result){
+	window.location.href = "/homepage";
 }
 
 function getCookie(cname) {

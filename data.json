@@ -197,6 +197,7 @@
 				"age": "22",
 				"rides": "10",
 				"rating": {"oyvikjo":3},
+				"requests":{},
 				"address": "4467 Dawes Street, San Diego, CA 92109",
 				"home": "Pacific Beach",
 				"destination": "UCSD",
@@ -215,6 +216,7 @@
 				"rides": "4",
 				"address": "4095 Honeycutt Street, San Diego, CA 92109",
 				"rating": {},
+				"requests":{},
 				"home": "Pacific Beach",
 				"destination": "UCSD",
 				"email": "anderhg@stud.ntnu.no",
@@ -232,6 +234,7 @@
 				"rides": "1",
 				"address": "1412 Graham Street, San Diego, CA 92109",
 				"rating": {"stianvale":5,"anderhg":3},
+				"requests":{},
 				"home": "Pacific Beach",
 				"destination": "UCSD",
 				"email": "oyvikjo@stud.ntnu.no",
@@ -248,6 +251,10 @@
 		},
 
 		"sessions":{
+
+		},
+
+		"requests":{
 
 		}
 		
