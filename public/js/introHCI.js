@@ -28,6 +28,7 @@ $(document).ready(function() {
 	$('#starFive').click(fiveStarClick);
 	$('.contactButton').click(contactClick);
 	$('.requestCommute').click(requestCommuteClick);
+	$('.sendRequest').click(commuteRequest);
 	$('#username-email').keypress(function(event) {
 	    if (event.keyCode == 13 || event.which == 13) {
 	        login();
@@ -440,16 +441,19 @@ function contactClick(){
 	}	
 }
 
+
 function requestCommuteClick(){
-	console.log($(this).attr('id').trim());
-	var modal = document.getElementById('myModal');
+	var username = $(this).attr('id').trim();
+
+	var modal = document.getElementById('modal'+username);
 	modal.style.display = 'block';
 
 	//Closes the modal when user clicks outside of the modal box.
 	window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
-    }
+    	}
+	}
 
     //Closes the modal when user clicks X or close button. 
     var close = document.getElementsByClassName("closeModal");
@@ -457,8 +461,53 @@ function requestCommuteClick(){
 	    close[i].onclick = function(){
 	    	modal.style.display = "none";
 	    }
-    	
-    }
-}	
 
+    }
+
+
+
+}
+
+function commuteRequest(){
+	var id = $(this).attr('id').trim();
+	var username = id.slice(11);
+
+	var callback = function(response) {
+		commuteRequestCallback(username, response);
+	};
+	$.get('data', callback);
+}
+
+
+    
+
+function commuteRequestCallback(username, result){
+
+	var modal = document.getElementById('modal'+username);
+
+	var days = document.getElementsByClassName("requestDays"+username);
+    var requestedDays = []
+
+    var pointsNeeded = 0;
+
+    for (var i=0; i<days.length; i++){
+    	if (days[i].checked){
+    		requestedDays[days[i].value] = 1;
+    		days[i].checked = false;
+    		pointsNeeded++;
+    	} else {
+    		requestedDays[days[i].value] = 0;
+    	}
+    }
+    var currentUser = document.cookie.split('=')[1];
+
+    console.log(result.users[currentUser].rides);
+
+    if(pointsNeeded>result.users[currentUser].rides){
+    	$('#alert').html('<div class="alert alert-info alert-dismissable"><a class="panel-close close" data-dismiss="alert">×</a><i class="glyphicon glyphicon-ban-circle"></i>Not enough rides available.</div>');
+    } else{
+    	console.log(requestedDays);
+    	modal.style.display = "none";
+    }
+ 
 }

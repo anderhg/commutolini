@@ -559,6 +559,4 @@ input::-webkit-input-placeholder {
 .modal .modal-header .modal-title{
   text-align: center;
 }
-#sendRequest {
-  float: left;
-}
+

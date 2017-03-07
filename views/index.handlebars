@@ -157,18 +157,13 @@
           
             <div>
               <button class="btn btn-primary contactButton" id='contact{{username}}' role="button">Contact</button>
-              <button href="#myModal" class="btn btn-success requestCommute" id='commute{{username}}' role="button">Request Commute</button>
+              <button class="btn btn-success requestCommute" id='{{username}}' role="button">Request Commute</button>
             </div>
         </div>
       </div>
     </div>
-  {{/each}}
-</div>
-  
 
-    
-    
-  <div id="myModal" class="modal fade in">
+      <div id="modal{{username}}" class="modal fade in">
         <div class="modal-dialog">
             <div class="modal-content">
  
@@ -178,6 +173,9 @@
                 </div>
                 <div class="modal-body">
                     <h6>Pick the days for which you wish to request a commute.</h6>
+                    <div id='alert'>
+
+                    </div>
 
                      <table class="requestTable" id='requestTable'>
                       <thead>
@@ -193,11 +191,11 @@
 
                         <tr style=' text-align:center'>
                           <form action="">
-                            <td><input type="checkbox" name="Day" value="Monday"></td>
-                            <td><input type="checkbox" name="Day" value="Tuesday"></td>
-                            <td><input type="checkbox" name="Day" value="Wednesday"></td>
-                            <td><input type="checkbox" name="Day" value="Thursday"></td>
-                            <td><input type="checkbox" name="Day" value="Friday"></td>
+                            <td><input class = "requestDays{{username}}" type="checkbox" name="Day" value="Monday"></td>
+                            <td><input class = "requestDays{{username}}" type="checkbox" name="Day" value="Tuesday"></td>
+                            <td><input class = "requestDays{{username}}" type="checkbox" name="Day" value="Wednesday"></td>
+                            <td><input class = "requestDays{{username}}" type="checkbox" name="Day" value="Thursday"></td>
+                            <td><input class = "requestDays{{username}}" type="checkbox" name="Day" value="Friday"></td>
                           </form>
                         </tr>
 
@@ -208,8 +206,8 @@
                 </div>
                 <div class="modal-footer">
                   <div class="btn-toolbar">
-                      <button class="btn btn-primary" id="sendRequest"><span class="glyphicon glyphicon-check"></span> Send</button>
-                      <button class="btn btn-danger closeRequest closeModal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                      <button class="btn btn-primary sendRequest" style='float:left' id="sendRequest{{username}}"><span class="glyphicon glyphicon-check"></span> Send</button>
+                      <button class="btn btn-danger closeModal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
                     </div>
                 </div>
  
@@ -217,6 +215,13 @@
         </div><!-- /.modal-dalog -->
     </div><!-- /.modal -->
     
+  {{/each}}
+</div>
+  
+
+    
+    
+
 
 
 
