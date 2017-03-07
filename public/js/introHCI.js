@@ -28,6 +28,7 @@ $(document).ready(function() {
 	$('.contactButton').click(contactClick);
 	$('.requestCommute').click(requestCommuteClick);
 	$('.sendRequest').click(commuteRequest);
+	$('#emailUser').click(openMailClient);
 	$('#username-email').keypress(function(event) {
 	    if (event.keyCode == 13 || event.which == 13) {
 	        login();
@@ -540,4 +541,10 @@ function getCookie(cname) {
         }
     }
     return "";
+}
+
+function openMailClient(){
+	var id = $(this).attr('id').trim();
+	var email = $('#'+id).text().trim();
+	window.location.href = "mailto:"+email+"?subject=Commutolini Contact";
 }

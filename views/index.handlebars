@@ -46,7 +46,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="/homepage"><i class="glyphicon glyphicon-home"></i>Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="/schedule"><i class="glyphicon glyphicon-list-alt"></i>Schedule<span class="sr-only">(current)</span></a></li>
+        <li><a href="/schedule"><i class="glyphicon glyphicon-list-alt"></i>My Schedule<span class="sr-only">(current)</span></a></li>
         <li><a href="/profile"><i class="glyphicon glyphicon-user"></i>Profile<span class="sr-only">(current)</span></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -82,7 +82,7 @@
           <img class = "card-img-top" src="{{#unless image}}/images/pool.jpg{{/unless}}{{image}}" id="userimg" alt ="Card image cap">
         </a>
         <div class="caption">
-          <h4><a href="/profile/{{username}}"> {{firstName}} {{lastName}}</a></h4> 
+          <h4><a href="/profile/{{username}}"> {{firstName}} {{lastName}}, {{age}}</a></h4> 
           <h5 style='text-align:center; font-weight:bold'> {{home}}  &nbsp<i class="glyphicon glyphicon-arrow-right" id="rightArrow"></i> {{destination}} </h5>
             {{/with}}
             <table class="table" id='info{{username}}'>
@@ -129,9 +129,9 @@
                   <td>&nbsp</td>
                   <td>&nbsp</td>
                 </tr>
-                <tr style=' text-align:center'>
+                <tr style=' text-align:center' id="emailUser">
                   <td><i class="glyphicon glyphicon-envelope" id="envelope"></i></td>
-                  <td>{{email}}</td>
+                  <td id="emailUser"><a>{{email}}</a></td>
                 </tr>
                 <tr>
                   <td>&nbsp</td>
