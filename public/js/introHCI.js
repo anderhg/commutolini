@@ -504,7 +504,7 @@ function commuteRequestCallback(username, result){
     console.log(requestedDays['Monday']);
 
     if(pointsNeeded>result.users[currentUser].rides){
-    	$('#alert').html('<div class="alert alert-info alert-dismissable"><a class="panel-close close" data-dismiss="alert">×</a><i class="glyphicon glyphicon-ban-circle"></i>Not enough rides available.</div>');
+    	$('#alert'+username).html('<div class="alert alert-info alert-dismissable"><a class="panel-close close" data-dismiss="alert">×</a><i class="glyphicon glyphicon-ban-circle"></i>Not enough rides available.</div>');
     } else{
     	console.log(requestedDays);
     	modal.style.display = "none";
