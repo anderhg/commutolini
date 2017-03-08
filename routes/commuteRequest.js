@@ -23,6 +23,7 @@ exports.sendRequest = function(req, res){
 		fakeData.start = data.schedule[receiver].days[0].start;
 		fakeData.end = data.schedule[receiver].days[0].end;
 		data.users[receiver].requests.push(fakeData);
+		data.users[sender].rides -= 1;
 	}
 	if (req.body.tuesday == 1){
 		var fakeData = JSON.parse(JSON.stringify(request));
@@ -30,6 +31,7 @@ exports.sendRequest = function(req, res){
 		fakeData.start = data.schedule[receiver].days[1].start;
 		fakeData.end = data.schedule[receiver].days[1].end;
 		data.users[receiver].requests.push(fakeData);
+		data.users[sender].rides -= 1;
 	}
 	if (req.body.wednesday == 1){
 		var fakeData = JSON.parse(JSON.stringify(request));
@@ -37,6 +39,7 @@ exports.sendRequest = function(req, res){
 		fakeData.start = data.schedule[receiver].days[2].start;
 		fakeData.end = data.schedule[receiver].days[2].end;
 		data.users[receiver].requests.push(fakeData);
+		data.users[sender].rides -= 1;
 	}
 	if (req.body.thursday == 1){
 		var fakeData = JSON.parse(JSON.stringify(request));
@@ -44,6 +47,7 @@ exports.sendRequest = function(req, res){
 		fakeData.start = data.schedule[receiver].days[3].start;
 		fakeData.end = data.schedule[receiver].days[3].end;
 		data.users[receiver].requests.push(fakeData);
+		data.users[sender].rides -= 1;
 	}
 	if (req.body.friday == 1){
 		var fakeData = JSON.parse(JSON.stringify(request));
@@ -51,6 +55,7 @@ exports.sendRequest = function(req, res){
 		fakeData.start = data.schedule[receiver].days[4].start;
 		fakeData.end = data.schedule[receiver].days[4].end;
 		data.users[receiver].requests.push(fakeData);
+		data.users[sender].rides -= 1;
 	}
 
 }
@@ -86,7 +91,9 @@ exports.acceptRequest = function(req, res){
 		data.users[sender].passengerRides.push(request);
 	}
 
+	data.users[receiver].rides += 1;
 	deleteObjectFromRequests(sender, receiver, day);
+	console.log("haha");
 	res.redirect("/homepage");
 
 }
@@ -100,7 +107,9 @@ exports.declineRequest = function(req, res){
 	var start = req.body.start;
 	var end = req.body.end;
 
+	data.users[sender].rides += 1;
 	deleteObjectFromRequests(sender, receiver, day);
+	console.log("haha");
 	res.redirect("/homepage");
 
 }

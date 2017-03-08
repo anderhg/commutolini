@@ -615,5 +615,5 @@ function acceptCallback(response){
 }
 
 function declineCallback(response){
-	
+	window.location.href = "/homepage";
 }
