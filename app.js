@@ -70,6 +70,9 @@ app.get('/profile/:username', profile.viewUserProfile);
 app.get('/editProfile', editProfile.viewEditProfile);
 app.post('/editProfileInfo', editProfile.editProfileInfo);
 app.post('/commuteRequest', commuteRequest.sendRequest);
+app.post('/acceptRequest', commuteRequest.acceptRequest);
+app.post('/declineRequest', commuteRequest.declineRequest);
+
 
 app.get('/register', register.viewRegister);
 app.post('/reg', reg.registerUser);

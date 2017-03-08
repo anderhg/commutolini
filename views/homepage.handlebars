@@ -46,7 +46,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="/homepage"><i class="glyphicon glyphicon-home"></i>Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="/schedule"><i class="glyphicon glyphicon-list-alt"></i>Schedule<span class="sr-only">(current)</span></a></li>
+        <li><a href="/browse"><i class="glyphicon glyphicon-list-alt"></i>Browse<span class="sr-only">(current)</span></a></li>
+            <li><a href="/schedule"><i class="glyphicon glyphicon-calendar"></i>My Schedule<span class="sr-only">(current)</span></a></li>
         <li><a href="/profile"><i class="glyphicon glyphicon-user"></i>Profile<span class="sr-only">(current)</span></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -72,20 +73,24 @@
 	  </div>
 
     <div class="row">
-      <div class="col-sm-6 col-md-4">
+      <div class="col-sm-12 col-md-6">
         {{#with currentUser}}
         {{#each requests}}
         {{#with (lookup ../../users sender)}}
 
         <div class="thumbnail">
-          <img src="{{image}}" alt="...">
-          <div class="caption">
-            <h3>{{firstName}} {{lastName}}</h3>
-            <p>Address: {{address}}</p>
-            <p><a href="#" class="btn btn-primary" role="button">Accept</a> <a href="#" class="btn btn-default" role="button">Decline</a></p>
+<!--           <img src="{{image}}" alt="..." class="img-circle homepage">
+ -->          <div class="caption">
+            
+              <h4><a href="/profile/{{username}}">{{firstName}} {{lastName}}</a>{{/with}} - {{day}} </h4>
+            
+            {{#with (lookup ../../users sender)}}
+            <p><strong>Address:</strong> {{address}}</p>
+            {{/with}}
+            <p id="{{sender}}{{day}}Time"><strong>Time:</strong> {{start}} - {{end}}</p>
+            <p><a href="#" class="btn btn-primary accept" role="button" id="{{sender}}{{day}}Accept">Accept</a> <a href="#" class="btn btn-default decline" role="button" id="{{sender}}{{day}}Decline">Decline</a></p>
           </div>
         </div>
-        {{/with}}
         {{/each}}
         {{/with}}
       </div>
@@ -95,6 +100,47 @@
       <h2> Upcoming commutes </h2>
     </div>
 
+    <div class="row">
+      <div class="col-xs-20 col-sm-12 col-md-12 col-lg-6">
+        {{#with currentUser}}
+        {{#each acceptedRequests}}
+        {{#with (lookup ../../users sender)}}
+
+        <div class="thumbnail">
+            <div class="col-xs-4">
+              <img src="{{image}}" alt="..." class="img-circle img-container homepage">
+            </div>
+            <div class="col-xs-16">
+            <div class="caption">
+            
+              <h4><a href="/profile/{{username}}">{{firstName}} {{lastName}}</a>{{/with}} - {{day}} </h4>
+              
+              {{#with (lookup ../../users sender)}}
+              <p><strong>Address:</strong> {{address}}</p>
+              {{/with}}
+              <p id="{{sender}}{{day}}Time"><strong>Time:</strong> {{start}} - {{end}}</p>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+        {{/with}}
+        {{#with currentUser}}
+        {{#each passengerRides}}
+        {{#with (lookup ../../users receiver)}}
+
+        <div class="thumbnail">
+<!--           <img src="{{image}}" alt="..." class="img-circle homepage">
+ -->          <div class="caption">
+            
+              <h4><a href="/profile/{{username}}">{{firstName}} {{lastName}}</a>{{/with}} - {{day}} </h4>
+            
+            <p id="{{sender}}{{day}}Time"><strong>Time:</strong> {{start}} - {{end}}</p>
+          </div>
+        </div>
+        {{/each}}
+        {{/with}}
+      </div>
+    </div>
 
   
 

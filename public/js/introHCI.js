@@ -10,6 +10,8 @@ $(document).ready(function() {
 	$("#saveProfile").click(saveProfile);
 	$('#register').click(register);
 	checkProfile();
+	$(".accept").click(acceptRequest);
+	$(".decline").click(declineRequest);	
 	$('#starOne').mouseenter(oneStar);
 	$('#starOne').mouseleave(removeOneStar);
 	$('#starOne').click(oneStarClick);
@@ -548,4 +550,70 @@ function openMailClient(){
 	var id = $(this).attr('id').trim();
 	var email = $('#'+id).text().trim();
 	window.location.href = "mailto:"+email+"?subject=Commutolini Contact";
+}
+
+function acceptRequest(){
+	event.preventDefault();
+	var id = $(this).attr('id').trim();
+	var sender = id.slice(0,indexOfFirstUpperCase(id));
+	var idMinusSender = id.slice(indexOfFirstUpperCase(id));
+	var day = idMinusSender.slice(0,indexOfFirstUpperCase(idMinusSender.slice(1))+1);
+	var receiver = getCookie("username");
+	var timeText = document.getElementById(sender+day+"Time").innerHTML;
+	var start = timeText.slice(23,28);
+	var end = timeText.slice(31,36);
+
+
+	var object = {
+		"sender": sender,
+		"receiver": receiver,
+		"day": day,
+		"start": start,
+		"end": end
+	}
+
+	console.log('here');
+	$.post('/acceptRequest', object, acceptCallback);
+
+
+}
+
+function declineRequest(){
+	event.preventDefault();
+	var id = $(this).attr('id').trim();
+	var sender = id.slice(0,indexOfFirstUpperCase(id));
+	var idMinusSender = id.slice(indexOfFirstUpperCase(id));
+	var day = idMinusSender.slice(0,indexOfFirstUpperCase(idMinusSender.slice(1))+1);
+	var receiver = getCookie("username");
+
+	var object = {
+		"sender": sender,
+		"receiver": receiver,
+		"day": day
+	}
+
+	$.post('/declineRequest', object, declineCallback);
+}
+
+function indexOfFirstUpperCase(string){
+	for (var count = 0; count < string.length; count = count +1){
+        if (isUpperCase(string.charAt(count))){ 
+            return count;       
+        }
+    }
+    return -1;
+}
+
+function isUpperCase(aCharacter)    
+{    
+    return (aCharacter >= 'A') && (aCharacter <= 'Z');
+}
+
+function acceptCallback(response){
+	console.log("Lol");
+	window.location.href = "/homepage";
+}
+
+function declineCallback(response){
+	
 }

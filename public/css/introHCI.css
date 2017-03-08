@@ -560,3 +560,10 @@ input::-webkit-input-placeholder {
   text-align: center;
 }
 
+.img-circle.homepage {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top: 20px;
+  right: 15px;
+}
