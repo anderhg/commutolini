@@ -55,7 +55,7 @@
 					"id": "collapseOne",
 					"start": "09:00",
 					"end": "17:00",
-					"seats": "0"
+					"seats": "1"
 					},
 					{
 					"day": "Tuesday",
@@ -63,7 +63,7 @@
 					"id": "collapseTwo",
 					"start": "09:00",
 					"end": "17:00",
-					"seats": "0"
+					"seats": "1"
 					},
 					{
 					"day": "Wednesday",
@@ -118,7 +118,7 @@
 					"id": "collapseThree",
 					"start": "09:00",
 					"end": "17:00",
-					"seats": "0"
+					"seats": "4"
 					},
 					{
 					"day": "Thursday",
@@ -126,7 +126,7 @@
 					"id": "collapseFour",
 					"start": "09:00",
 					"end": "19:00",
-					"seats": "0"
+					"seats": "4"
 					},
 					{
 					"day": "Friday",
@@ -155,7 +155,7 @@
 					"id": "collapseTwo",
 					"start": "07:00",
 					"end": "17:00",
-					"seats": "0"
+					"seats": "3"
 					},
 					{
 					"day": "Wednesday",
@@ -179,7 +179,7 @@
 					"id": "collapseFive",
 					"start": "09:00",
 					"end": "17:00",
-					"seats": "0"
+					"seats": "3"
 					}
 				]	
 			}

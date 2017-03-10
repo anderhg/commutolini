@@ -71,7 +71,6 @@ function initializePage() {
 function saveSchedule() {
 
 	event.preventDefault();
-	ga("send", "event", 'save', 'click');
 
 
 	var data = {
