@@ -76,7 +76,8 @@
 
 <div class = "row">
   {{#each schedule}}
-    {{#with (lookup ../users username)}}
+    {{#unless (if_eq ../currentUser.username username)}}
+    {{#with (lookup ../../users username)}}
     <div class="col-sm-6 col-md-4">
       <div class="thumbnail">
         <a href="/profile/{{username}}">
@@ -117,7 +118,7 @@
               </tbody>
             </table>
 
-            {{#with (lookup ../users username)}}
+            {{#with (lookup ../../users username)}}
             <table class="contactTable" id='contactInfo{{username}}' style='display:none'>
               <thead>
               </thead>
@@ -164,6 +165,7 @@
       </div>
     </div>
 
+      
       <div id="modal{{username}}" class="modal fade in">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -177,6 +179,11 @@
                     <div id='alert{{username}}'>
 
                     </div>
+                    {{#with (lookup ../../users ../../currentUser.username)}}
+                    <div class="avaiable-rides">
+                    <p>Available rides: {{rides}}</p>
+                    </div>
+                    {{/with}}
 
                      <table class="requestTable" id='requestTable'>
                       <thead>
@@ -215,7 +222,8 @@
             </div><!-- /.modal-content -->
         </div><!-- /.modal-dalog -->
     </div><!-- /.modal -->
-    
+  
+  {{/unless}}
   {{/each}}
 </div>
   

@@ -102,7 +102,7 @@
 					"id": "collapseOne",
 					"start": "08:00",
 					"end": "17:00",
-					"seats": "0"
+					"seats": "1"
 					},
 					{
 					"day": "Tuesday",
@@ -110,7 +110,7 @@
 					"id": "collapseTwo",
 					"start": "09:00",
 					"end": "16:00",
-					"seats": "0"
+					"seats": "1"
 					},
 					{
 					"day": "Wednesday",
@@ -181,6 +181,53 @@
 					"end": "17:00",
 					"seats": "3"
 					}
+
+				]	
+			},
+			"henmo":{
+				"username": "henmo",
+				"days": [
+					{
+					"day": "Monday",
+					"code": "M",
+					"id": "collapseOne",
+					"start": "08:00",
+					"end": "19:00",
+					"seats": "1"
+					},
+					{
+					"day": "Tuesday",
+					"code": "Tu",
+					"id": "collapseTwo",
+					"start": "07:00",
+					"end": "10:00",
+					"seats": "4"
+					},
+					{
+					"day": "Wednesday",
+					"code": "W",
+					"id": "collapseThree",
+					"start": "10:00",
+					"end": "16:00",
+					"seats": "1"
+					},
+					{
+					"day": "Thursday",
+					"code": "Th",
+					"id": "collapseFour",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": "1"
+					},
+					{
+					"day": "Friday",
+					"code": "F",
+					"id": "collapseFive",
+					"start": "09:00",
+					"end": "15:00",
+					"seats": "3"
+					}
+
 				]	
 			}
 		},
@@ -197,11 +244,59 @@
 				"age": "22",
 				"rides": 10,
 				"rating": {"oyvikjo":3},
-				"requests":{},
+				"requests":[
+        {
+          "sender": "anderhg",
+          "receiver": "stianvale",
+          "start": "09:00",
+          "end": "17:00",
+          "day": "Monday"
+        },
+        {
+          "sender": "anderhg",
+          "receiver": "stianvale",
+          "start": "09:00",
+          "end": "17:00",
+          "day": "Tuesday"
+        }
+      ],
 				"address": "4467 Dawes Street, San Diego, CA 92109",
 				"home": "Pacific Beach",
 				"destination": "UCSD",
 				"email": "stainvale@stud.ntnu.no",
+				"phoneNumber": "123456789",
+				"verified": true
+			},
+			"henmo":{
+				"firstName": "Henrik",
+				"lastName": "Mork",
+				"username": "henmo",
+				"image": "/images/anon.jpg",
+				"about": "Student at UCSD",
+				"car": "Toyota Corolla 2008",
+				"age": "25",
+				"rides": 3,
+				"rating": {},
+				"requests":[
+        {
+          "sender": "anderhg",
+          "receiver": "stianvale",
+          "start": "09:00",
+          "end": "17:00",
+          "day": "Monday"
+        },
+        {
+          "sender": "anderhg",
+          "receiver": "stianvale",
+          "start": "09:00",
+          "end": "17:00",
+          "day": "Tuesday"
+        }
+      ],
+				"address": "4095 Honeycutt Street, San Diego, CA 92109",
+				"home": "Pacific Beach",
+				"destination": "UCSD",
+				"email": "henmo@stud.ntnu.no",
 				"phoneNumber": "123456789",
 				"verified": true
 			},
@@ -216,7 +311,22 @@
 				"rides": 4,
 				"address": "4095 Honeycutt Street, San Diego, CA 92109",
 				"rating": {},
-				"requests":{},
+				"requests":[
+        {
+          "sender": "stianvale",
+          "receiver": "anderhg",
+          "start": "08:00",
+          "end": "17:00",
+          "day": "Monday"
+        },
+        {
+          "sender": "stianvale",
+          "receiver": "anderhg",
+          "start": "09:00",
+          "end": "16:00",
+          "day": "Tuesday"
+        }
+      ],
 				"home": "Pacific Beach",
 				"destination": "UCSD",
 				"email": "anderhg@stud.ntnu.no",
@@ -234,7 +344,22 @@
 				"rides": 1,
 				"address": "1412 Graham Street, San Diego, CA 92109",
 				"rating": {"stianvale":5,"anderhg":3},
-				"requests":{},
+				"requests":[
+        {
+          "sender": "anderhg",
+          "receiver": "stianvale",
+          "start": "09:00",
+          "end": "17:00",
+          "day": "Monday"
+        },
+        {
+          "sender": "anderhg",
+          "receiver": "stianvale",
+          "start": "09:00",
+          "end": "17:00",
+          "day": "Tuesday"
+        }
+      ],
 				"home": "Pacific Beach",
 				"destination": "UCSD",
 				"email": "oyvikjo@stud.ntnu.no",

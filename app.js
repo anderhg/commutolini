@@ -29,9 +29,16 @@ var homepage = require('./routes/homepage');
 var app = express();
 var hbs = handlebars.create({
     helpers: {
-        lookup: function (obj, field) { return obj && obj[field]; }
+        lookup: function (obj, field) { return obj && obj[field]; },
+        if_eq: function(a, b) {
+    		if(a == b) // Or === depending on your needs
+        		return this;
+    		else
+        		return undefined;
+									}
     }
 });
+
 
 // all environments
 app.set('port', process.env.PORT || 3000);

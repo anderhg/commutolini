@@ -526,7 +526,7 @@ function commuteRequestCallback(username, result){
 }
 
 function postRequestCallback(result){
-	window.location.href = "/homepage";
+	window.location.href = "/browse";
 }
 
 function getCookie(cname) {
