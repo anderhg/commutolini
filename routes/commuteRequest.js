@@ -58,6 +58,8 @@ exports.sendRequest = function(req, res){
 		data.users[sender].rides -= 1;
 	}
 
+	res.redirect("/browse");
+
 }
 
 exports.acceptRequest = function(req, res){
@@ -89,6 +91,32 @@ exports.acceptRequest = function(req, res){
 		data.users[sender].passengerRides = [request];
 	}else{
 		data.users[sender].passengerRides.push(request);
+	}
+
+	if (day=='Monday'){
+		var rideInt = parseInt(data.schedule[receiver].days[0].seats);
+		rideInt -= 1;
+		data.schedule[receiver].days[0].seats = ""+rideInt;
+	}
+	if (day=='Tuesday'){
+		var rideInt = parseInt(data.schedule[receiver].days[1].seats);
+		rideInt -= 1;
+		data.schedule[receiver].days[1].seats = ""+rideInt;
+	}
+	if (day=='Wednesday'){
+		var rideInt = parseInt(data.schedule[receiver].days[2].seats);
+		rideInt -= 1;
+		data.schedule[receiver].days[2].seats = ""+rideInt;
+	}
+	if (day=='Thursday'){
+		var rideInt = parseInt(data.schedule[receiver].days[3].seats);
+		rideInt -= 1;
+		data.schedule[receiver].days[3].seats = ""+rideInt;
+	}
+	if (day=='Friday'){
+		var rideInt = parseInt(data.schedule[receiver].days[4].seats);
+		rideInt -= 1;
+		data.schedule[receiver].days[4].seats = ""+rideInt;
 	}
 
 	data.users[receiver].rides += 1;

@@ -71,7 +71,6 @@ function initializePage() {
 function saveSchedule() {
 
 	event.preventDefault();
-	ga("send", "event", 'save', 'click');
 
 
 	var data = {
@@ -527,7 +526,7 @@ function commuteRequestCallback(username, result){
 }
 
 function postRequestCallback(result){
-	window.location.href = "/homepage";
+	window.location.href = "/browse";
 }
 
 function getCookie(cname) {
