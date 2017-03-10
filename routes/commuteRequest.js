@@ -13,11 +13,15 @@ exports.sendRequest = function(req, res){
 		"end": "",
 		"day": ""
 	}
-	data.users[receiver].requests = [] 
 
+	if (data.users[receiver].requests == undefined){
+		data.users[receiver].requests = [];
+	}
 
+	console.log(req.body);
 
 	if (req.body.monday == 1){
+		console.log("wtf");
 		var fakeData = JSON.parse(JSON.stringify(request));
 		fakeData.day = 'Monday';
 		fakeData.start = data.schedule[receiver].days[0].start;
