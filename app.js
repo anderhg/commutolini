@@ -58,7 +58,9 @@ if ('development' == app.get('env')) {
 // Add routes here
 app.get('/', login.viewLogin);
 app.get('/schedule', schedule.viewSchedule);
+app.get('/path/to/page_A', schedule.viewSchedule);
 app.get('/grid', schedule.viewTable);
+app.get('/path/to/page_B', schedule.viewTable);
 app.get('/profile', profile.viewProfile);
 app.get('/homepage', homepage.view);
 app.get('/browse', index.view);
