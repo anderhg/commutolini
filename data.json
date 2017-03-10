@@ -245,21 +245,21 @@
 				"rides": 10,
 				"rating": {"oyvikjo":3},
 				"requests":[
-        {
-          "sender": "anderhg",
-          "receiver": "stianvale",
-          "start": "09:00",
-          "end": "17:00",
-          "day": "Monday"
-        },
-        {
-          "sender": "anderhg",
-          "receiver": "stianvale",
-          "start": "09:00",
-          "end": "17:00",
-          "day": "Tuesday"
-        }
-      ],
+						        {
+						          "sender": "anderhg",
+						          "receiver": "stianvale",
+						          "start": "09:00",
+						          "end": "17:00",
+						          "day": "Monday"
+						        },
+						        {
+						          "sender": "anderhg",
+						          "receiver": "stianvale",
+						          "start": "09:00",
+						          "end": "17:00",
+						          "day": "Tuesday"
+						        }
+						    ],
 				"address": "4467 Dawes Street, San Diego, CA 92109",
 				"home": "Pacific Beach",
 				"destination": "UCSD",
@@ -269,30 +269,30 @@
 			},
 			"henmo":{
 				"firstName": "Henrik",
-				"lastName": "Mork",
+				"lastName": "Mørk",
 				"username": "henmo",
-				"image": "/images/anon.jpg",
+				"image": "/images/cow.jpg",
 				"about": "Student at UCSD",
 				"car": "Toyota Corolla 2008",
 				"age": "25",
 				"rides": 3,
 				"rating": {},
 				"requests":[
-        {
-          "sender": "anderhg",
-          "receiver": "stianvale",
-          "start": "09:00",
-          "end": "17:00",
-          "day": "Monday"
-        },
-        {
-          "sender": "anderhg",
-          "receiver": "stianvale",
-          "start": "09:00",
-          "end": "17:00",
-          "day": "Tuesday"
-        }
-      ],
+						        {
+						          "sender": "anderhg",
+						          "receiver": "henmo",
+						          "start": "09:00",
+						          "end": "17:00",
+						          "day": "Monday"
+						        },
+						        {
+						          "sender": "anderhg",
+						          "receiver": "henmo",
+						          "start": "09:00",
+						          "end": "17:00",
+						          "day": "Tuesday"
+						        }
+						    ],
 				"address": "4095 Honeycutt Street, San Diego, CA 92109",
 				"home": "Pacific Beach",
 				"destination": "UCSD",
@@ -312,21 +312,21 @@
 				"address": "4095 Honeycutt Street, San Diego, CA 92109",
 				"rating": {},
 				"requests":[
-        {
-          "sender": "stianvale",
-          "receiver": "anderhg",
-          "start": "08:00",
-          "end": "17:00",
-          "day": "Monday"
-        },
-        {
-          "sender": "stianvale",
-          "receiver": "anderhg",
-          "start": "09:00",
-          "end": "16:00",
-          "day": "Tuesday"
-        }
-      ],
+						        {
+						          "sender": "stianvale",
+						          "receiver": "anderhg",
+						          "start": "08:00",
+						          "end": "17:00",
+						          "day": "Monday"
+						        },
+						        {
+						          "sender": "stianvale",
+						          "receiver": "anderhg",
+						          "start": "09:00",
+						          "end": "16:00",
+						          "day": "Tuesday"
+						        }
+						    ],
 				"home": "Pacific Beach",
 				"destination": "UCSD",
 				"email": "anderhg@stud.ntnu.no",
@@ -345,21 +345,21 @@
 				"address": "1412 Graham Street, San Diego, CA 92109",
 				"rating": {"stianvale":5,"anderhg":3},
 				"requests":[
-        {
-          "sender": "anderhg",
-          "receiver": "stianvale",
-          "start": "09:00",
-          "end": "17:00",
-          "day": "Monday"
-        },
-        {
-          "sender": "anderhg",
-          "receiver": "stianvale",
-          "start": "09:00",
-          "end": "17:00",
-          "day": "Tuesday"
-        }
-      ],
+						        {
+						          "sender": "anderhg",
+						          "receiver": "oyvikjo",
+						          "start": "09:00",
+						          "end": "17:00",
+						          "day": "Monday"
+						        },
+						        {
+						          "sender": "anderhg",
+						          "receiver": "oyvikjo",
+						          "start": "09:00",
+						          "end": "17:00",
+						          "day": "Tuesday"
+						        }
+						    ],
 				"home": "Pacific Beach",
 				"destination": "UCSD",
 				"email": "oyvikjo@stud.ntnu.no",

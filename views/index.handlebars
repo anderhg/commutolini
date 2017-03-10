@@ -184,7 +184,6 @@
                     <p>Available rides: {{rides}}</p>
                     </div>
                     {{/with}}
-
                      <table class="requestTable" id='requestTable'>
                       <thead>
                       </thead>
@@ -199,11 +198,46 @@
 
                         <tr style=' text-align:center'>
                           <form action="">
-                            <td><input class = "requestDays{{username}}" type="checkbox" name="Day" value="Monday"></td>
-                            <td><input class = "requestDays{{username}}" type="checkbox" name="Day" value="Tuesday"></td>
-                            <td><input class = "requestDays{{username}}" type="checkbox" name="Day" value="Wednesday"></td>
-                            <td><input class = "requestDays{{username}}" type="checkbox" name="Day" value="Thursday"></td>
-                            <td><input class = "requestDays{{username}}" type="checkbox" name="Day" value="Friday"></td>
+                            {{#with (lookup days 0)}}
+                            {{#if (if_eq seats 0)}}
+                            <td><input class = "requestDays{{../username}}" type="checkbox" name="Day" value="Monday" onclick="return false;" disabled="disabled"></td>
+                            {{/if}}
+                            {{#unless (if_eq seats 0)}}
+                            <td><input class = "requestDays{{username}}" type="checkbox" name="Day" value="Monday" ></td>
+                            {{/unless}}
+                            {{/with}}
+                            {{#with (lookup days 1)}}
+                            {{#if (if_eq seats 0)}}
+                            <td><input class = "requestDays{{../username}}" type="checkbox" name="Day" value="Tuesday" onclick="return false;" disabled="disabled"></td>
+                            {{/if}}
+                            {{#unless (if_eq seats 0)}}
+                            <td><input class = "requestDays{{username}}" type="checkbox" name="Day" value="Tuesday" ></td>
+                            {{/unless}}
+                            {{/with}}
+                            {{#with (lookup days 2)}}
+                            {{#if (if_eq seats 0)}}
+                            <td><input class = "requestDays{{../username}}" type="checkbox" name="Day" value="Wednesday" onclick="return false;" disabled="disabled"></td>
+                            {{/if}}
+                            {{#unless (if_eq seats 0)}}
+                            <td><input class = "requestDays{{username}}" type="checkbox" name="Day" value="Wednesday" ></td>
+                            {{/unless}}
+                            {{/with}}
+                            {{#with (lookup days 3)}}
+                            {{#if (if_eq seats 0)}}
+                            <td><input class = "requestDays{{../username}}" type="checkbox" name="Day" value="Thursday" onclick="return false;" disabled="disabled"></td>
+                            {{/if}}
+                            {{#unless (if_eq seats 0)}}
+                            <td><input class = "requestDays{{username}}" type="checkbox" name="Day" value="Thursday" ></td>
+                            {{/unless}}
+                            {{/with}}
+                            {{#with (lookup days 4)}}
+                            {{#if (if_eq seats 0)}}
+                            <td><input class = "requestDays{{../username}}" type="checkbox" name="Day" value="Friday" onclick="return false;" disabled="disabled"></td>
+                            {{/if}}
+                            {{#unless (if_eq seats 0)}}
+                            <td><input class = "requestDays{{username}}" type="checkbox" name="Day" value="Friday" ></td>
+                            {{/unless}}
+                            {{/with}}
                           </form>
                         </tr>
 

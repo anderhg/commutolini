@@ -33,6 +33,8 @@ var hbs = handlebars.create({
         if_eq: function(a, b) {
     		if(a == b) // Or === depending on your needs
         		return this;
+        	else if(parseInt(a) == b)
+        		return this;
     		else
         		return undefined;
 									}

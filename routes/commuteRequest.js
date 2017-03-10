@@ -145,9 +145,11 @@ exports.declineRequest = function(req, res){
 function deleteObjectFromRequests(sender, receiver, day){
 	var list = 	data.users[receiver].requests;
 	var i = 0;
+	console.log(sender, receiver, day);
 	list.forEach(function(element) {
     
 		if (element.sender == sender && element.receiver == receiver && element.day == day){
+			console.log("fah");
 			list.splice(i,1);
 		}else{
 			i++;
