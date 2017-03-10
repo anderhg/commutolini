@@ -560,10 +560,27 @@ input::-webkit-input-placeholder {
   text-align: center;
 }
 
-.img-circle.homepage {
+.img.homepage {
   width: 100px;
   height: 100px;
+  right: 15px;
   position: relative;
   top: 20px;
-  right: 15px;
+  padding-bottom: auto;
+  color: grey;
 }
+
+.no {
+  text-align: center;
+  color: grey;
+}
+
+h2 {
+  font-family: AboveFont;
+}
+
+.commuteText {
+  margin: 0;
+}
+
+

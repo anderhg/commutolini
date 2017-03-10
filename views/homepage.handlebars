@@ -75,9 +75,9 @@
     <div class="row">
       <div class="col-sm-12 col-md-6">
         {{#with currentUser}}
-        {{#each requests}}
-        {{#with (lookup ../../users sender)}}
-
+        {{#if (lookup requests 0)}}
+        {{#each ../requests}}
+        {{#with (lookup ../../../users sender)}}
         <div class="thumbnail">
 <!--           <img src="{{image}}" alt="..." class="img-circle homepage">
  -->          <div class="caption">
@@ -92,49 +92,60 @@
           </div>
         </div>
         {{/each}}
-        {{/with}}
+        {{else}}
+        <div class="well">
+          <p class="no">You currently have no new requests.</p>
+        </div>
+        {{/if}}
       </div>
     </div>
 
     <div id="upcomingHeader">
-      <h2> Upcoming commutes </h2>
+      <h2>Upcoming commutes</h2>
     </div>
 
     <div class="row">
       <div class="col-xs-20 col-sm-12 col-md-12 col-lg-6">
-        {{#with currentUser}}
+        {{#if (lookup acceptedRequests 0)}}
         {{#each acceptedRequests}}
-        {{#with (lookup ../../users sender)}}
+        {{#with (lookup ../../../users sender)}}
 
         <div class="thumbnail">
             <div class="col-xs-4">
-              <img src="{{image}}" alt="..." class="img-circle img-container homepage">
-            </div>
+<!--               <img src="/images/steer.png" alt="..." class="img img-container homepage">
+ -->            </div>
             <div class="col-xs-16">
             <div class="caption">
             
               <h4><a href="/profile/{{username}}">{{firstName}} {{lastName}}</a>{{/with}} - {{day}} </h4>
               
-              {{#with (lookup ../../users sender)}}
-              <p><strong>Address:</strong> {{address}}</p>
+              {{#with (lookup ../../../users sender)}}
+              <p class="commuteText"><strong>Status:</strong> Driver</p>
+              <p class="commuteText"><strong>Pick-up address:</strong> {{address}}</p>
               {{/with}}
-              <p id="{{sender}}{{day}}Time"><strong>Time:</strong> {{start}} - {{end}}</p>
+              <p id="{{sender}}{{day}}Time" class="commuteText"><strong>Time:</strong> {{start}} - {{end}}</p>
             </div>
           </div>
         </div>
         {{/each}}
-        {{/with}}
-        {{#with currentUser}}
+        {{else}}
+        {{#unless (lookup passengerRides 0)}}
+        <div class="well">
+          <p class="no">You currently have no upcoming commutes.</p>
+        </div>
+        {{/unless}}
+        {{/if}}
         {{#each passengerRides}}
         {{#with (lookup ../../users receiver)}}
 
         <div class="thumbnail">
-<!--           <img src="{{image}}" alt="..." class="img-circle homepage">
+<!--           <img src="/images/seet.png" alt="..." class="img homepage">
  -->          <div class="caption">
             
               <h4><a href="/profile/{{username}}">{{firstName}} {{lastName}}</a>{{/with}} - {{day}} </h4>
             
-            <p id="{{sender}}{{day}}Time"><strong>Time:</strong> {{start}} - {{end}}</p>
+            <p class="commuteText"><strong>Status:</strong> Passenger</p>
+            <p id="{{sender}}{{day}}Time" class="commuteText"><strong>Time:</strong> {{start}} - {{end}}</p>
           </div>
         </div>
         {{/each}}
