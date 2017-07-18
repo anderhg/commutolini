@@ -1,8 +1,7 @@
 {	
-	"data":{
 		"days":[
 			{
-				"name": "Monday",
+				"day": "Monday",
 				"code": "M",
 				"id": "collapseOne",
 				"start": "",
@@ -10,7 +9,7 @@
 				"seats": ""
 			},
 			{
-				"name": "Tuesday",
+				"day": "Tuesday",
 				"code": "Tu",
 				"id": "collapseTwo",
 				"start": "",
@@ -18,7 +17,7 @@
 				"seats": ""
 			},
 			{
-				"name": "Wednesday",
+				"day": "Wednesday",
 				"code": "W",
 				"id": "collapseThree",
 				"start": "",
@@ -26,7 +25,7 @@
 				"seats": ""
 			},
 			{
-				"name": "Thursday",
+				"day": "Thursday",
 				"code": "Th",
 				"id": "collapseFour",
 				"start": "",
@@ -34,7 +33,7 @@
 				"seats": ""
 			},
 			{
-				"name": "Friday",
+				"day": "Friday",
 				"code": "F",
 				"id": "collapseFive",
 				"start": "",
@@ -42,24 +41,347 @@
 				"seats": ""
 			}
 		],
+		
+		"schedule":{ 
+				
+			"stianvale": {
+				"username": "stianvale",
+				"name": "Stian Vale",
+				"image": "images/anon.jpg",
+				"days": [
+					{
+					"day": "Monday",
+					"code": "M",
+					"id": "collapseOne",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": "1"
+					},
+					{
+					"day": "Tuesday",
+					"code": "Tu",
+					"id": "collapseTwo",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": "1"
+					},
+					{
+					"day": "Wednesday",
+					"code": "W",
+					"id": "collapseThree",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": "0"
+					},
+					{
+					"day": "Thursday",
+					"code": "Th",
+					"id": "collapseFour",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": "0"
+					},
+					{
+					"day": "Friday",
+					"code": "F",
+					"id": "collapseFive",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": "0"
+					}
+				]	
+			},
+			"anderhg": {
+				"username": "anderhg",
+				"name": "Anders Geitle",
+				"image": "images/banana.png",
+				"days": [
+					{
+					"day": "Monday",
+					"code": "M",
+					"id": "collapseOne",
+					"start": "08:00",
+					"end": "17:00",
+					"seats": "1"
+					},
+					{
+					"day": "Tuesday",
+					"code": "Tu",
+					"id": "collapseTwo",
+					"start": "09:00",
+					"end": "16:00",
+					"seats": "1"
+					},
+					{
+					"day": "Wednesday",
+					"code": "W",
+					"id": "collapseThree",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": "4"
+					},
+					{
+					"day": "Thursday",
+					"code": "Th",
+					"id": "collapseFour",
+					"start": "09:00",
+					"end": "19:00",
+					"seats": "4"
+					},
+					{
+					"day": "Friday",
+					"code": "F",
+					"id": "collapseFive",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": "0"
+					}
+				]	
+			},
+			"oyvikjo":{
+				"username": "oyvikjo",
+				"days": [
+					{
+					"day": "Monday",
+					"code": "M",
+					"id": "collapseOne",
+					"start": "13:00",
+					"end": "17:00",
+					"seats": "0"
+					},
+					{
+					"day": "Tuesday",
+					"code": "Tu",
+					"id": "collapseTwo",
+					"start": "07:00",
+					"end": "17:00",
+					"seats": "3"
+					},
+					{
+					"day": "Wednesday",
+					"code": "W",
+					"id": "collapseThree",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": "0"
+					},
+					{
+					"day": "Thursday",
+					"code": "Th",
+					"id": "collapseFour",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": "0"
+					},
+					{
+					"day": "Friday",
+					"code": "F",
+					"id": "collapseFive",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": "3"
+					}
+
+				]	
+			},
+			"henmo":{
+				"username": "henmo",
+				"days": [
+					{
+					"day": "Monday",
+					"code": "M",
+					"id": "collapseOne",
+					"start": "08:00",
+					"end": "19:00",
+					"seats": "1"
+					},
+					{
+					"day": "Tuesday",
+					"code": "Tu",
+					"id": "collapseTwo",
+					"start": "07:00",
+					"end": "10:00",
+					"seats": "4"
+					},
+					{
+					"day": "Wednesday",
+					"code": "W",
+					"id": "collapseThree",
+					"start": "10:00",
+					"end": "16:00",
+					"seats": "1"
+					},
+					{
+					"day": "Thursday",
+					"code": "Th",
+					"id": "collapseFour",
+					"start": "09:00",
+					"end": "17:00",
+					"seats": "1"
+					},
+					{
+					"day": "Friday",
+					"code": "F",
+					"id": "collapseFive",
+					"start": "09:00",
+					"end": "15:00",
+					"seats": "3"
+					}
+
+				]	
+			}
+		},
+
 		"users":{
 
 			"stianvale":{
 				"firstName": "Stian",
-				"lastName": "Vale"
+				"lastName": "Vale",
+				"username": "stianvale",
+				"image": "/images/anon.jpg",
+				"about": "Student at UCSD",
+				"car": "Hyundai Elantra 2003",
+				"age": "22",
+				"rides": 10,
+				"rating": {"oyvikjo":3},
+				"requests":[
+						        {
+						          "sender": "anderhg",
+						          "receiver": "stianvale",
+						          "start": "09:00",
+						          "end": "17:00",
+						          "day": "Monday"
+						        },
+						        {
+						          "sender": "anderhg",
+						          "receiver": "stianvale",
+						          "start": "09:00",
+						          "end": "17:00",
+						          "day": "Tuesday"
+						        }
+						    ],
+				"address": "4467 Dawes Street, San Diego, CA 92109",
+				"home": "Pacific Beach",
+				"destination": "UCSD",
+				"email": "stainvale@stud.ntnu.no",
+				"phoneNumber": "123456789",
+				"verified": true
+			},
+			"henmo":{
+				"firstName": "Henrik",
+				"lastName": "Mørk",
+				"username": "henmo",
+				"image": "/images/cow.jpg",
+				"about": "Student at UCSD",
+				"car": "Toyota Corolla 2008",
+				"age": "25",
+				"rides": 3,
+				"rating": {},
+				"requests":[
+						        {
+						          "sender": "anderhg",
+						          "receiver": "henmo",
+						          "start": "09:00",
+						          "end": "17:00",
+						          "day": "Monday"
+						        },
+						        {
+						          "sender": "anderhg",
+						          "receiver": "henmo",
+						          "start": "09:00",
+						          "end": "17:00",
+						          "day": "Tuesday"
+						        }
+						    ],
+				"address": "4095 Honeycutt Street, San Diego, CA 92109",
+				"home": "Pacific Beach",
+				"destination": "UCSD",
+				"email": "henmo@stud.ntnu.no",
+				"phoneNumber": "123456789",
+				"verified": true
 			},
 			"anderhg":{
 				"firstName": "Anders",
-				"lastName": "Geitle"
+				"lastName": "Geitle",
+				"username": "anderhg",
+				"image": "/images/banana.png",
+				"about": "Student at UCSD",
+				"car": "Batmobile",
+				"age": "22",
+				"rides": 4,
+				"address": "4095 Honeycutt Street, San Diego, CA 92109",
+				"rating": {},
+				"requests":[
+						        {
+						          "sender": "stianvale",
+						          "receiver": "anderhg",
+						          "start": "08:00",
+						          "end": "17:00",
+						          "day": "Monday"
+						        },
+						        {
+						          "sender": "stianvale",
+						          "receiver": "anderhg",
+						          "start": "09:00",
+						          "end": "16:00",
+						          "day": "Tuesday"
+						        }
+						    ],
+				"home": "Pacific Beach",
+				"destination": "UCSD",
+				"email": "anderhg@stud.ntnu.no",
+				"phoneNumber": "111111111",
+				"verified": true
 			},
 			"oyvikjo":{
 				"firstName": "Øyvind",
-				"lastName": "Johnsen"
+				"lastName": "Johnsen",
+				"username": "oyvikjo",
+				"image": "/images/klopp.jpg",
+				"about": "Student at UCSD",
+				"car": "Volkswagen Passat 1999",
+				"age": "22",
+				"rides": 1,
+				"address": "1412 Graham Street, San Diego, CA 92109",
+				"rating": {"stianvale":5,"anderhg":3},
+				"requests":[
+						        {
+						          "sender": "anderhg",
+						          "receiver": "oyvikjo",
+						          "start": "09:00",
+						          "end": "17:00",
+						          "day": "Monday"
+						        },
+						        {
+						          "sender": "anderhg",
+						          "receiver": "oyvikjo",
+						          "start": "09:00",
+						          "end": "17:00",
+						          "day": "Tuesday"
+						        }
+						    ],
+				"home": "Pacific Beach",
+				"destination": "UCSD",
+				"email": "oyvikjo@stud.ntnu.no",
+				"phoneNumber": "987654321",
+				"verified": true
+			},
+			"geokuk":{
+				"firstName": "Georg",
+				"lastName": "Kukfjes",
+				"username": "geokuk",
+				"rides": "0",
+				"rating": {}
 			}
 		},
-		"currentUser":{
+
+		"sessions":{
+
+		},
+
+		"requests":{
 
 		}
 		
-	}
 }
+

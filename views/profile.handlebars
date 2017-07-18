@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>HCI Project Portfolio</title>	
+	<title>Commutolini</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -40,13 +40,17 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="/homepage"><i class="glyphicon glyphicon-home"></i>Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="/schedule"><i class="glyphicon glyphicon-list-alt"></i>Schedule<span class="sr-only">(current)</span></a></li>
+        <li><a href="/browse"><i class="glyphicon glyphicon-list-alt"></i>Browse<span class="sr-only">(current)</span></a></li>
+            <li><a href="/schedule"><i class="glyphicon glyphicon-calendar"></i>My Schedule<span class="sr-only">(current)</span></a></li>
         <li><a href="/profile"><i class="glyphicon glyphicon-user"></i>Profile<span class="sr-only">(current)</span></a></li>
-
-
       </ul>
-      <p class="navbar-text navbar-right">Signed in as <a href="/profile" class="navbar-link">Stian Vale</a>&nbsp&nbsp&nbsp</p>
 
+    {{#with (lookup users sessions)}}
+      <ul class="nav navbar-nav navbar-right">
+        <li><p class="navbar-text">&nbsp&nbsp&nbspSigned in as <a href="/profile" class="navbar-link">{{firstName}} {{lastName}}</a></p></li>
+        <li><a href="#" id="logoff"><i class="glyphicon glyphicon-off"></i>Log off&nbsp&nbsp&nbsp</a></li>
+      </ul>
+    {{/with}}
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
@@ -54,64 +58,65 @@
 
 	<div class="row profilepage">
 		<div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
-    	 <div class="well profile">
+    	 <div class="well profile" id="profilewell">
             <div class="col-sm-12">
                 <div class="col-xs-12 col-sm-12">
-                    <img src="images/anon.jpg" alt="" class="img-circle img-responsive profilePic" id="profileimg">
-                    <div onClick="this.contentEditable='true';"> 
-                        <h4>Stian Westerhus Vale</h4>
+                    <img src="{{currentUser.image}}{{#unless currentUser.image}}/images/pool.jpg{{/unless}}" alt="" class="img-circle img-responsive profilePic" id="profileimg">
+                    <div class="profileName"> 
+                        <h4>{{currentUser.firstName}} {{currentUser.lastName}}{{#if currentUser.age}}, {{currentUser.age}}{{/if}}  {{#if currentUser.verified}}<i class = 'glyphicon glyphicon-ok-circle'></i>{{/if}}</h4>
                     </div>
-                    <div class="profileLabel">
-                        <p><strong>About: &nbsp </strong></p>
+                    <div class="profileRating" id="profileRating"> 
+                        <i class="glyphicon glyphicon-star-empty" id="starOne"></i><i class="glyphicon glyphicon-star-empty" id="starTwo"></i><i class="glyphicon glyphicon-star-empty" id="starThree"></i><i class="glyphicon glyphicon-star-empty" id="starFour"></i><i class="glyphicon glyphicon-star-empty" id="starFive"></i>
                     </div>
-                    <div class="profileEditable" onClick="this.contentEditable='true';"> 
-                        <p>Student at UCSD </p>
+                    <div class="profileDesc"> 
+                        <p>{{currentUser.about}}{{#unless currentUser.about}}<br>{{/unless}}</p>
                     </div>
+                    <div class="profileEditable"><i class="glyphicon glyphicon-home"></i><p style="display:inline">{{currentUser.address}}</p> <a href="http://www.google.com/maps/search/{{currentUser.address}}"><br>Open in Google Maps</a>
+                    </div>
+                    <p> </p>
                     <div class="profileLabel">
                         <p><strong>Car: &nbsp </strong></p>
                     </div>
-                    <div class="profileEditable" onClick="this.contentEditable='true';"> 
-                        <p>Hyundai Elantra 2003 </p>
+                    <div class="profileEditable"> 
+                        <p>{{currentUser.car}}{{#unless currentUser.car}}<br>{{/unless}}</p>
+                    </div>
+                    <div class="profileLabel">
+                        <p><strong>Phone: &nbsp </strong></p>
+                    </div>
+                    <div class="profileEditable"> 
+                        <p>{{currentUser.phoneNumber}}{{#unless currentUser.phoneNumber}}<br>{{/unless}}</p>
+                    </div>
+                    <div class="profileLabel">
+                        <p><strong>Email: &nbsp </strong></p>
+                    </div>
+                    <div class="profileEditable"> 
+                        <p>{{currentUser.email}}{{#unless currentUser.email}}<br>{{/unless}}</p>
+                    </div>
+                    <div id="rating-outside">
+                        <figcaption class="ratings">
+                                <p><strong>Average rating: </strong>
+                                    <div id="rating">
+                                        <p id='ratingText'></p><p id='ratingEnd'>/ 5<p>
+                                    </div>
+                                </p>
+                        </figcaption>
                     </div>
                     
-                    <p><strong>Age: &nbsp</strong>22</p>
-                   
-                    <p><strong>Rides: </strong> 4 </p>
-                    <div class="profileLabel">
-                        <p><strong>Address:  &nbsp</strong></p>
-                    </div>
-                    <div class="profileEditable" onClick="this.contentEditable='true';"> 
-                        <p>4467 Dawes Street, San Diego, CA 92109 </p>
-                    </div>
-                    <figcaption class="ratings">
-                            <p><strong>Rating </strong>
-                            <a href="#">
-                                <span class="fa fa-star"></span>
-                            </a>
-                            <a href="#">
-                                <span class="fa fa-star"></span>
-                            </a>
-                            <a href="#">
-                                <span class="fa fa-star"></span>
-                            </a>
-                            <a href="#">
-                                <span class="fa fa-star"></span>
-                            </a>
-                            <a href="#">
-                                 <span class="fa fa-star"></span>
-                            </a> 
-                            </p>
-                    </figcaption>
+                </div>
+                           
+            </div>        
+    	 </div>
+         <div id='checkProfile'>
+        </div>  
 
-                </div>             
-            </div>          
-    	 </div>                
 		</div>
-		
-
 	</div>
+
+
+
 		<script src="https://code.jquery.com/jquery.js"></script>
 		<script src="/js/bootstrap.min.js"></script>
+        <script src="/js/introHCI.js"></script>
 </div>
 
 </body>

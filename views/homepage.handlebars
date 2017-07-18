@@ -1,0 +1,164 @@
+<!doctype html>
+
+<html>
+<head>
+	<title>Commutolini</title>	
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+	<link href="/css/introHCI.css" rel="stylesheet">
+	<!-- this is a comment in HTML -->
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->        
+</head>
+
+<body>
+	<div class="dicontainer">
+
+
+
+
+
+
+
+	<div class="container">
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/homepage">Commutolini</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="/homepage"><i class="glyphicon glyphicon-home"></i>Home<span class="sr-only">(current)</span></a></li>
+        <li><a href="/browse"><i class="glyphicon glyphicon-list-alt"></i>Browse<span class="sr-only">(current)</span></a></li>
+            <li><a href="/schedule"><i class="glyphicon glyphicon-calendar"></i>My Schedule<span class="sr-only">(current)</span></a></li>
+        <li><a href="/profile"><i class="glyphicon glyphicon-user"></i>Profile<span class="sr-only">(current)</span></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><p class="navbar-text">&nbsp&nbsp&nbspSigned in as <a href="/profile" class="navbar-link">{{currentUser.firstName}} {{currentUser.lastName}}</a></p></li>
+        <li><a href="#" id="logoff"><i class="glyphicon glyphicon-off"></i>Log off&nbsp&nbsp&nbsp</a></li>
+      </ul>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+
+		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
+		<!-- p means paragraph -->
+
+
+
+		<div id="indexHeader">
+		  <h2> New Requests </h2>
+      <p> Accept or decline requests for commutes.</p>
+	  </div>
+
+    <div class="row">
+      <div class="col-xs-20 col-sm-12 col-md-12 col-lg-6">
+        {{#with currentUser}}
+        {{#if (lookup requests 0)}}
+        {{#each ../requests}}
+        {{#with (lookup ../../../users sender)}}
+        <div class="thumbnail">
+<!--           <img src="{{image}}" alt="..." class="img-circle homepage">
+ -->          <div class="caption">
+            
+              <h4><a href="/profile/{{username}}">{{firstName}} {{lastName}}</a>{{/with}} - {{day}} </h4>
+            
+            {{#with (lookup ../../users sender)}}
+            <p><strong>Address:</strong> {{address}}</p>
+            {{/with}}
+            <p id="{{sender}}{{day}}Time"><strong>Time:</strong> {{start}} - {{end}}</p>
+            <p><a href="#" class="btn btn-primary accept" role="button" id="{{sender}}{{day}}Accept">Accept</a> <a href="#" class="btn btn-default decline" role="button" id="{{sender}}{{day}}Decline">Decline</a></p>
+          </div>
+        </div>
+        {{/each}}
+        {{else}}
+        <div class="well">
+          <p class="no">You currently have no new requests.</p>
+        </div>
+        {{/if}}
+      </div>
+    </div>
+
+    <div id="upcomingHeader">
+      <h2>Upcoming commutes</h2>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-20 col-sm-12 col-md-12 col-lg-6">
+        {{#if (lookup acceptedRequests 0)}}
+        {{#each acceptedRequests}}
+        {{#with (lookup ../../../users sender)}}
+
+        <div class="thumbnail">
+            <div class="col-xs-4">
+<!--               <img src="/images/steer.png" alt="..." class="img img-container homepage">
+ -->            </div>
+            <div class="col-xs-16">
+            <div class="caption">
+            
+              <h4><a href="/profile/{{username}}">{{firstName}} {{lastName}}</a>{{/with}} - {{day}} </h4>
+              
+              {{#with (lookup ../../../users sender)}}
+              <p class="commuteText"><strong>Status:</strong> Driver</p>
+              <p class="commuteText"><strong>Pick-up address:</strong> {{address}}</p>
+              {{/with}}
+              <p id="{{sender}}{{day}}Time" class="commuteText"><strong>Time:</strong> {{start}} - {{end}}</p>
+            </div>
+          </div>
+        </div>
+        {{/each}}
+        {{else}}
+        {{#unless (lookup passengerRides 0)}}
+        <div class="well">
+          <p class="no">You currently have no upcoming commutes.</p>
+        </div>
+        {{/unless}}
+        {{/if}}
+        {{#each passengerRides}}
+        {{#with (lookup ../../users receiver)}}
+
+        <div class="thumbnail">
+<!--           <img src="/images/seet.png" alt="..." class="img homepage">
+ -->          <div class="caption">
+            
+              <h4><a href="/profile/{{username}}">{{firstName}} {{lastName}}</a>{{/with}} - {{day}} </h4>
+            
+            <p class="commuteText"><strong>Status:</strong> Passenger</p>
+            <p id="{{sender}}{{day}}Time" class="commuteText"><strong>Time:</strong> {{start}} - {{end}}</p>
+          </div>
+        </div>
+        {{/each}}
+        {{/with}}
+      </div>
+    </div>
+
+  
+
+
+
+	<script src="https://code.jquery.com/jquery.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+  <script src="/js/introHCI.js"></script>
+</body>
+</html>

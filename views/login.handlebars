@@ -2,7 +2,7 @@
 
 <html>
 <head>
-	<title>HCI Project Portfolio</title>	
+	<title>Commutolini</title>	
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -19,6 +19,11 @@
 </head>
 
 <body>
+
+  <div class="container">
+    <img class="img-responsive" id="logo" src="/images/commutolini.png" alt="Commutolini"></img>
+  </div>
+
 	<div>
 		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
 		<!-- p means paragraph -->
@@ -30,14 +35,15 @@
             <form action="">
               <legend>Login</legend>
               <div class="form-group">
-                  <label for="username-email">E-mail or Username</label>
-                  <input value='' id="username-email" placeholder="E-mail or Username" type="text" class="form-control" />
+                  <label for="username-email">Username</label>
+                  <input value='' id="username-email" placeholder="Username" type="text" class="form-control" />
               </div>
               <div class="form-group">
                   <label for="password">Password</label>
                   <input id="password" value='' placeholder="Password" type="password" class="form-control" />
               </div>
               <div class="form-group text-center">
+                  <a class="btn btn-info" id="register" href="/register">Register</a>
                   <a class="btn btn-success btn-login-submit" id="login" href="/homepage">Login</a>
               </div>
             </form>

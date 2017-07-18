@@ -30,6 +30,13 @@
   padding-top: 10px;
 }
 
+#logo {
+  padding-top: 50px;
+  position: relative;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 #personimg {
      right: 50px;
      position: absolute;
@@ -49,7 +56,6 @@ p.drivecard {
 }
 
 a.button {
-<<<<<<< HEAD
     -webkit-appearance: button;
     -moz-appearance: button;
     appearance: button;
@@ -150,7 +156,7 @@ border-color: rgb(53, 126, 189);
 
 .row.schedule {
   position: relative;
-  padding-top: 50px;
+  padding-top: 10px;
 }
 
 #yourrides {
@@ -172,8 +178,8 @@ border-color: rgb(53, 126, 189);
 .profile 
 {
     min-height: 355px;
-    display: inline-block;
-    }
+}
+
 figcaption.ratings
 {
     margin-top:20px;
@@ -242,7 +248,6 @@ span.tags
     position: absolute;
     bottom: -10px;
     left: 50%;
-<<<<<<< HEAD
 }
 
 .panel-heading {
@@ -254,7 +259,7 @@ span.tags
     padding: 10px 15px;
     margin: -10px -15px;
 }
-=======
+
     }
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700);
@@ -325,9 +330,257 @@ span.tags
 }
 
 #destination {
-  padding-top: 30px;
+  padding-left: 0px;
 }
 
 .profileLabel {
   float: left;
 }
+
+#rating {
+  position: relative;
+  top: -36px;
+  margin-left: 120px;
+}
+
+#profilewell {
+  height: 540px;
+  width: 325px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@font-face {
+  font-family: AboveFont;
+  src: url("../fonts/ABOVE.ttf");
+}
+
+.navbar-brand {
+  font-family: AboveFont;
+}
+
+.input-group-addon {
+  height: 10px;
+}
+
+.profileName {
+  text-align: center;
+}
+
+.profileDesc{
+  font-style: italic;
+  text-align: center;
+}
+
+.glyphicon-ok-circle{
+  color: green;
+}
+
+#rating-outside {
+  position: relative;
+  margin-top: -10px;
+}
+
+#leftArrow {
+  color: #b20000;
+}
+
+#rightArrow {
+  color: green;
+}
+
+#people {
+  color: #3B5998;
+}
+
+.main{
+  margin-top: -25px;
+}
+
+h1.title { 
+  font-size: 50px;
+  font-family: 'AboveFont'; 
+  font-weight: 400; 
+}
+
+hr{
+  width: 10%;
+  color: #fff;
+}
+
+.form-group{
+  margin-bottom: 15px;
+}
+
+label{
+  margin-bottom: 15px;
+}
+
+input,
+input::-webkit-input-placeholder {
+    font-size: 11px;
+    padding-top: 3px;
+}
+
+.main-login{
+  background-color: #f1f1f1;
+    /* shadows and rounded borders */
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+
+}
+
+.main-center{
+  margin-top: 30px;
+  margin: 0 auto;
+  max-width: 330px;
+    padding: 40px 40px;
+
+}
+
+.login-button{
+  margin-top: 5px;
+}
+
+.login-register{
+  font-size: 11px;
+  text-align: center;
+}
+
+#registerIcon {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  margin-top: auto;
+}
+
+.input-group-addon {
+  height: 100%;
+}
+
+#checkProfile {
+  margin-top: -25px;
+  margin: auto;
+  width: 325px;
+  text-align: center;
+
+}
+
+#editImage {
+  width: 200px;
+  height: 200px;
+}
+
+.profileRating {
+
+  font-size: 25px;
+  text-align: center;
+  color: #ffd700;
+}
+
+#ratingEnd {
+  margin-top: -31px;
+  margin-left: 33px;
+  color: grey;
+}
+
+#ratingText {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.table{
+  width: 100%;
+  table-layout: fixed;
+}
+
+.contactTable{
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+  table-layout: fixed;
+}
+
+#envelope {
+  color: #35abdd;
+}
+
+#editProfileBtn {
+  position: relative;
+  top: -12px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 10px;
+  width: 325px;
+  text-align: center;
+}
+
+#indexHeader {
+  padding-top: 60px;
+}
+
+#scheduleHeader {
+  padding-top: 40px;
+}
+
+#yesNo {
+  position: relative;
+  top: 7px;
+  text-align: center;
+}
+
+.requestCommute{
+  float: right;
+}
+
+.modal .modal-header {
+  border-bottom: none;
+  position: relative;
+}
+.modal .modal-header .btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.modal .modal-footer {
+  border-top: none;
+  padding: 0;
+}
+
+.modal .modal-header .modal-title{
+  text-align: center;
+}
+
+.img.homepage {
+  width: 100px;
+  height: 100px;
+  right: 15px;
+  position: relative;
+  top: 20px;
+  padding-bottom: auto;
+  color: grey;
+}
+
+.no {
+  text-align: center;
+  color: grey;
+}
+
+h2 {
+  font-family: AboveFont;
+}
+
+.commuteText {
+  margin: 0;
+}
+
+

@@ -46,12 +46,14 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a href="/homepage"><i class="glyphicon glyphicon-home"></i>Home<span class="sr-only">(current)</span></a></li>
-        <li><a href="/schedule"><i class="glyphicon glyphicon-list-alt"></i>Schedule<span class="sr-only">(current)</span></a></li>
+        <li><a href="/browse"><i class="glyphicon glyphicon-list-alt"></i>Browse<span class="sr-only">(current)</span></a></li>
+            <li><a href="/schedule"><i class="glyphicon glyphicon-calendar"></i>My Schedule<span class="sr-only">(current)</span></a></li>
         <li><a href="/profile"><i class="glyphicon glyphicon-user"></i>Profile<span class="sr-only">(current)</span></a></li>
-
-
       </ul>
-      <p class="navbar-text navbar-right">Signed in as <a href="/profile" class="navbar-link">{{data.currentUser.firstName}} {{data.currentUser.lastName}}</a>&nbsp&nbsp&nbsp</p>
+      <ul class="nav navbar-nav navbar-right">
+        <li><p class="navbar-text">&nbsp&nbsp&nbspSigned in as <a href="/profile" class="navbar-link">{{currentUser.firstName}} {{currentUser.lastName}}</a></p></li>
+        <li><a href="#" id="logoff"><i class="glyphicon glyphicon-off"></i>Log off&nbsp&nbsp&nbsp</a></li>
+      </ul>
 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -62,49 +64,217 @@
 
 		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
 		<!-- p means paragraph -->
-		<div class="jumbotron homepage">
-			<h1>Welcome, {{data.currentUser.firstName}}</h1>
-		</div>
 
 
-		<div id="yourrides">
-		  <h2> Your Rides </h2>
+
+		<div id="indexHeader">
+		  <h2> Available Commuters </h2>
+      <p> Find a fellow commuter that fits your schedule, get in contact and plan your commute.</p>
 	  </div>
 
+  
 
-  <div class="heisann"></div>
+<div class = "row">
+  {{#each schedule}}
+    {{#unless (if_eq ../currentUser.username username)}}
+    {{#with (lookup ../../users username)}}
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <a href="/profile/{{username}}">
+          <img class = "card-img-top" src="{{#unless image}}/images/pool.jpg{{/unless}}{{image}}" id="userimg" alt ="Card image cap">
+        </a>
+        <div class="caption">
+          <h4><a href="/profile/{{username}}"> {{firstName}} {{lastName}}, {{age}}</a></h4> 
+          <h5 style='text-align:center; font-weight:bold'> {{home}}  &nbsp<i class="glyphicon glyphicon-arrow-right" id="rightArrow"></i> {{destination}} </h5>
+            {{/with}}
+            <table class="table" id='info{{username}}'>
+              <thead>
+                <tr>
+                  <th></th>
+                  {{#each days}}
+                  <th>{{code}}</th>
+                  {{/each}}
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><i class="glyphicon glyphicon-arrow-right" id="rightArrow"></i></td>
+                  {{#each days}}
+                  <td>{{start}}</td>
+                  {{/each}}
+                </tr>
+                <tr>
+                  <td><i class="glyphicon glyphicon-arrow-left" id="leftArrow"></i></td>
+                  {{#each days}}
+                  <td>{{end}}</td>
+                  {{/each}}
+                </tr>
+                <tr>
+                  <td><i class="glyphicon glyphicon-user" id="people"></i></td>
+                  {{#each days}}
+                  <td>{{seats}}</td>
+                  {{/each}}
+                </tr>
+              </tbody>
+            </table>
 
-	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-  	<div class="panel panel-default">
-    {{#each drivecard}}
-        <div class="panel-heading" role="tab">
-          <h4 class="panel-title">
-            <a class="collapsed" id="headerdrivecard{{id}}"" role="button" data-toggle="collapse" data-parent="#accordion" href="#{{id}}" aria-expanded="false" aria-controls="{{id}}"> 
-            </a>
-          </h4>
+            {{#with (lookup ../../users username)}}
+            <table class="contactTable" id='contactInfo{{username}}' style='display:none'>
+              <thead>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>&nbsp</td>
+                  <td>&nbsp</td>
+                </tr>
+                <tr>
+                  <td>&nbsp</td>
+                  <td>&nbsp</td>
+                </tr>
+                <tr style=' text-align:center' id="emailUser">
+                  <td><i class="glyphicon glyphicon-envelope" id="envelope"></i></td>
+                  <td id="emailUser"><a>{{email}}</a></td>
+                </tr>
+                <tr>
+                  <td>&nbsp</td>
+                  <td>&nbsp</td>
+                </tr>
+
+                <tr style=' text-align:center'>
+                 <td><i class="glyphicon glyphicon-phone-alt" id="phone-alt"></i></td>
+                 <td>{{phoneNumber}}</td>
+                </tr>
+                <tr>
+                  <td>&nbsp</td>
+                  <td>&nbsp</td>
+                </tr>
+                <tr>
+                  <td>&nbsp</td>
+                  <td>&nbsp</td>
+                </tr>
+
+              </tbody>
+            </table>
+            {{/with}}
+          
+            <div>
+              <button class="btn btn-primary contactButton" id='contact{{username}}' role="button">Contact</button>
+              <button class="btn btn-success requestCommute" id='{{username}}' role="button">Request Commute</button>
+            </div>
         </div>
-        <div id="{{id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
-          <div class="panel-body">
-    		<p class = "drivecard" id="bodydrivecard{{id}}">   
-    			    08:30 <br>
-            	pick-up	<br>
-            	@  <br>
-            	1412 Graham St
-            </p> 
-          </div>
-        </div>
-    {{/each}}
-  	</div>
-  </div>
+      </div>
+    </div>
 
-		<!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
+      
+      <div id="modal{{username}}" class="modal fade in">
+        <div class="modal-dialog">
+            <div class="modal-content">
+ 
+                <div class="modal-header">
+                    <a class="btn btn-default closeModal"><span class="glyphicon glyphicon-remove"></span></a>
+                    <h4 class="modal-title">Commute Request</h4>
+                </div>
+                <div class="modal-body">
+                    <h6>Pick the days for which you wish to request a commute.</h6>
+                    <div id='alert{{username}}'>
+
+                    </div>
+                    {{#with (lookup ../../users ../../currentUser.username)}}
+                    <div class="avaiable-rides">
+                    <p>Available rides: {{rides}}</p>
+                    </div>
+                    {{/with}}
+                     <table class="requestTable" id='requestTable'>
+                      <thead>
+                      </thead>
+                      <tbody>
+                        <tr style=' text-align:center'>
+                          <td>Monday &nbsp</td>
+                          <td>Tuesday &nbsp</td>
+                          <td>Wednesday &nbsp</td>
+                          <td>Thursday &nbsp</td>
+                          <td>Friday &nbsp</td>
+                        </tr>
+
+                        <tr style=' text-align:center'>
+                          <form action="">
+                            {{#with (lookup days 0)}}
+                            {{#if (if_eq seats 0)}}
+                            <td><input class = "requestDays{{../../username}}" type="checkbox" name="Day" value="Monday" onclick="return false;" disabled="disabled"></td>
+                            {{/if}}
+                            {{#unless (if_eq seats 0)}}
+                            <td><input class = "requestDays{{../../username}}" type="checkbox" name="Day" value="Monday" ></td>
+                            {{/unless}}
+                            {{/with}}
+                            {{#with (lookup days 1)}}
+                            {{#if (if_eq seats 0)}}
+                            <td><input class = "requestDays{{../../username}}" type="checkbox" name="Day" value="Tuesday" onclick="return false;" disabled="disabled"></td>
+                            {{/if}}
+                            {{#unless (if_eq seats 0)}}
+                            <td><input class = "requestDays{{../../username}}" type="checkbox" name="Day" value="Tuesday" ></td>
+                            {{/unless}}
+                            {{/with}}
+                            {{#with (lookup days 2)}}
+                            {{#if (if_eq seats 0)}}
+                            <td><input class = "requestDays{{../../username}}" type="checkbox" name="Day" value="Wednesday" onclick="return false;" disabled="disabled"></td>
+                            {{/if}}
+                            {{#unless (if_eq seats 0)}}
+                            <td><input class = "requestDays{{../../username}}" type="checkbox" name="Day" value="Wednesday" ></td>
+                            {{/unless}}
+                            {{/with}}
+                            {{#with (lookup days 3)}}
+                            {{#if (if_eq seats 0)}}
+                            <td><input class = "requestDays{{../../username}}" type="checkbox" name="Day" value="Thursday" onclick="return false;" disabled="disabled"></td>
+                            {{/if}}
+                            {{#unless (if_eq seats 0)}}
+                            <td><input class = "requestDays{{../../username}}" type="checkbox" name="Day" value="Thursday" ></td>
+                            {{/unless}}
+                            {{/with}}
+                            {{#with (lookup days 4)}}
+                            {{#if (if_eq seats 0)}}
+                            <td><input class = "requestDays{{../../username}}" type="checkbox" name="Day" value="Friday" onclick="return false;" disabled="disabled"></td>
+                            {{/if}}
+                            {{#unless (if_eq seats 0)}}
+                            <td><input class = "requestDays{{../../username}}" type="checkbox" name="Day" value="Friday" ></td>
+                            {{/unless}}
+                            {{/with}}
+                          </form>
+                        </tr>
+
+                      </tbody>
+                    </table>
+
+                    
+                </div>
+                <div class="modal-footer">
+                  <div class="btn-toolbar">
+                      <button class="btn btn-primary sendRequest" style='float:left' id="sendRequest{{username}}"><span class="glyphicon glyphicon-check"></span> Send</button>
+                      <button class="btn btn-danger closeModal"><span class="glyphicon glyphicon-remove"></span> Cancel</button>
+                    </div>
+                </div>
+ 
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dalog -->
+    </div><!-- /.modal -->
+  
+  {{/unless}}
+  {{/each}}
+</div>
+  
+
+    
+    
+
+
+
+
+      
+
+
+    <!-- divs are invisible structuring elements that stack vertically by default. Use them to organize your code -->
 		<!-- img tags are images. Lorem Pixel will deliver random images; handy! -->
 		<!-- a are anchors, also known as hyperlinks. Use the href attribute to tell the browser where to go when the user clicks -->
-		<div class="setupSchedule">
-			<a href="schedule">
-				<button class="btn btn-info btn-sm" id="btn-schedule" ><i class="glyphicon glyphicon-time"></i>Edit schedule</button>
-			</a>
-		</div>
+
 		
 
 	</div>
